@@ -1,0 +1,93 @@
+[
+ {
+  "company_id": "version-1",
+  "company_name": "Version 1",
+  "source": "linkedin-logged-in",
+  "work_model": "hybrid",
+  "office_days": null,
+  "salary": null,
+  "closes": null,
+  "sectors": [
+   "civic-tech",
+   "education"
+  ],
+  "purpose_score": 3,
+  "people": [],
+  "company_linkedin": "https://www.linkedin.com/company/version-1/",
+  "verified_open": true,
+  "checked": "2026-10-14",
+  "id": "version-1-service-designer",
+  "title": "Service Designer",
+  "apply_url": "https://www.linkedin.com/jobs/view/4441813482/",
+  "source_url": "https://www.linkedin.com/jobs/view/4441813482/",
+  "location": "London, Manchester, Birmingham, Newcastle, Edinburgh or Belfast, UK (hybrid)",
+  "seniority": "mid",
+  "years_experience": null,
+  "posted": "2026-09-30",
+  "role_summary": "Service Designer in Version 1's 15-strong service design community, working across discovery to live on public-sector services, such as tailored support for people in prison and cutting the cost of hiring teachers. Maps current and future states, runs workshops and blueprints services with multidisciplinary teams. GOV.UK/DDaT experience is desirable, not essential; flexible and remote working offered. Posted in six UK cities; 114 applicants on LinkedIn."
+ },
+ {
+  "company_id": "version-1",
+  "company_name": "Version 1",
+  "source": "linkedin-logged-in",
+  "work_model": "hybrid",
+  "office_days": null,
+  "salary": null,
+  "closes": null,
+  "sectors": [
+   "civic-tech",
+   "education"
+  ],
+  "purpose_score": 3,
+  "people": [],
+  "company_linkedin": "https://www.linkedin.com/company/version-1/",
+  "verified_open": true,
+  "checked": "2026-10-14",
+  "id": "version-1-senior-service-designer",
+  "title": "Senior Service Designer",
+  "apply_url": "https://www.linkedin.com/jobs/view/4442860040/",
+  "source_url": "https://www.linkedin.com/jobs/view/4442860040/",
+  "location": "London, Manchester, Birmingham, Newcastle, Edinburgh or Belfast, UK (hybrid)",
+  "seniority": "senior",
+  "years_experience": null,
+  "posted": "2026-10-07",
+  "role_summary": "Senior Service Designer leading end-to-end public-sector services in education, social care and criminal justice, such as better education for people in prison, safer data sharing about children between agencies and reducing teachers' admin. Expects experience with the GOV.UK Service Standard, leading workshops and stakeholders. Posted in six UK cities."
+ },
+ {
+  "id": "trust-in-soda-senior-product-designer-climate-tech",
+  "title": "Senior Product Designer (Climate Tech)",
+  "company_id": "trust-in-soda",
+  "company_name": "Trust In SODA",
+  "apply_url": "https://www.linkedin.com/jobs/view/4466871480/",
+  "source": "linkedin-logged-in",
+  "source_url": "https://www.linkedin.com/jobs/view/4466871480/",
+  "location": "London Area, UK (hybrid)",
+  "work_model": "hybrid",
+  "office_days": null,
+  "salary": "£60k–£110k",
+  "seniority": "senior",
+  "years_experience": null,
+  "posted": "2026-09-23",
+  "closes": null,
+  "role_summary": "Recruiter (Trust In SODA) hiring for a venture-backed climate-tech business whose B2B SaaS platform replaces manual processes for delivering renewable energy projects. Product Designer working across web and mobile, from user research and prototyping to shipping with engineering. Client not named in the advert.",
+  "sectors": [
+   "climate",
+   "energy-transition"
+  ],
+  "purpose_score": 4,
+  "client_unnamed": true,
+  "people": [
+   {
+    "name": "David Young",
+    "title": "Job poster at Trust In SODA (recruiter)",
+    "linkedin": "",
+    "role": "recruiter",
+    "source": "linkedin-hiring-team",
+    "verified": true,
+    "for_job": "Senior Product Designer (Climate Tech)"
+   }
+  ],
+  "verified_open": true,
+  "checked": "2026-10-13"
+ }
+]
