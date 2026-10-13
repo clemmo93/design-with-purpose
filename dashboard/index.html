@@ -26,13 +26,16 @@
   --f-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --f-mono: var(--f-body);
   --r: 10px;
+  --sec-energy: #eda100; --sec-nature: #008300; --sec-care: #e87ba4; --sec-public: #2a78d6; --sec-other: #9aa49e;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #13181a; --surface: #1a2023; --surface-2: #232b2f; --ink: #e9ede9; --ink-2: #b6c0ba; --ink-3: #95a29b;
   --line: #2b3438; --accent: #8fcfaa; --accent-soft: #1d3329; --sun: #e9c14a; --sun-ink: #241d00; --leaf: #7cc68d;
   --strong: #84d295; --strong-bg: #183a23; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d9a6b4; --stretch-bg: #3a2229;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4); color-scheme: dark; } }
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4);
+  --sec-energy: #c98500; --sec-nature: #008300; --sec-care: #d55181; --sec-public: #3987e5; --sec-other: #6f7a75; color-scheme: dark; } }
 :root[data-theme="dark"] {
+  --sec-energy: #c98500; --sec-nature: #008300; --sec-care: #d55181; --sec-public: #3987e5; --sec-other: #6f7a75;
   --bg: #13181a; --surface: #1a2023; --surface-2: #232b2f; --ink: #e9ede9; --ink-2: #b6c0ba; --ink-3: #95a29b;
   --line: #2b3438; --accent: #8fcfaa; --accent-soft: #1d3329; --sun: #e9c14a; --sun-ink: #241d00; --leaf: #7cc68d;
   --strong: #84d295; --strong-bg: #183a23; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d9a6b4; --stretch-bg: #3a2229;
@@ -108,6 +111,9 @@ details.more > summary { cursor: pointer; padding-block: 12px; font-weight: 700;
 .tierhead h2 i { font-style: normal; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--t); margin-right: 8px; vertical-align: 2px; }
 .tierhead span { color: var(--ink-3); font-size: 14px; }
 .sectors { color: var(--ink-3); }
+.sec { display: inline-flex; align-items: center; gap: 5px; color: var(--ink-2); white-space: nowrap; }
+.sec i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none; }
+.chip .sec i { width: 10px; height: 10px; }
 .job { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 18px; align-items: start; background: transparent; border-bottom: 1px solid var(--line); padding: 16px 10px; cursor: pointer; text-align: left; width: 100%; border-radius: 0; transition: background .15s; }
 .job:hover, .job:focus-visible { background: var(--surface); }
 .job.dim { opacity: .55; }
@@ -390,11 +396,12 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         v.forEach(x => counts[x] = (counts[x] || 0) + 1);
       });
       let keys = ORDER[facet] || Object.keys(LABELS[facet] || {});
-      if (facet === "sectors") keys = keys.filter(k => DATA.jobs.some(j => (j.sectors || []).includes(k)));
+      if (facet === "sectors") { const fo = ["energy", "nature", "care", "public", "other"]; keys = keys.filter(k => DATA.jobs.some(j => (j.sectors || []).includes(k))).sort((a, b) => fo.indexOf(SECTOR_FAMILY[a] || "other") - fo.indexOf(SECTOR_FAMILY[b] || "other")); }
       else keys = keys.filter(k => DATA.jobs.some(j => val(j, facet) === k) || facet === "status");
       box.innerHTML = keys.map(k => {
         const on = F[facet].includes(k), n = counts[k] || 0;
-        return `<button class="chip ${n ? "" : "zero"}" aria-pressed="${on}" data-k="${esc(k)}">${esc((LABELS[facet] || {})[k] || k)}<span class="n">${n}</span></button>`;
+        const label = facet === "sectors" ? sec(k) : esc((LABELS[facet] || {})[k] || k);
+        return `<button class="chip ${n ? "" : "zero"}" aria-pressed="${on}" data-k="${esc(k)}">${label}<span class="n">${n}</span></button>`;
       }).join("");
     });
   }
@@ -411,6 +418,13 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   }
   const pips = n => `<span class="pips" title="Purpose ${n || "?"}/5">${[1,2,3,4,5].map(i => `<i class="${i <= (n || 0) ? "on" : ""}"></i>`).join("")}</span>`;
   let BASELINE = "";  // the first refresh's date: everything seen then is the starting set, not "new"
+  const SECTOR_FAMILY = {
+    "energy-transition": "energy", climate: "energy", "circular-economy": "energy",
+    "nature-rewilding": "nature", "sustainable-food": "nature",
+    charity: "care", health: "care", "social-impact": "care", "ethical-finance": "care",
+    "civic-tech": "public", education: "public",
+  };
+  const sec = k => `<span class="sec" style="--c:var(--sec-${SECTOR_FAMILY[k] || "other"})"><i aria-hidden="true"></i>${esc(LABELS.sectors[k] || k)}</span>`;
   const SRC_NAMES = { "hard-problems-rss": "Hard Problems", linkedin: "LinkedIn", charityjob: "CharityJob", "nhs-jobs-api": "NHS Jobs", "escape-the-city": "Escape the City", uiuxjobsboard: "UI/UX Jobs Board" };
   const srcName = n => { n = String(n || ""); if (SRC_NAMES[n]) return SRC_NAMES[n]; if (n.startsWith("getro:")) return n.slice(6); if (n.endsWith("-api")) return "the company's careers site";
     return n.replace(/[-_]+/g, " ").replace(/\b(rss|api|search|guest)\b/gi, "").trim().replace(/^./, c => c.toUpperCase()); };
@@ -441,7 +455,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
           <p class="jt">${esc(j.title)}</p>
           <div class="jc"><strong>${esc(j.company_name)}</strong>${pips(j.purpose_score)}<span>${esc(j.location || j.region)}</span></div>
           <div class="meta">${week(j)}<span>${esc(LABELS.seniority[j.seniority] || j.seniority)}${j.years_experience ? ` · ${esc(j.years_experience)} yrs` : ""}</span>${j.salary ? `<span>${esc(j.salary)}</span>` : ""}
-            ${(j.sectors || []).length ? `<span class="sectors">${(j.sectors || []).slice(0, 3).map(s => esc(LABELS.sectors[s] || s)).join(" · ")}</span>` : ""}
+            ${(j.sectors || []).slice(0, 3).map(sec).join("")}
             ${isNew(j) ? `<span class="tag new">New</span>` : ""}
             ${j.unconfirmed ? `<span class="tag unconf" title="Seen on a job board, but the live posting couldn't be opened (bot check or login). Check it's still open before applying.">Unconfirmed</span>` : ""}
             ${(() => { const n = (j.people || []).length + ((COS[j.company_id] || {}).people || []).length; return n ? `<span class="sectors">${n} contact${n > 1 ? "s" : ""}</span>` : ""; })()}</div>
@@ -498,6 +512,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       <h2 id="sh-title">${esc(j.title)}</h2>
       <div class="meta">${week(j)}<span class="pill tier-${j.tier}">${LABELS.tier[j.tier]} match · ${j.match}</span>${isNew(j) ? `<span class="tag new">New</span>` : ""}</div>
       <div class="links" style="margin-top:16px">${links}</div>
+      <h3>People to know</h3>${peopleBlock([...(j.people || []), ...(c.people || [])], j.company_name, liCompany(c, j))}
       <dl class="facts">
         <div><dt>Location</dt><dd>${esc(j.location || "—")}</dd></div>
         <div><dt>Region</dt><dd>${esc(j.region)}</dd></div>
@@ -515,10 +530,9 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       <h3>The role</h3><p>${esc(j.role_summary || "No summary captured. Open the posting for details.")}</p>
       <h3>The company</h3>
       <p>${esc(c.mission || "")}</p>
-      <div class="meta">${pips(j.purpose_score)}<span>Purpose ${j.purpose_score || "?"}/5</span>${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}${c.size ? `<span class="tag">${esc(c.size)} people</span>` : ""}${c.hq ? `<span class="tag">${esc(c.hq)}</span>` : ""}</div>
+      <div class="meta">${pips(j.purpose_score)}<span>Purpose ${j.purpose_score || "?"}/5</span>${(j.sectors || []).map(sec).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}${c.size ? `<span class="tag">${esc(c.size)} people</span>` : ""}${c.hq ? `<span class="tag">${esc(c.hq)}</span>` : ""}</div>
       ${c.purpose_rationale ? `<p class="muted" style="margin-top:8px">${esc(c.purpose_rationale)}</p>` : ""}
       ${c.design_team_notes ? `<p class="muted">${esc(c.design_team_notes)}</p>` : ""}
-      <h3>People to know</h3>${peopleBlock([...(j.people || []), ...(c.people || [])], j.company_name, liCompany(c, j))}
       <h3>Why this score</h3>
       <div class="score">
         ${[["Purpose", sp.purpose, 40], ["Work pattern", sp.location, 30], ["Level fit", sp.seniority, 30]].map(([l, v, m]) => `<div class="bar"><span>${l}</span><div class="tr"><div class="fl" style="width:${(v || 0) / m * 100}%"></div></div><span class="v">${v ?? 0}/${m}</span></div>`).join("")}
@@ -559,7 +573,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   function renderCompanies() {
     const hiring = {}; DATA.jobs.forEach(j => hiring[j.company_id] = (hiring[j.company_id] || 0) + 1);
     const secs = [...new Set(DATA.companies.flatMap(c => c.sectors || []))];
-    $("#csec").innerHTML = secs.map(s => `<button class="chip" aria-pressed="${CF.sec.includes(s)}" data-k="${esc(s)}">${esc(LABELS.sectors[s] || s)}</button>`).join("");
+    $("#csec").innerHTML = secs.map(s => `<button class="chip" aria-pressed="${CF.sec.includes(s)}" data-k="${esc(s)}">${sec(s)}</button>`).join("");
     const list = DATA.companies.filter(c => {
       if (CF.hiring && !hiring[c.id]) return false;
       if (CF.sec.length && !(c.sectors || []).some(s => CF.sec.includes(s))) return false;
@@ -568,7 +582,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
     }).sort((a, b) => (hiring[b.id] || 0) - (hiring[a.id] || 0) || (b.purpose_score || 0) - (a.purpose_score || 0) || a.name.localeCompare(b.name));
     $("#cgrid").innerHTML = list.length ? list.map(c => `<article class="co">
       <h4><span>${esc(c.name)}</span>${hiring[c.id] ? `<button class="hiring" data-co="${esc(c.id)}">${hiring[c.id]} open role${hiring[c.id] > 1 ? "s" : ""} →</button>` : `<span class="muted">no design roles open</span>`}</h4>
-      <div class="meta" style="margin-top:0">${pips(c.purpose_score)}${(c.sectors || []).slice(0, 3).map(s => `<span class="tag">${esc(LABELS.sectors[s] || s)}</span>`).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}</div>
+      <div class="meta" style="margin-top:0">${pips(c.purpose_score)}${(c.sectors || []).slice(0, 3).map(sec).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}</div>
       <p>${esc(c.mission || "")}</p>
       <p class="muted">${esc([c.hq, c.uk_presence, c.size && c.size + " people"].filter(Boolean).join(" · "))}</p>
       ${(c.people || []).length ? `<div class="people">${c.people.slice(0, 4).map(p => `<div class="person"><div style="min-width:0"><span class="role">${esc(ROLE_LABEL[p.role] || p.role || "")}</span><b>${esc(p.name)}</b><small>${esc(p.title || "")}</small></div>${safeUrl(p.linkedin) ? `<a class="btn" href="${esc(p.linkedin)}" target="_blank" rel="noopener">in ↗</a>` : ""}</div>`).join("")}</div>` : ""}
