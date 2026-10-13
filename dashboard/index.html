@@ -1,39 +1,42 @@
 <title>Design with Purpose</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap">
 <style>
 /* Layout: masthead + tab strip; Roles = filter rail (left) + ranked list, detail opens in a side sheet. */
 :root {
-  --bg: #f2f4f0;          /* lichen-pale stone */
+  /* Field-guide paper, forest ink, a sunlight highlighter. Leaves stay green. */
+  --bg: #f5f6f1;
   --surface: #ffffff;
-  --surface-2: #e8ece6;
-  --ink: #15302a;         /* spruce */
-  --ink-2: #4c6159;
-  --ink-3: #7d8f87;
-  --line: #d3dad3;
-  --accent: #1d6a96;      /* kingfisher */
-  --accent-soft: #dcebf3;
-  --leaf: #3f8a4e;
-  --strong: #2f7a43; --strong-bg: #dff0e2;
-  --good: #9a6b06;   --good-bg: #f8ecc9;
-  --stretch: #8a5a68; --stretch-bg: #f1e3e7;
-  --shadow: 0 1px 2px rgba(21,48,42,.06), 0 6px 24px rgba(21,48,42,.08);
-  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
-  --f-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --surface-2: #eceee6;
+  --ink: #1c2620;
+  --ink-2: #47544c;
+  --ink-3: #5f6c64;
+  --line: #dde1d7;
+  --accent: #2b6548;
+  --accent-soft: #e2eee6;
+  --sun: #f4cd52;
+  --sun-ink: #2e2600;
+  --leaf: #3c8a4f;
+  --strong: #2a7440; --strong-bg: #dff0e2;
+  --good: #8a5d00;   --good-bg: #f7ecc8;
+  --stretch: #85525f; --stretch-bg: #f2e4e8;
+  --shadow: 0 1px 2px rgba(28,38,32,.06), 0 8px 28px rgba(28,38,32,.10);
+  --f-display: "Familjen Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: var(--f-body);
   --r: 10px;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0f1a17; --surface: #16241f; --surface-2: #1d2e28; --ink: #e3ece7; --ink-2: #a9bab2; --ink-3: #74877f;
-  --line: #2a3d36; --accent: #6db7e0; --accent-soft: #19323f; --leaf: #74c486;
-  --strong: #7fd28f; --strong-bg: #173a22; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d6a3b2; --stretch-bg: #3a2229;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); color-scheme: dark; } }
+  --bg: #13181a; --surface: #1a2023; --surface-2: #232b2f; --ink: #e9ede9; --ink-2: #b6c0ba; --ink-3: #95a29b;
+  --line: #2b3438; --accent: #8fcfaa; --accent-soft: #1d3329; --sun: #e9c14a; --sun-ink: #241d00; --leaf: #7cc68d;
+  --strong: #84d295; --strong-bg: #183a23; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d9a6b4; --stretch-bg: #3a2229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4); color-scheme: dark; } }
 :root[data-theme="dark"] {
-  --bg: #0f1a17; --surface: #16241f; --surface-2: #1d2e28; --ink: #e3ece7; --ink-2: #a9bab2; --ink-3: #74877f;
-  --line: #2a3d36; --accent: #6db7e0; --accent-soft: #19323f; --leaf: #74c486;
-  --strong: #7fd28f; --strong-bg: #173a22; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d6a3b2; --stretch-bg: #3a2229;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); color-scheme: dark; }
+  --bg: #13181a; --surface: #1a2023; --surface-2: #232b2f; --ink: #e9ede9; --ink-2: #b6c0ba; --ink-3: #95a29b;
+  --line: #2b3438; --accent: #8fcfaa; --accent-soft: #1d3329; --sun: #e9c14a; --sun-ink: #241d00; --leaf: #7cc68d;
+  --strong: #84d295; --strong-bg: #183a23; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d9a6b4; --stretch-bg: #3a2229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4); color-scheme: dark; }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -47,9 +50,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* masthead */
 header.mast { padding-block: 28px 0; }
 .mast-row { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: flex-end; justify-content: space-between; }
-h1 { font: 800 clamp(28px, 4.4vw, 44px)/1 var(--f-display); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+h1 { font: 700 clamp(30px, 4.6vw, 46px)/1 var(--f-display); letter-spacing: -.025em; margin: 0; text-wrap: balance; display: flex; align-items: center; gap: .32em; }
+h1 .mark { width: .62em; height: .62em; border-radius: .62em 0; background: var(--leaf); transform: rotate(-12deg); flex: none; }
 h1 .sprout { color: var(--leaf); }
-.kicker { font: 500 12px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin-bottom: 10px; }
+.kicker { font: 700 14px/1.2 var(--f-body); color: var(--accent); margin-bottom: 6px; }
+.summary { margin: 14px 0 0; font-size: 16px; color: var(--ink-2); }
+.summary b { color: var(--ink); }
+.summary .hl { background: linear-gradient(transparent 62%, var(--sun) 62%); color: var(--ink); padding: 0 2px; }
 .brief { color: var(--ink-2); max-width: 62ch; margin: 10px 0 0; }
 .stats { display: flex; gap: 22px; flex-wrap: wrap; }
 @media (max-width: 600px) { .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; } }
@@ -59,7 +66,7 @@ h1 .sprout { color: var(--leaf); }
 nav.tabs { display: flex; gap: 4px; margin-top: 22px; border-bottom: 1px solid var(--line); overflow-x: auto; }
 nav.tabs button { background: none; border: 0; padding: 10px 14px; font-weight: 600; color: var(--ink-2); border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
 nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
-nav.tabs .count { font: 500 11px var(--f-mono); color: var(--ink-3); margin-left: 4px; }
+nav.tabs .count { font: 400 13px var(--f-body); color: var(--ink-3); margin-left: 5px; }
 
 /* roles layout */
 .layout { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; padding-block: 22px 60px; }
@@ -73,18 +80,20 @@ details.fwrap > summary { display: none; }
 }
 .fgroup { padding-block: 12px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
 .fgroup:first-child { padding-top: 0; }
-.flabel { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); display: flex; justify-content: space-between; }
+.flabel { font: 700 13px/1.2 var(--f-body); color: var(--ink); display: flex; justify-content: space-between; }
+.flabel span { font-weight: 400; color: var(--ink-3); }
 .flabel button { background: none; border: 0; color: var(--accent); font: inherit; text-transform: none; letter-spacing: 0; cursor: pointer; padding: 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 10px; font-size: 13px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
-.chip .n { font: 500 11px var(--f-mono); color: var(--ink-3); }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; min-height: 34px; font-size: 14px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.chip .n { font: 400 12px var(--f-body); color: var(--ink-3); }
+.chip[aria-pressed="true"] { background: var(--sun); color: var(--sun-ink); border-color: var(--sun); font-weight: 700; }
 .chip[aria-pressed="true"] .n { color: inherit; opacity: .7; }
 .chip.zero { opacity: .45; }
 input[type="search"], select, textarea { width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-input[type="range"] { width: 100%; accent-color: var(--ink); }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
 .toggle { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--ink-2); cursor: pointer; }
 .toggle input { accent-color: var(--ink); }
+details.more > summary { cursor: pointer; padding-block: 12px; font-weight: 700; color: var(--accent); }
 .reset { margin-top: 14px; width: 100%; padding: 8px; border: 1px dashed var(--line); background: none; border-radius: 8px; cursor: pointer; color: var(--ink-2); }
 
 /* results */
@@ -92,9 +101,15 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .rhead .count { font: 600 15px var(--f-display); }
 .rhead .count small { font: 400 13px var(--f-body); color: var(--ink-3); }
 .rhead select, #ssort { width: auto; }
-.list { display: grid; gap: 10px; }
-.job { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 16px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; text-align: left; width: 100%; transition: border-color .15s, box-shadow .15s; }
-.job:hover { border-color: var(--ink-3); box-shadow: var(--shadow); }
+.list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.tierhead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 26px 10px 8px; border-bottom: 1px solid var(--line); }
+.tierhead:first-child { padding-top: 14px; }
+.tierhead h2 { margin: 0; font: 700 19px/1.2 var(--f-display); }
+.tierhead h2 i { font-style: normal; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--t); margin-right: 8px; vertical-align: 2px; }
+.tierhead span { color: var(--ink-3); font-size: 14px; }
+.sectors { color: var(--ink-3); }
+.job { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 18px; align-items: start; background: transparent; border-bottom: 1px solid var(--line); padding: 16px 10px; cursor: pointer; text-align: left; width: 100%; border-radius: 0; transition: background .15s; }
+.job:hover, .job:focus-visible { background: var(--surface); }
 .job.dim { opacity: .55; }
 @media (max-width: 600px) { .job { grid-template-columns: 44px minmax(0, 1fr); } .job .side { grid-column: 1 / -1; justify-self: start; flex-direction: row; } }
 .ring { width: 52px; height: 52px; position: relative; }
@@ -106,17 +121,18 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .tier-good { --t: var(--good); --tb: var(--good-bg); }
 .tier-stretch { --t: var(--stretch); --tb: var(--stretch-bg); }
 .ring .val { stroke: var(--t); }
-.jt { font: 700 17px/1.25 var(--f-display); margin: 0; text-wrap: balance; }
+.jt { font: 700 18px/1.25 var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -.005em; }
 .jc { color: var(--ink-2); font-size: 14px; margin-top: 2px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
 .jc strong { color: var(--ink); font-weight: 600; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 13px; color: var(--ink-2); align-items: center; }
-.tag { font: 500 11px/1 var(--f-mono); padding: 4px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); text-transform: lowercase; }
+.tag { font: 400 12px/1 var(--f-body); padding: 4px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); }
 .tag.unconf { background: var(--good-bg); color: var(--good); text-transform: none; }
-.tag.new { background: var(--accent-soft); color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+.tag.new { background: var(--sun); color: var(--sun-ink); font-weight: 700; }
 .side { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 .pill { font: 600 11px/1 var(--f-body); padding: 5px 9px; border-radius: 999px; background: var(--tb, var(--surface-2)); color: var(--t, var(--ink-2)); white-space: nowrap; }
-.li-link { font: 700 11px/1 var(--f-body); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 6px; text-decoration: none; }
-.li-link:hover { border-color: var(--accent); }
+.li-link { font: 700 13px/1 var(--f-body); color: var(--accent); text-decoration: none; padding: 4px 0; }
+.li-link:hover { text-decoration: underline; }
+
 .status { font: 600 11px/1 var(--f-body); padding: 5px 9px; border-radius: 999px; border: 1px solid currentColor; color: var(--accent); white-space: nowrap; }
 .status[data-s="pass"], .status[data-s="closed"] { color: var(--ink-3); }
 
@@ -138,13 +154,13 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 @media (max-width: 600px) { .sheet { padding-inline: 16px; } }
 .sheet .close { position: sticky; top: 0; float: right; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 18px; line-height: 1; }
 .sheet h2 { font: 800 26px/1.15 var(--f-display); margin: 6px 0 4px; letter-spacing: -.01em; text-wrap: balance; padding-right: 44px; }
-.sheet h3 { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin: 26px 0 10px; }
+.sheet h3 { font: 700 17px/1.2 var(--f-display); color: var(--ink); margin: 28px 0 10px; }
 .sheet p { margin: 0 0 8px; max-width: 65ch; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; }
 .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; color: var(--ink); font-weight: 500; font-size: 14px; cursor: pointer; }
 .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin-top: 16px; }
-.facts dt { font: 500 10.5px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); margin-bottom: 5px; }
+.facts dt { font: 400 13px/1.2 var(--f-body); color: var(--ink-3); margin-bottom: 4px; }
 .facts dd { margin: 0; font-size: 14px; }
 .score { display: grid; gap: 8px; }
 .bar { display: grid; grid-template-columns: 90px minmax(0, 1fr) 54px; gap: 10px; align-items: center; font-size: 13px; }
@@ -155,7 +171,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .person { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
 .person b { font-weight: 600; }
 .person small { display: block; color: var(--ink-2); font-size: 13px; }
-.person .role { display: block; margin-bottom: 2px; font: 500 10.5px var(--f-mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; }
+.person .role { display: block; margin-bottom: 2px; font: 700 12px var(--f-body); color: var(--accent); }
 .muted { color: var(--ink-3); font-size: 13px; }
 .track { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; }
 .track .sts { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -172,7 +188,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .tbl-wrap { overflow-x: auto; padding-bottom: 60px; }
 table { border-collapse: collapse; width: 100%; min-width: 760px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
 th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
-th { font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); background: var(--surface-2); }
+th { font: 700 13px var(--f-body); color: var(--ink-2); background: var(--surface-2); }
 td.notes { color: var(--ink-2); max-width: 46ch; }
 .foot { color: var(--ink-3); font-size: 12px; padding-block: 0 40px; }
 .howgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 10px; padding-top: 16px; }
@@ -218,11 +234,11 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   <header class="mast">
     <div class="mast-row">
       <div>
-        <div class="kicker">Product design roles · purpose-led · London &amp; ≤2h</div>
-        <h1>Design with Purpose<span class="sprout">.</span></h1>
-        <p class="brief">Product design roles at organisations making real change: energy transition, climate, nature, charities and tech for good. Ranked for Robyn by purpose, office days and level.</p>
+        <h1><span class="mark" aria-hidden="true"></span>Design with Purpose</h1>
+        <p class="brief">Product design roles at organisations making real change in energy, climate, nature, charities and tech for good, ranked for Robyn.</p>
+        <p class="summary" id="summary">Loading roles…</p>
       </div>
-      <div class="stats" id="stats"></div>
+
     </div>
     <nav class="tabs" role="tablist" id="tabs">
       <button role="tab" data-tab="roles" aria-selected="true">Roles<span class="count" id="c-roles"></span></button>
@@ -240,7 +256,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         <div class="fgroup"><div class="flabel">Match</div><div class="chips" data-facet="tier"></div></div>
         <div class="fgroup"><div class="flabel">Work model</div><div class="chips" data-facet="work_model"></div></div>
         <div class="fgroup">
-          <div class="flabel">Max office days / week <span id="dval"></span></div>
+          <div class="flabel">Office days a week, at most <span id="dval"></span></div>
           <input type="range" id="days" min="0" max="5" step="1" value="5" aria-label="Maximum office days per week">
           <label class="toggle"><input type="checkbox" id="unkdays" checked> Include roles with unstated days</label>
         </div>
@@ -248,11 +264,13 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         <div class="fgroup"><div class="flabel">Purpose score <span id="pval"></span></div>
           <input type="range" id="purpose" min="1" max="5" step="1" value="1" aria-label="Minimum purpose score"></div>
         <div class="fgroup"><div class="flabel">Level</div><div class="chips" data-facet="seniority"></div></div>
+        <details class="more"><summary>More filters</summary>
         <div class="fgroup"><div class="flabel">Region</div><div class="chips" data-facet="region"></div></div>
         <div class="fgroup"><div class="flabel">Found via</div><div class="chips" data-facet="source_kind"></div>
           <label class="toggle"><input type="checkbox" id="unconf" checked> Include roles we couldn't confirm are open</label></div>
-        <div class="fgroup"><div class="flabel">Robyn's status</div><div class="chips" data-facet="status"></div>
+        <div class="fgroup"><div class="flabel">Your progress</div><div class="chips" data-facet="status"></div>
           <label class="toggle"><input type="checkbox" id="hidepass" checked> Hide “Not for me”</label></div>
+        </details>
         <button class="reset" id="reset">Clear all filters</button>
       </details>
     </aside>
@@ -393,6 +411,9 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   }
   const pips = n => `<span class="pips" title="Purpose ${n || "?"}/5">${[1,2,3,4,5].map(i => `<i class="${i <= (n || 0) ? "on" : ""}"></i>`).join("")}</span>`;
   let BASELINE = "";  // the first refresh's date: everything seen then is the starting set, not "new"
+  const SRC_NAMES = { "hard-problems-rss": "Hard Problems", linkedin: "LinkedIn", charityjob: "CharityJob", "nhs-jobs-api": "NHS Jobs", "escape-the-city": "Escape the City", uiuxjobsboard: "UI/UX Jobs Board" };
+  const srcName = n => { n = String(n || ""); if (SRC_NAMES[n]) return SRC_NAMES[n]; if (n.startsWith("getro:")) return n.slice(6); if (n.endsWith("-api")) return "the company's careers site";
+    return n.replace(/[-_]+/g, " ").replace(/\b(rss|api|search|guest)\b/gi, "").trim().replace(/^./, c => c.toUpperCase()); };
   const isNew = j => j.first_seen && j.first_seen > BASELINE && (Date.now() - new Date(j.first_seen).getTime()) < 7 * 864e5;
   const fmtDate = d => { if (!d) return ""; const t = new Date(d); return isNaN(t) ? d : t.toLocaleDateString("en-GB", { day: "numeric", month: "short" }); };
 
@@ -407,20 +428,25 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
     jobs.sort(sorters[F.sort] || sorters.match);
     const strong = jobs.filter(j => j.tier === "strong").length;
     $("#rcount").innerHTML = `${jobs.length} role${jobs.length === 1 ? "" : "s"} <small>· ${strong} strong match${strong === 1 ? "" : "es"} · of ${DATA.jobs.length}</small>`;
+    const TIER_NOTE = { strong: "Purpose-led, a work pattern that fits, at Robyn's level", good: "Close: one thing is a compromise", stretch: "Worth a look, but more than one trade-off" };
+    let lastTier = "";
     $("#list").innerHTML = jobs.length ? jobs.map(j => {
+      const head = F.sort === "match" && j.tier !== lastTier
+        ? `<div class="tierhead tier-${j.tier}"><h2><i></i>${LABELS.tier[j.tier]} matches</h2><span>${jobs.filter(x => x.tier === j.tier).length} roles · ${TIER_NOTE[j.tier]}</span></div>` : "";
+      lastTier = j.tier;
       const st = statusOf(j);
-      return `<div class="job ${st === "pass" ? "dim" : ""}" data-id="${esc(j.id)}" role="button" tabindex="0" aria-label="${esc(j.title)} at ${esc(j.company_name)}">
+      return head + `<div class="job ${st === "pass" ? "dim" : ""}" data-id="${esc(j.id)}" role="button" tabindex="0" aria-label="${esc(j.title)} at ${esc(j.company_name)}">
         ${ring(j.match, j.tier)}
         <div style="min-width:0">
           <p class="jt">${esc(j.title)}</p>
           <div class="jc"><strong>${esc(j.company_name)}</strong>${pips(j.purpose_score)}<span>${esc(j.location || j.region)}</span></div>
           <div class="meta">${week(j)}<span>${esc(LABELS.seniority[j.seniority] || j.seniority)}${j.years_experience ? ` · ${esc(j.years_experience)} yrs` : ""}</span>${j.salary ? `<span>${esc(j.salary)}</span>` : ""}
-            ${(j.sectors || []).slice(0, 3).map(s => `<span class="tag">${esc(LABELS.sectors[s] || s)}</span>`).join("")}
+            ${(j.sectors || []).length ? `<span class="sectors">${(j.sectors || []).slice(0, 3).map(s => esc(LABELS.sectors[s] || s)).join(" · ")}</span>` : ""}
             ${isNew(j) ? `<span class="tag new">New</span>` : ""}
             ${j.unconfirmed ? `<span class="tag unconf" title="Seen on a job board, but the live posting couldn't be opened (bot check or login). Check it's still open before applying.">Unconfirmed</span>` : ""}
-            ${(() => { const n = (j.people || []).length + ((COS[j.company_id] || {}).people || []).length; return n ? `<span class="tag">${n} contact${n > 1 ? "s" : ""}</span>` : ""; })()}</div>
+            ${(() => { const n = (j.people || []).length + ((COS[j.company_id] || {}).people || []).length; return n ? `<span class="sectors">${n} contact${n > 1 ? "s" : ""}</span>` : ""; })()}</div>
         </div>
-        <div class="side"><span class="pill tier-${j.tier}">${LABELS.tier[j.tier]}</span>${liCompany(COS[j.company_id], j) ? `<a class="li-link" href="${esc(liCompany(COS[j.company_id], j))}" target="_blank" rel="noopener" title="${esc(j.company_name)} on LinkedIn" aria-label="${esc(j.company_name)} on LinkedIn">in</a>` : ""}${st !== "none" ? `<span class="status" data-s="${st}">${esc(LABELS.status[st])}</span>` : ""}${j.posted ? `<span class="muted">${fmtDate(j.posted)}</span>` : ""}</div>
+        <div class="side">${liCompany(COS[j.company_id], j) ? `<a class="li-link" href="${esc(liCompany(COS[j.company_id], j))}" target="_blank" rel="noopener" aria-label="${esc(j.company_name)} on LinkedIn">LinkedIn ↗</a>` : ""}${st !== "none" ? `<span class="status" data-s="${st}">${esc(LABELS.status[st])}</span>` : ""}${j.posted ? `<span class="muted">${fmtDate(j.posted)}</span>` : ""}</div>
       </div>`;
     }).join("") : `<div class="empty">No roles match these filters. Try widening office days or clearing a filter.</div>`;
     const active = ["tier", "work_model", "sectors", "seniority", "region", "source_kind", "status"].reduce((n, k) => n + F[k].length, 0) + (F.q ? 1 : 0) + (F.days < 5 ? 1 : 0) + (F.purpose > 1 ? 1 : 0);
@@ -463,7 +489,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       safeUrl(c.careers_url) && `<a class="btn" href="${esc(c.careers_url)}" target="_blank" rel="noopener">Careers page ↗</a>`,
       safeUrl(c.website) && `<a class="btn" href="${esc(c.website)}" target="_blank" rel="noopener">Website ↗</a>`,
       liCompany(c, j) && `<a class="btn" href="${esc(liCompany(c, j))}" target="_blank" rel="noopener">LinkedIn company page ↗</a>`,
-      ...(j.sources || []).filter(s => safeUrl(s.url) && s.url !== j.apply_url).map(s => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">Seen on ${esc(s.name)} ↗</a>`),
+      ...(j.sources || []).filter(s => safeUrl(s.url) && s.url !== j.apply_url).map(s => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">Seen on ${esc(srcName(s.name))} ↗</a>`),
     ].filter(Boolean).join("");
     $("#sheet").innerHTML = `<button class="close" id="sh-close" aria-label="Close">×</button>
       <div class="kicker">${esc(j.company_name)}</div>
@@ -480,7 +506,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         <div><dt>Posted</dt><dd>${esc(fmtDate(j.posted) || "—")}</dd></div>
         <div><dt>Closes</dt><dd>${esc(fmtDate(j.closes) || "—")}</dd></div>
       </dl>
-      <h3>Robyn's tracker</h3>
+      <h3>Your progress</h3>
       <div class="track">
         <div class="sts" id="sts">${ORDER.status.map(s => `<button class="chip" aria-pressed="${(t.status || "none") === s}" data-s="${s}" ${canWrite ? "" : "disabled"}>${LABELS.status[s]}</button>`).join("")}</div>
         <textarea id="note" rows="3" placeholder="Notes: who to contact, deadline, how it went…" ${canWrite ? "" : "disabled"}>${esc(t.note || "")}</textarea>
@@ -653,9 +679,8 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   fetch("data.json").then(r => r.json()).then(d => {
     DATA = d; COS = Object.fromEntries((d.companies || []).map(c => [c.id, c]));
     BASELINE = d.baseline || "";
-    const s = d.stats || {};
-    $("#stats").innerHTML = [["Roles", s.jobs], ["Strong matches", s.strong, "hl"], ["Companies tracked", s.companies], ["Hiring designers", s.companies_hiring]]
-      .map(([l, v, c]) => `<div class="stat ${c || ""}"><b>${v ?? 0}</b><span>${l}</span></div>`).join("");
+    const s = d.stats || {}, employers = new Set(d.jobs.map(j => j.company_name)).size;
+    $("#summary").innerHTML = `<span class="hl"><b>${s.strong ?? 0} strong matches</b></span> among ${s.jobs ?? 0} open roles at ${employers} employers. Updated ${esc(fmtDate(String(d.generated).slice(0, 10)))}.`;
     $("#c-roles").textContent = d.jobs.length; $("#c-cos").textContent = d.companies.length; $("#c-src").textContent = d.sources.filter(x => x.how !== "retired").length;
     $("#foot").textContent = `Data refreshed ${d.generated}. See “How scoring works” for the match score. People marked unverified were found by web search; check before reaching out.`;
     syncInputs(); render(); renderCompanies(); renderSources(); renderScoring();
