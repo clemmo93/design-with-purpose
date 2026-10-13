@@ -762,7 +762,8 @@
   "status": "active",
   "verified_on": "2026-10-13",
   "http_check": 429,
-  "notes": "Highest volume. Don't scrape: it's against the ToS and returns 429 to automated requests. Set a daily email alert on this search (UK geoId 101165590, Remote+Hybrid f_WT=2,3, Associate+Mid-Senior f_E=3,4, newest first), plus a second alert with keywords like 'product designer' climate OR charity OR energy. Follow target companies so their posts reach her feed."
+  "notes": "Full logged-in pass on 13 Oct (past month; UK; on-site, hybrid and remote; internship to mid-senior): LinkedIn reported 413 results and every one was reviewed. 56 were already on the board, 306 were skipped as ordinary commercial employers (purpose 2 or lower, incl. large IT consultancies), 13 weren't design roles, 7 were outside the UK, 3 were student schemes, and 23 purpose-led roles were added. Earlier logged-out sweeps covered the past month at ~60 results per search. Robyn should also keep a daily LinkedIn alert for this search.",
+  "how": "sweep"
  },
  {
   "id": "indeed-uk",

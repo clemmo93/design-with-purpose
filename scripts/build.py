@@ -15,7 +15,7 @@ from fetch_ats import EXCLUDE_RE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-JOB_FILES = ["jobs_ats.json", "jobs_boards.json", "jobs_aggregators.json", "jobs_linkedin.json", "jobs_junior.json", "jobs_manual.json"]
+JOB_FILES = ["jobs_ats.json", "jobs_boards.json", "jobs_aggregators.json", "jobs_linkedin.json", "jobs_junior.json", "jobs_linkedin_auth.json", "jobs_manual.json"]
 SOURCE_PRIORITY = {"api": 0, "aggregator": 1, "linkedin": 2}  # lower wins on dedupe
 
 # Rough region map: towns within ~2h of London grouped by region.
