@@ -347,6 +347,69 @@ def write_site(out):
     (site / ".nojekyll").write_text("")
 
 
+# --- "Passed on": everything a sweep skipped, grouped by company, for a human second look ---
+AGENCY_RE = re.compile(r"recruit|talent|resourc|search and selection|\bhays\b|harvey nash|experis|sanderson|oliver bernard|burns sheehan|"
+                       r"better placed|brio digital|corecom|cps group|ecs resource|es recruit|exalto|identify solutions|jobgether|jobright|"
+                       r"morson|mthree|oxbow|pontoon|propel|pulse group|rmg digital|\bsalt\b|stealth it|stott and may|switch tech|synapri|"
+                       r"synergize|tiptopjob|totally tech|\btrg\b|trust in soda|zachary daniels|aquent|haystack|career moves|futureheads|"
+                       r"adlib|bentley|eleniak|undisclosed", re.I)
+CONSULT_RE = re.compile(r"version 1|\bibm\b|kainos|capgemini|tata consultancy|netcompany|\bcgi\b|accenture|wipro|grid dynamics|synechron|"
+                        r"capco|sahaj|nec software|designit|akqa|native design|parallax|evoke|principle", re.I)
+PASS_GROUPS = {  # key -> (label, why it was passed, priority for review: lower = look first)
+    "recruiter": ("Recruiter, client not named", "Posted by a recruitment agency. The search card doesn't show who the client is, so the mission is unknown.", 1),
+    "consultancy": ("Consultancy or agency", "Builds services for clients. Many work on government and public services, so this is a judgement call.", 2),
+    "commercial": ("Commercial company", "Judged an ordinary commercial employer (purpose 2 or lower) from the company name.", 3),
+    "not-design": ("Not a product design role", "Physical product, games UI, graphic or IT service management roles.", 4),
+    "outside-uk": ("Outside the UK", "The role is based abroad.", 5),
+    "scheme": ("Student or graduate scheme", "Internships, placements and graduate schemes below Robyn's level.", 6),
+}
+
+
+def pass_group(reason, company):
+    r = (reason or "").lower()
+    if "not design" in r:
+        return "not-design"
+    if "non-uk" in r or "outside" in r:
+        return "outside-uk"
+    if "student" in r or "graduate" in r or "intern" in r:
+        return "scheme"
+    if AGENCY_RE.search(company or ""):
+        return "recruiter"
+    if CONSULT_RE.search(company or ""):
+        return "consultancy"
+    return "commercial"
+
+
+def passed_on(jobs):
+    on_board_ids, on_board_keys = set(), set()
+    for j in jobs:
+        for u in [j.get("apply_url"), j.get("source_url")] + [x.get("url") for x in j.get("sources", [])]:
+            m = re.search(r"/jobs/view/(?:[^/]*-)?(\d{6,})", u or "")
+            if m:
+                on_board_ids.add(m.group(1))
+        on_board_keys.add((norm_company(j.get("company_name")), norm_title(j.get("title", ""))))
+    by_co = {}
+    for f in sorted(DATA.glob("*skipped*.json")):
+        for x in json.loads(f.read_text()):
+            co = x.get("company") or "Unknown"
+            if str(x.get("id")) in on_board_ids or (norm_company(co), norm_title(x.get("title", ""))) in on_board_keys:
+                continue  # it made it onto the board after all
+            g = pass_group(x.get("reason"), co)
+            e = by_co.setdefault(norm_company(co) or co.lower(), {"company": co, "group": g, "roles": [], "reasons": set()})
+            if PASS_GROUPS[g][2] < PASS_GROUPS[e["group"]][2]:
+                e["group"] = g
+            e["reasons"].add(x.get("reason") or "")
+            e["roles"].append({"title": x.get("title"), "location": x.get("location"),
+                               "url": f"https://www.linkedin.com/jobs/view/{x['id']}/" if str(x.get("id", "")).isdigit() else x.get("url")})
+    out = []
+    for key, e in by_co.items():
+        detail = "; ".join(sorted(r for r in e["reasons"] if r and r != "purpose<=2"))
+        out.append({"key": re.sub(r"[^a-z0-9]+", "-", key).strip("-")[:120], "company": e["company"], "group": e["group"],
+                    "detail": detail, "roles": e["roles"]})
+    out.sort(key=lambda e: (PASS_GROUPS[e["group"]][2], -len(e["roles"]), e["company"].lower()))
+    return out
+
+
 def main():
     companies = json.loads((DATA / "companies.json").read_text()) if (DATA / "companies.json").exists() else []
     cmap = {c["id"]: c for c in companies}
@@ -439,6 +502,8 @@ def main():
         "sources": enrich_sources(sources, jobs),
         "source_how": {k: {"label": v[0], "explain": v[1]} for k, v in SOURCE_HOW.items()},
         "score_rules": score_rules(),
+        "passed": passed_on(jobs),
+        "pass_groups": {k: {"label": v[0], "explain": v[1], "order": v[2]} for k, v in PASS_GROUPS.items()},
         "stats": {"jobs": len(jobs), "companies": len(companies), "companies_hiring": len(used & set(cmap)),
                   "strong": sum(j["tier"] == "strong" for j in jobs)},
     }

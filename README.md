@@ -9,6 +9,7 @@ Product design roles at organisations making real change (energy transition, cli
 - **Roles**: every open product, UX, UI, service and interaction design role we found, each with a match score, apply link, the company's LinkedIn page and the people worth knowing there (Head of Design, design leads, Head of Product, designers, recruiters). Filter by match, remote/hybrid, office days, sector, purpose, level, region and source.
 - **Companies**: a register of 130 purpose-led organisations, grouped by sector, with their careers pages and LinkedIn pages.
 - **Sources**: every job board, feed and community we use, and how roles from each one reach the board.
+- **Passed on**: every company our searches looked at and decided not to add, grouped by reason (recruiter with an unnamed client, consultancy, commercial company, not a design role, outside the UK, student scheme). Mark each one "Should be on the board", "Not sure" or "Pass is right" so a person can catch miscategorised companies. Kept completely separate from the qualified roles.
 - **How scoring works**: the scoring rules, with worked examples.
 
 Your statuses and notes (Shortlisted, Applied, Not for me…) save in your own browser on this site.

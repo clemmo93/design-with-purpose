@@ -212,6 +212,22 @@ td.notes { color: var(--ink-2); max-width: 46ch; }
 .how-join { background: var(--stretch-bg); color: var(--stretch); }
 .how-retired { background: var(--surface-2); color: var(--ink-3); }
 td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.passlist { display: grid; border-top: 1px solid var(--line); padding-bottom: 60px; }
+.passrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 20px; padding: 14px 10px; border-bottom: 1px solid var(--line); align-items: start; }
+@media (max-width: 700px) { .passrow { grid-template-columns: minmax(0, 1fr); } }
+.passrow h4 { margin: 0 0 4px; font: 700 17px/1.25 var(--f-display); display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.passrow .why { color: var(--ink-3); font-size: 13px; margin: 0 0 6px; }
+.passrow ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 14px; }
+.passrow ul a { color: var(--ink-2); }
+.passrow .more-roles { color: var(--ink-3); font-size: 13px; }
+.decide { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.decide .chip[data-d="include"][aria-pressed="true"] { background: var(--strong-bg); color: var(--strong); border-color: var(--strong); }
+.decide .chip[data-d="unsure"][aria-pressed="true"] { background: var(--good-bg); color: var(--good); border-color: var(--good); }
+.decide .chip[data-d="agree"][aria-pressed="true"] { background: var(--surface-2); color: var(--ink-2); border-color: var(--line); }
+.decide input { width: 220px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: 13px; }
+.pg-recruiter { background: var(--good-bg); color: var(--good); }
+.pg-consultancy { background: var(--accent-soft); color: var(--accent); }
+.pg-commercial, .pg-not-design, .pg-outside-uk, .pg-scheme { background: var(--surface-2); color: var(--ink-2); }
 .score-page { display: grid; gap: 28px; padding-block: 22px 60px; max-width: 980px; }
 .score-page h2 { font: 800 24px/1.2 var(--f-display); margin: 0 0 6px; }
 .score-page h3 { font: 700 18px/1.25 var(--f-display); margin: 0 0 8px; }
@@ -252,6 +268,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       <button role="tab" data-tab="roles" aria-selected="true">Roles<span class="count" id="c-roles"></span></button>
       <button role="tab" data-tab="companies" aria-selected="false">Companies<span class="count" id="c-cos"></span></button>
       <button role="tab" data-tab="sources" aria-selected="false">Sources<span class="count" id="c-src"></span></button>
+      <button role="tab" data-tab="passed" aria-selected="false">Passed on<span class="count" id="c-pass"></span></button>
       <button role="tab" data-tab="scoring" aria-selected="false">How scoring works</button>
     </nav>
   </header>
@@ -315,6 +332,16 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       <select id="ssort" aria-label="Sort sources"><option value="roles">Most roles on board</option><option value="fit">Best fit for Robyn</option><option value="name">A–Z</option></select>
     </div>
     <div class="tbl-wrap"><table id="stbl"></table></div>
+  </section>
+
+  <section id="v-passed" hidden>
+    <p class="brief" style="padding-top:18px">Companies our searches looked at and decided not to add, kept here so a person can check the call. Nothing on this tab appears in Roles. Mark each one: if it <b>should be on the board</b>, Claude will open the adverts and add the roles on the next refresh.</p>
+    <div class="howgrid" id="passgrid"></div>
+    <div class="cfilters">
+      <input type="search" id="pq" placeholder="Search companies or job titles…" aria-label="Search passed-on companies">
+      <div class="chips" id="pdec"></div>
+    </div>
+    <div class="passlist" id="passlist"></div>
   </section>
 
   <section id="v-scoring" hidden>
@@ -624,6 +651,62 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   $("#shideretired").onchange = e => { SF.hideRetired = e.target.checked; renderSources(); };
   $("#ssort").onchange = e => { SF.sort = e.target.value; renderSources(); };
 
+  /* ---------- passed on: a human second look at what sweeps skipped ---------- */
+  let REVIEW = {};           // company key -> {decision: agree|include|unsure, note, updated}
+  let PF = { q: "", group: [], dec: "todo" };
+  const DEC_LABEL = { agree: "Pass is right", include: "Should be on the board", unsure: "Not sure" };
+  function passMatch(x, skip) {
+    if (PF.q && ![x.company, x.detail, ...x.roles.map(r => r.title)].join(" ").toLowerCase().includes(PF.q.toLowerCase())) return false;
+    if (skip !== "group" && PF.group.length && !PF.group.includes(x.group)) return false;
+    const d = (REVIEW[x.key] || {}).decision;
+    if (skip !== "dec" && PF.dec === "todo" && d) return false;
+    if (skip !== "dec" && PF.dec !== "todo" && PF.dec !== "all" && d !== PF.dec) return false;
+    return true;
+  }
+  function renderPassed() {
+    const P = DATA.passed || [], G = DATA.pass_groups || {};
+    $("#c-pass").textContent = P.length;
+    const gpool = P.filter(x => passMatch(x, "group"));
+    $("#passgrid").innerHTML = Object.entries(G).sort((a, b) => a[1].order - b[1].order).map(([k, g]) => {
+      const n = gpool.filter(x => x.group === k), roles = n.reduce((a, x) => a + x.roles.length, 0);
+      return `<button class="howcard" aria-pressed="${PF.group.includes(k)}" data-group="${k}"><div class="hc-top"><span class="howpill pg-${k}">${esc(g.label)}</span><span class="muted">${n.length} companies · ${roles} roles</span></div><p>${esc(g.explain)}</p></button>`;
+    }).join("");
+    const dpool = P.filter(x => passMatch(x, "dec")), cnt = d => dpool.filter(x => (REVIEW[x.key] || {}).decision === d).length;
+    const decs = [["todo", "Not reviewed yet", dpool.filter(x => !(REVIEW[x.key] || {}).decision).length], ["include", DEC_LABEL.include, cnt("include")], ["unsure", DEC_LABEL.unsure, cnt("unsure")], ["agree", DEC_LABEL.agree, cnt("agree")], ["all", "All", dpool.length]];
+    $("#pdec").innerHTML = decs.map(([k, l, n]) => `<button class="chip" aria-pressed="${PF.dec === k}" data-dec="${k}">${esc(l)}<span class="n">${n}</span></button>`).join("");
+    const rows = P.filter(x => passMatch(x));
+    $("#passlist").innerHTML = rows.length ? rows.map(x => {
+      const r = REVIEW[x.key] || {}, g = G[x.group] || {};
+      const shown = x.roles.slice(0, 4);
+      return `<div class="passrow" data-key="${esc(x.key)}">
+        <div style="min-width:0"><h4>${esc(x.company)} <span class="howpill pg-${esc(x.group)}">${esc(g.label || x.group)}</span></h4>
+          ${x.detail ? `<p class="why">${esc(x.detail)}</p>` : ""}
+          <ul>${shown.map(o => `<li>${safeUrl(o.url) ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.title)}</a>` : esc(o.title)} <span class="muted">· ${esc(o.location || "")}</span></li>`).join("")}</ul>
+          ${x.roles.length > shown.length ? `<span class="more-roles">+ ${x.roles.length - shown.length} more postings</span>` : ""}</div>
+        <div class="decide">${["include", "unsure", "agree"].map(d => `<button class="chip" data-d="${d}" aria-pressed="${r.decision === d}">${DEC_LABEL[d]}</button>`).join("")}
+          <input type="text" data-note placeholder="Note (optional)" value="${esc(r.note || "")}" aria-label="Note on ${esc(x.company)}"></div>
+      </div>`;
+    }).join("") : `<div class="empty" style="margin-top:14px">${PF.dec === "todo" ? "Everything here has been reviewed." : "No companies match."}</div>`;
+  }
+  async function saveReview(key, patch) {
+    const next = Object.assign({ decision: "", note: "" }, REVIEW[key], patch, { updated: new Date().toISOString() });
+    REVIEW[key] = next;
+    if (db) {
+      try { await db.collection("review").doc(key.slice(0, 140)).set({ key, decision: next.decision, note: next.note, updated: next.updated }); }
+      catch (err) { if (err && err.code === "invalid_argument") canWrite = false; }
+    } else { try { localStorage.setItem("gwb:review", JSON.stringify(REVIEW)); } catch {} }
+  }
+  $("#passgrid").onclick = e => { const b = e.target.closest("[data-group]"); if (!b) return; const k = b.dataset.group; PF.group = PF.group.includes(k) ? PF.group.filter(x => x !== k) : [...PF.group, k]; renderPassed(); };
+  $("#pdec").onclick = e => { const b = e.target.closest("[data-dec]"); if (b) { PF.dec = b.dataset.dec; renderPassed(); } };
+  $("#pq").oninput = e => { PF.q = e.target.value; renderPassed(); };
+  $("#passlist").onclick = e => {
+    const b = e.target.closest("[data-d]"); if (!b) return;
+    const key = b.closest("[data-key]").dataset.key, cur = (REVIEW[key] || {}).decision;
+    saveReview(key, { decision: cur === b.dataset.d ? "" : b.dataset.d }).then(renderPassed);
+    b.closest(".decide").querySelectorAll("[data-d]").forEach(x => x.setAttribute("aria-pressed", x === b && cur !== b.dataset.d));
+  };
+  $("#passlist").addEventListener("change", e => { if (e.target.matches("[data-note]")) saveReview(e.target.closest("[data-key]").dataset.key, { note: e.target.value }); });
+
   /* ---------- scoring explainer (rendered from the same rules build.py scores with) ---------- */
   function renderScoring() {
     const R = DATA.score_rules; if (!R) return;
@@ -661,7 +744,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
 
   /* ---------- wiring ---------- */
   function setTab(t) {
-    ["roles", "companies", "sources", "scoring"].forEach(k => { $("#v-" + k).hidden = k !== t; $(`[data-tab="${k}"]`).setAttribute("aria-selected", k === t); });
+    ["roles", "companies", "sources", "passed", "scoring"].forEach(k => { $("#v-" + k).hidden = k !== t; $(`[data-tab="${k}"]`).setAttribute("aria-selected", k === t); });
     store.set("tab", t);
   }
   $("#tabs").onclick = e => { const b = e.target.closest("[data-tab]"); if (b) setTab(b.dataset.tab); };
@@ -699,14 +782,15 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
     $("#summary").innerHTML = `<span class="hl"><b>${s.strong ?? 0} strong matches</b></span> among ${s.jobs ?? 0} open roles at ${employers} employers. Updated ${esc(fmtDate(String(d.generated).slice(0, 10)))}.`;
     $("#c-roles").textContent = d.jobs.length; $("#c-cos").textContent = d.companies.length; $("#c-src").textContent = d.sources.filter(x => x.how !== "retired").length;
     $("#foot").textContent = `Data refreshed ${d.generated}. See “How scoring works” for the match score. People marked unverified were found by web search; check before reaching out.`;
-    syncInputs(); render(); renderCompanies(); renderSources(); renderScoring();
+    syncInputs(); render(); renderCompanies(); renderSources(); renderPassed(); renderScoring();
     const tab = (location.hash || "").slice(1) || store.get("tab", "roles");
-    if (["roles", "companies", "sources", "scoring"].includes(tab)) setTab(tab);
+    if (["roles", "companies", "sources", "passed", "scoring"].includes(tab)) setTab(tab);
   }).catch(() => { $("#list").innerHTML = `<div class="empty">Couldn't load the role data. Reload the page to try again.</div>`; });
 
   /* shared tracker (Robyn + family) */
   if (!window.claude) {  // not inside Claude (e.g. GitHub Pages): load this browser's saved tracker
     try { TRACK = JSON.parse(localStorage.getItem("gwb:tracker") || "{}"); } catch { TRACK = {}; }
+    try { REVIEW = JSON.parse(localStorage.getItem("gwb:review") || "{}"); } catch { REVIEW = {}; }
   }
   (async () => {
     try {
@@ -719,6 +803,12 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         snap.docs.forEach(d => { const v = d.data(); if (v && v.jobId) next[v.jobId] = v; });
         TRACK = next;
         if (DATA.jobs.length) render();
+      }, () => {});
+      db.collection("review").onSnapshot(snap => {
+        const next = {};
+        snap.docs.forEach(d => { const v = d.data(); if (v && v.key) next[v.key] = v; });
+        REVIEW = next;
+        if (DATA.passed) renderPassed();
       }, () => {});
     } catch { db = null; }
   })();
