@@ -1,0 +1,3234 @@
+[
+  {
+    "id": "octopus-energy",
+    "name": "Octopus Energy",
+    "website": "https://octopus.energy",
+    "careers_url": "https://octopus.energy/careers/",
+    "ats": {
+      "provider": "lever",
+      "slug": "octoenergy",
+      "api_url": "https://api.lever.co/v0/postings/octoenergy?mode=json"
+    },
+    "linkedin": "https://www.linkedin.com/company/octopusenergy/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "Large London HQ (Soho/Fitzrovia) plus Brighton, Warwick, Leicester and Manchester offices; flexible hybrid",
+    "size": "5001-10000",
+    "mission": "Renewable-focused energy supplier using technology to accelerate the shift to green, affordable energy.",
+    "purpose_score": 4,
+    "purpose_rationale": "Commercial supplier but explicitly built around renewables, EVs and heat pumps; strong climate mission.",
+    "design_team_notes": "Large in-house product design org across Octopus brands (Octopus EV, Heat, Energy apps); designers sit in product squads. Lever board 'octoenergy' covers the whole group.",
+    "people": []
+  },
+  {
+    "id": "kraken",
+    "name": "Kraken Technologies",
+    "website": "https://kraken.tech",
+    "careers_url": "https://jobs.ashbyhq.com/krakentech",
+    "ats": {
+      "provider": "ashby",
+      "slug": "krakentech",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/krakentech?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/krakentech/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ with UK hubs; hybrid",
+    "size": "1001-5000",
+    "mission": "Operating-system software for utilities (customer, billing, flexibility) that enables a smarter, greener grid.",
+    "purpose_score": 4,
+    "purpose_rationale": "B2B utility platform; mission framed around decarbonising energy systems.",
+    "design_team_notes": "Established product design practice for Kraken platform and Kraken Flex tooling; enterprise/B2B design work. Spun out of Octopus in 2025.",
+    "people": []
+  },
+  {
+    "id": "ovo",
+    "name": "OVO",
+    "website": "https://www.ovoenergy.com",
+    "careers_url": "https://job-boards.greenhouse.io/ovoenergy",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "ovoenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/ovoenergy/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/ovoenergy/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "corporate",
+    "hq": "Bristol",
+    "uk_presence": "Bristol HQ and London office; hybrid",
+    "size": "1001-5000",
+    "mission": "Energy supplier aiming to drive progress to net zero for its customers.",
+    "purpose_score": 3,
+    "purpose_rationale": "Large retail energy supplier with net-zero plan ('Plan Zero'); commercial core.",
+    "design_team_notes": "Digital product & design team in Bristol/London for the OVO app and web; has shrunk after restructures.",
+    "people": []
+  },
+  {
+    "id": "kaluza",
+    "name": "Kaluza",
+    "website": "https://www.kaluza.com",
+    "careers_url": "https://www.kaluza.com/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "kaluza",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/kaluza?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/kaluza/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London, Bristol and Edinburgh offices; hybrid",
+    "size": "501-1000",
+    "mission": "Energy software platform (billing, flexibility, EV smart charging) helping retailers build a zero-carbon energy system.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate-tech software spun out of OVO; mission explicitly about a net-zero grid.",
+    "design_team_notes": "Has a 'Platform Design' community (Lead/Senior Product Designer roles seen). Live roles appear on both Ashby (kaluza) and Greenhouse (kaluza) - check both.",
+    "people": []
+  },
+  {
+    "id": "ohme",
+    "name": "Ohme",
+    "website": "https://ohme-ev.com",
+    "careers_url": "https://ohme-ev.com/job-postings/",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "ohme",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/ohme/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/ohmeev/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ (King's Cross area); hybrid",
+    "size": "201-500",
+    "mission": "Smart EV chargers and app that charge cars at the cheapest, greenest times.",
+    "purpose_score": 4,
+    "purpose_rationale": "EV smart-charging hardware/software accelerating EV adoption.",
+    "design_team_notes": "Consumer mobile app team (Associate Product Manager - Mobile App role live); in-house product/UX designers.",
+    "people": []
+  },
+  {
+    "id": "pod-point",
+    "name": "Pod Point",
+    "website": "https://pod-point.com",
+    "careers_url": "https://careers.pod-point.com",
+    "ats": {
+      "provider": "pinpoint",
+      "slug": "pod-point",
+      "api_url": "https://pod-point.pinpointhq.com/postings.json"
+    },
+    "linkedin": "https://www.linkedin.com/company/pod-point/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "501-1000",
+    "mission": "EV charging hardware, installation and software for homes and businesses.",
+    "purpose_score": 4,
+    "purpose_rationale": "EV infrastructure for net zero; now part of EDF.",
+    "design_team_notes": "Digital team for Pod Point app and installer tools; product designers hired occasionally.",
+    "people": []
+  },
+  {
+    "id": "lightsource-bp",
+    "name": "Lightsource bp",
+    "website": "https://lightsourcebp.com",
+    "careers_url": "https://careers.lightsourcebp.com",
+    "ats": {
+      "provider": "other",
+      "slug": "successfactors:careers.lightsourcebp.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/lightsourcebp/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "1001-5000",
+    "mission": "Develops, finances and manages utility-scale solar and storage projects worldwide.",
+    "purpose_score": 4,
+    "purpose_rationale": "Large-scale renewables developer (fully owned by bp).",
+    "design_team_notes": "Mainly engineering/development roles; limited in-house product design - occasional digital/asset-management tooling roles.",
+    "people": []
+  },
+  {
+    "id": "good-energy",
+    "name": "Good Energy",
+    "website": "https://www.goodenergy.co.uk",
+    "careers_url": "https://careers.goodenergy.co.uk",
+    "ats": {
+      "provider": "pinpoint",
+      "slug": "goodenergy",
+      "api_url": "https://goodenergy.pinpointhq.com/postings.json"
+    },
+    "linkedin": "https://www.linkedin.com/company/goodenergyuk/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "b-corp",
+    "hq": "Chippenham",
+    "uk_presence": "Chippenham (Wiltshire) HQ, ~1h15 from London; hybrid",
+    "size": "201-500",
+    "mission": "100% renewable electricity supplier and solar/heat pump installer.",
+    "purpose_score": 4,
+    "purpose_rationale": "Long-standing green supplier and B Corp; now owned by Esova.",
+    "design_team_notes": "Small digital team; occasional UX/product roles.",
+    "people": []
+  },
+  {
+    "id": "ecotricity",
+    "name": "Ecotricity",
+    "website": "https://www.ecotricity.co.uk",
+    "careers_url": "https://jobs.ecotricity.co.uk",
+    "ats": {
+      "provider": "other",
+      "slug": "eploy:jobs.ecotricity.co.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/ecotricity/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "corporate",
+    "hq": "Stroud",
+    "uk_presence": "Stroud (Gloucestershire) HQ; hybrid",
+    "size": "501-1000",
+    "mission": "Green energy company building wind/solar and supplying renewable power and green gas.",
+    "purpose_score": 4,
+    "purpose_rationale": "Founded as a green-energy pioneer; climate-led mission.",
+    "design_team_notes": "In-house digital team in Stroud; product/UX roles occasionally.",
+    "people": []
+  },
+  {
+    "id": "sunsave",
+    "name": "Sunsave",
+    "website": "https://www.sunsave.energy",
+    "careers_url": "https://www.sunsave.energy/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "sunsave",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/sunsave?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/sunsave/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Solar-panel and battery subscriptions that make home solar affordable with no upfront cost.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate startup financing home solar and heat pumps.",
+    "design_team_notes": "Consumer product with sales/onboarding journeys; small product/design team. Careers page also links Otta/Welcome to the Jungle; Ashby board currently empty.",
+    "people": []
+  },
+  {
+    "id": "aira",
+    "name": "Aira",
+    "website": "https://www.airahome.com",
+    "careers_url": "https://airahome.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "airahome",
+      "api_url": "https://airahome.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/airahome/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Stockholm",
+    "uk_presence": "UK HQ and installer academies across UK (London presence); hybrid",
+    "size": "1001-5000",
+    "mission": "Clean-energy tech company selling heat pumps on subscription with app-controlled smart heating.",
+    "purpose_score": 4,
+    "purpose_rationale": "Heat-pump decarbonisation at scale.",
+    "design_team_notes": "Product & design team spans Stockholm/UK for the Aira app and customer journeys. Teamtailor board shows ~100 roles (many installer roles).",
+    "people": []
+  },
+  {
+    "id": "zapmap",
+    "name": "Zapmap",
+    "website": "https://www.zapmap.com",
+    "careers_url": "https://www.zapmap.com/careers",
+    "ats": {
+      "provider": "workable",
+      "slug": "zapmap",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/zapmap"
+    },
+    "linkedin": "https://www.linkedin.com/company/zap-map/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Bristol",
+    "uk_presence": "Bristol HQ; hybrid",
+    "size": "51-200",
+    "mission": "The UK's leading app and platform for EV drivers to find, pay for and plan charging.",
+    "purpose_score": 4,
+    "purpose_rationale": "Removes barriers to EV adoption.",
+    "design_team_notes": "Consumer app with product team (Head of Product, PMs); product designers hired periodically. Workable account exists (0 live); recent roles also advertised as PDFs with email applications (jobs@zapmap.com).",
+    "people": []
+  },
+  {
+    "id": "hometree",
+    "name": "Hometree",
+    "website": "https://www.hometree.co.uk",
+    "careers_url": "https://hometree-1690194722.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "hometree-1690194722",
+      "api_url": "https://hometree-1690194722.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/hometree/",
+    "sectors": [
+      "energy-transition"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Home-services platform offering boiler cover and finance for heat pumps and solar.",
+    "purpose_score": 3,
+    "purpose_rationale": "Pivoting towards home decarbonisation financing; still partly traditional boiler cover.",
+    "design_team_notes": "Digital product team building customer and engineer apps.",
+    "people": []
+  },
+  {
+    "id": "heat-geek",
+    "name": "Heat Geek",
+    "website": "https://www.heatgeek.com",
+    "careers_url": "https://job-boards.eu.greenhouse.io/heatgeek",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "heatgeek",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/heatgeek/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/heat-geek/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Trains and certifies heating engineers and connects homeowners with high-quality heat pump installs.",
+    "purpose_score": 4,
+    "purpose_rationale": "Directly scaling the heat-pump installer workforce.",
+    "design_team_notes": "Growing digital team (Experience Manager role seen); design team small.",
+    "people": []
+  },
+  {
+    "id": "lunar-energy",
+    "name": "Lunar Energy",
+    "website": "https://www.lunarenergy.com",
+    "careers_url": "https://job-boards.greenhouse.io/lunarenergy",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "lunarenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/lunarenergy/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/lunarenergyinc/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Mountain View, CA",
+    "uk_presence": "UK office in London (from Moixa acquisition), hybrid",
+    "size": "201-500",
+    "mission": "Home batteries and Gridshare software that turn homes into virtual power plants.",
+    "purpose_score": 4,
+    "purpose_rationale": "Distributed energy/virtual power plant tech for decarbonisation.",
+    "design_team_notes": "Gridshare software team in UK; product designers in London historically.",
+    "people": []
+  },
+  {
+    "id": "axle-energy",
+    "name": "Axle Energy",
+    "website": "https://www.axle.energy",
+    "careers_url": "https://www.axle.energy/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/axle-energy/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "11-50",
+    "mission": "Connects home batteries, EVs and heat pumps to energy markets to reward flexible demand.",
+    "purpose_score": 4,
+    "purpose_rationale": "Grid flexibility startup enabling a renewable-heavy grid.",
+    "design_team_notes": "Small, fast-growing (Accel-backed) team; design likely generalist/founding-designer level. Careers page is Webflow, ATS not exposed.",
+    "people": []
+  },
+  {
+    "id": "modo-energy",
+    "name": "Modo Energy",
+    "website": "https://modoenergy.com",
+    "careers_url": "https://modoenergy.com/careers",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "modoenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/modoenergy/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/modo-energy/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "51-200",
+    "mission": "Data and benchmarking platform for battery energy storage and power markets.",
+    "purpose_score": 4,
+    "purpose_rationale": "Analytics accelerating investment in grid batteries.",
+    "design_team_notes": "Data-product company with product designers working on dashboards/data viz.",
+    "people": []
+  },
+  {
+    "id": "piclo",
+    "name": "Piclo",
+    "website": "https://www.piclo.com",
+    "careers_url": "https://www.piclo.com/careers",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "piclo",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/piclo/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/piclo/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Independent marketplace for local energy flexibility used by grid operators.",
+    "purpose_score": 4,
+    "purpose_rationale": "Enables decentralised, flexible grids for net zero.",
+    "design_team_notes": "B2B marketplace product with UX/product designer roles historically. Careers page embeds Greenhouse board 'piclo' but the public API currently returns 404 (no live public jobs) - re-check.",
+    "people": []
+  },
+  {
+    "id": "zenobe",
+    "name": "Zenobē",
+    "website": "https://www.zenobe.com",
+    "careers_url": "https://careers.zenobe.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "careers.zenobe.com",
+      "api_url": "https://careers.zenobe.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/zenobe-energy-ltd/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "201-500",
+    "mission": "Owns and operates grid batteries and electric bus/truck fleet charging.",
+    "purpose_score": 4,
+    "purpose_rationale": "Battery storage and fleet electrification.",
+    "design_team_notes": "Mostly engineering/commercial; some software/digital roles for fleet platform.",
+    "people": []
+  },
+  {
+    "id": "electron",
+    "name": "Electron",
+    "website": "https://electron.net",
+    "careers_url": "https://electron.net/careers/",
+    "ats": {
+      "provider": "workable",
+      "slug": "electron",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/electron"
+    },
+    "linkedin": "https://www.linkedin.com/company/electron-platform/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "11-50",
+    "mission": "Market platform (ElectronConnect) for local grid flexibility and congestion management.",
+    "purpose_score": 4,
+    "purpose_rationale": "Grid flexibility software enabling more renewables.",
+    "design_team_notes": "B2B platform product; small design function. Workable account exists (0 live roles).",
+    "people": []
+  },
+  {
+    "id": "ripple-energy",
+    "name": "Ripple Energy",
+    "website": "https://rippleenergy.com",
+    "careers_url": "https://careers.rippleenergy.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "rippleenergy",
+      "api_url": "https://rippleenergy.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/ripple-energy/",
+    "sectors": [
+      "energy-transition",
+      "climate",
+      "ethical-finance"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid/remote-friendly",
+    "size": "11-50",
+    "mission": "Lets households co-own wind and solar farms through cooperatives to cut their bills.",
+    "purpose_score": 5,
+    "purpose_rationale": "Democratises ownership of renewables; mission is the product.",
+    "design_team_notes": "Consumer web journeys; small product team. Teamtailor account exists (0 live roles).",
+    "people": []
+  },
+  {
+    "id": "so-energy",
+    "name": "So Energy",
+    "website": "https://www.so.energy",
+    "careers_url": "https://careers.so.energy",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "careers.so.energy",
+      "api_url": "https://careers.so.energy/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/so-energy/",
+    "sectors": [
+      "energy-transition"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "501-1000",
+    "mission": "Renewable electricity supplier also installing heat pumps and solar (So Energy / ESB).",
+    "purpose_score": 3,
+    "purpose_rationale": "Green-tariff supplier; commercial retail energy.",
+    "design_team_notes": "Digital team for app/web; occasional product designer roles.",
+    "people": []
+  },
+  {
+    "id": "hypervolt",
+    "name": "Hypervolt",
+    "website": "https://hypervolt.co.uk",
+    "careers_url": "https://hypervolt.co.uk/en-GB/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/hypervolt/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Designs smart home EV chargers and app for cheaper, greener charging.",
+    "purpose_score": 4,
+    "purpose_rationale": "EV charging accelerating electrification.",
+    "design_team_notes": "Small product/app team (Flutter); design likely generalist.",
+    "people": []
+  },
+  {
+    "id": "connected-kerb",
+    "name": "Connected Kerb",
+    "website": "https://connectedkerb.com",
+    "careers_url": "https://connectedkerb.com/join-us/",
+    "ats": {
+      "provider": "workable",
+      "slug": "connected-kerb",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/connected-kerb"
+    },
+    "linkedin": "https://www.linkedin.com/company/connected-kerb/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London/Gloucester; hybrid",
+    "size": "201-500",
+    "mission": "On-street EV charging for people without driveways.",
+    "purpose_score": 4,
+    "purpose_rationale": "Equitable EV charging access.",
+    "design_team_notes": "Mostly field/engineering roles; small digital team.",
+    "people": []
+  },
+  {
+    "id": "gridserve",
+    "name": "GRIDSERVE",
+    "website": "https://www.gridserve.com",
+    "careers_url": "https://www.gridserve.com/careers/",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/gridserve/",
+    "sectors": [
+      "energy-transition",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Braintree",
+    "uk_presence": "Essex HQ, London office; hybrid",
+    "size": "501-1000",
+    "mission": "Builds Electric Forecourts, EV charging networks and solar to deliver net zero.",
+    "purpose_score": 4,
+    "purpose_rationale": "Sustainable energy infrastructure company.",
+    "design_team_notes": "Digital team for charging app; design capacity modest. ATS not determined.",
+    "people": []
+  },
+  {
+    "id": "energy-saving-trust",
+    "name": "Energy Saving Trust",
+    "website": "https://energysavingtrust.org.uk",
+    "careers_url": "https://energysavingtrust.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "energysavingtrust",
+      "api_url": "https://energysavingtrust.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/energy-saving-trust/",
+    "sectors": [
+      "energy-transition",
+      "climate",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London, Edinburgh, Cardiff; hybrid",
+    "size": "201-500",
+    "mission": "Independent charity helping people and organisations save energy and cut carbon.",
+    "purpose_score": 5,
+    "purpose_rationale": "Charity whose core purpose is energy efficiency and decarbonisation.",
+    "design_team_notes": "Digital/insight team builds advice tools; occasional UX/content design roles.",
+    "people": []
+  },
+  {
+    "id": "sylvera",
+    "name": "Sylvera",
+    "website": "https://www.sylvera.com",
+    "careers_url": "https://www.sylvera.com/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "sylvera",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/sylvera?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/sylveracarbon/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ (plus NYC); hybrid",
+    "size": "201-500",
+    "mission": "Independent ratings and data for carbon credits so capital flows to real climate impact.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate-tech integrity platform for carbon markets.",
+    "design_team_notes": "Established product design team for B2B data platform; Ashby board used for design roles.",
+    "people": []
+  },
+  {
+    "id": "altruistiq",
+    "name": "Altruistiq",
+    "website": "https://altruistiq.com",
+    "careers_url": "https://jobs.ashbyhq.com/altruistiq",
+    "ats": {
+      "provider": "ashby",
+      "slug": "altruistiq",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/altruistiq?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/altruistiq/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Sustainability data platform helping consumer-goods companies measure and cut supply-chain emissions.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate SaaS for decarbonising supply chains.",
+    "design_team_notes": "Small product design team for B2B SaaS. Old Greenhouse EU board is gone; Ashby is current.",
+    "people": []
+  },
+  {
+    "id": "carbonchain",
+    "name": "CarbonChain",
+    "website": "https://www.carbonchain.com",
+    "careers_url": "https://www.carbonchain.com/careers",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "carbonchain",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/carbonchain/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/carbonchain-io/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Carbon accounting for commodity supply chains (metals, energy, agriculture).",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate SaaS for heavy industry emissions.",
+    "design_team_notes": "Small product team; product designer roles occasional.",
+    "people": []
+  },
+  {
+    "id": "treefera",
+    "name": "Treefera",
+    "website": "https://www.treefera.com",
+    "careers_url": "https://jobs.ashbyhq.com/treefera",
+    "ats": {
+      "provider": "ashby",
+      "slug": "treefera",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/treefera?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/treefera/",
+    "sectors": [
+      "climate",
+      "nature-rewilding"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "11-50",
+    "mission": "AI and satellite data platform for nature-based supply chains and forest carbon.",
+    "purpose_score": 4,
+    "purpose_rationale": "Nature data to protect forests and verify supply chains.",
+    "design_team_notes": "Early-stage; design likely founding/solo designer.",
+    "people": []
+  },
+  {
+    "id": "watershed",
+    "name": "Watershed",
+    "website": "https://watershed.com",
+    "careers_url": "https://watershed.com/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "watershed",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/watershed?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/watershedclimate/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "San Francisco",
+    "uk_presence": "London office (EMEA hub); hybrid",
+    "size": "501-1000",
+    "mission": "Enterprise climate platform to measure, report and reduce corporate emissions.",
+    "purpose_score": 4,
+    "purpose_rationale": "Leading climate SaaS for decarbonisation.",
+    "design_team_notes": "Strong, design-led culture with product designers in SF and London.",
+    "people": []
+  },
+  {
+    "id": "sweep",
+    "name": "Sweep",
+    "website": "https://www.sweep.net",
+    "careers_url": "https://sweep.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "sweep",
+      "api_url": "https://sweep.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/sweep-softwareforsustainability/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Montpellier",
+    "uk_presence": "London office; hybrid",
+    "size": "201-500",
+    "mission": "Carbon and ESG data management platform for enterprises.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate SaaS for corporate decarbonisation.",
+    "design_team_notes": "Product design team mostly in France; some London roles. Note: Ashby 'sweep' is a different company.",
+    "people": []
+  },
+  {
+    "id": "plan-a",
+    "name": "Plan A",
+    "website": "https://plana.earth",
+    "careers_url": "https://apply.workable.com/plana/",
+    "ats": {
+      "provider": "workable",
+      "slug": "plana",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/plana"
+    },
+    "linkedin": "https://www.linkedin.com/company/planaearth/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Berlin",
+    "uk_presence": "Some London/UK roles; hybrid",
+    "size": "201-500",
+    "mission": "Carbon accounting and decarbonisation software for companies.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate SaaS.",
+    "design_team_notes": "Product design team in Berlin; UK eligibility varies by role.",
+    "people": []
+  },
+  {
+    "id": "naturemetrics",
+    "name": "NatureMetrics",
+    "website": "https://www.naturemetrics.com",
+    "careers_url": "https://naturemetrics.jobs.personio.de/",
+    "ats": {
+      "provider": "personio",
+      "slug": "naturemetrics",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/naturemetrics/",
+    "sectors": [
+      "nature-rewilding",
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "Guildford",
+    "uk_presence": "Guildford (Surrey) HQ; hybrid",
+    "size": "201-500",
+    "mission": "eDNA biodiversity monitoring and nature data platform.",
+    "purpose_score": 5,
+    "purpose_rationale": "Measuring biodiversity to drive nature-positive decisions.",
+    "design_team_notes": "Building digital nature-intelligence platform; product/UX design roles appear. Personio XML feed disabled - scrape the Personio page instead.",
+    "people": []
+  },
+  {
+    "id": "ecologi",
+    "name": "Ecologi",
+    "website": "https://ecologi.com",
+    "careers_url": "https://ecologi.careers.hibob.com/",
+    "ats": {
+      "provider": "other",
+      "slug": "hibob:ecologi",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/ecologihq/",
+    "sectors": [
+      "climate",
+      "nature-rewilding"
+    ],
+    "org_type": "b-corp",
+    "hq": "Bristol",
+    "uk_presence": "Bristol; remote-first UK",
+    "size": "51-200",
+    "mission": "Climate-action platform funding tree planting and carbon projects for people and businesses.",
+    "purpose_score": 5,
+    "purpose_rationale": "B Corp whose product is climate action.",
+    "design_team_notes": "In-house product designers; careers on HiBob (no public JSON API).",
+    "people": []
+  },
+  {
+    "id": "isometric",
+    "name": "Isometric",
+    "website": "https://isometric.com",
+    "careers_url": "https://jobs.ashbyhq.com/isometric",
+    "ats": {
+      "provider": "ashby",
+      "slug": "isometric",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/isometric?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/isometric-hq/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "51-200",
+    "mission": "Science-led registry verifying carbon removal.",
+    "purpose_score": 4,
+    "purpose_rationale": "Integrity infrastructure for carbon removal markets.",
+    "design_team_notes": "Design-conscious team with product designers; Ashby board.",
+    "people": []
+  },
+  {
+    "id": "supercritical",
+    "name": "Supercritical",
+    "website": "https://gosupercritical.com",
+    "careers_url": "https://apply.workable.com/supercritical/",
+    "ats": {
+      "provider": "workable",
+      "slug": "supercritical",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/supercritical"
+    },
+    "linkedin": "https://www.linkedin.com/company/gosupercritical/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London (plus Teesside site); hybrid",
+    "size": "11-50",
+    "mission": "Carbon removal marketplace and net-zero platform for businesses.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate startup scaling carbon removal.",
+    "design_team_notes": "Small product team; occasional product designer roles.",
+    "people": []
+  },
+  {
+    "id": "climate-x",
+    "name": "Climate X",
+    "website": "https://www.climate-x.com",
+    "careers_url": "https://apply.workable.com/climate-x/",
+    "ats": {
+      "provider": "workable",
+      "slug": "climate-x",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/climate-x"
+    },
+    "linkedin": "https://www.linkedin.com/company/climate-x/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London (Borough); hybrid",
+    "size": "51-200",
+    "mission": "Physical climate risk analytics for banks, real estate and infrastructure.",
+    "purpose_score": 4,
+    "purpose_rationale": "Climate adaptation/resilience data.",
+    "design_team_notes": "Data-viz heavy product; product designer roles historically. Old Greenhouse board gone; Workable account exists (0 live).",
+    "people": []
+  },
+  {
+    "id": "pawprint",
+    "name": "Pawprint",
+    "website": "https://www.pawprint.eco",
+    "careers_url": "https://www.pawprint.eco/careers",
+    "ats": {
+      "provider": "workable",
+      "slug": "pawprint",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/pawprint"
+    },
+    "linkedin": "https://www.linkedin.com/company/pawprinteco/",
+    "sectors": [
+      "climate"
+    ],
+    "org_type": "b-corp",
+    "hq": "Edinburgh",
+    "uk_presence": "Edinburgh/London; remote-friendly UK",
+    "size": "11-50",
+    "mission": "Employee engagement platform helping staff understand and cut their carbon footprint.",
+    "purpose_score": 4,
+    "purpose_rationale": "Behaviour-change climate tool (B Corp).",
+    "design_team_notes": "Small team; design generalists.",
+    "people": []
+  },
+  {
+    "id": "ecosia",
+    "name": "Ecosia",
+    "website": "https://www.ecosia.org",
+    "careers_url": "https://jobs.ashbyhq.com/ecosia.org",
+    "ats": {
+      "provider": "ashby",
+      "slug": "ecosia.org",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/ecosia.org?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/ecosia/",
+    "sectors": [
+      "climate",
+      "nature-rewilding"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "Berlin",
+    "uk_presence": "Remote-friendly; some roles open to UK-based remote",
+    "size": "201-500",
+    "mission": "Search engine that uses its profits to plant trees and fund climate action.",
+    "purpose_score": 5,
+    "purpose_rationale": "Steward-owned social business; profits go to climate.",
+    "design_team_notes": "~8-person design team led by a Design Lead (role advertised); designers across search, browser and AI products.",
+    "people": []
+  },
+  {
+    "id": "olio",
+    "name": "OLIO",
+    "website": "https://olioapp.com",
+    "careers_url": "https://olioapp.com/en/careers/",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/olio-share-more-waste-less/",
+    "sectors": [
+      "circular-economy",
+      "sustainable-food"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; remote-friendly",
+    "size": "51-200",
+    "mission": "Food- and item-sharing app connecting neighbours to reduce waste.",
+    "purpose_score": 5,
+    "purpose_rationale": "Mission-led anti-waste app with millions of users.",
+    "design_team_notes": "Small in-house product/design team; roles listed on own careers page.",
+    "people": []
+  },
+  {
+    "id": "too-good-to-go",
+    "name": "Too Good To Go",
+    "website": "https://www.toogoodtogo.com",
+    "careers_url": "https://www.toogoodtogo.com/en-gb/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "toogoodtogo",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/toogoodtogo?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/too-good-to-go/",
+    "sectors": [
+      "sustainable-food",
+      "circular-economy"
+    ],
+    "org_type": "b-corp",
+    "hq": "Copenhagen",
+    "uk_presence": "London office; hybrid",
+    "size": "1001-5000",
+    "mission": "App connecting customers with surplus food from shops and restaurants to fight food waste.",
+    "purpose_score": 4,
+    "purpose_rationale": "B Corp tackling food waste.",
+    "design_team_notes": "Central product & design team in Copenhagen; UK roles mostly commercial.",
+    "people": []
+  },
+  {
+    "id": "oddbox",
+    "name": "Oddbox",
+    "website": "https://www.oddbox.co.uk",
+    "careers_url": "https://oddbox.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "oddbox",
+      "api_url": "https://oddbox.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/oddbox/",
+    "sectors": [
+      "sustainable-food",
+      "circular-economy",
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Delivers wonky and surplus fruit and veg boxes to fight food waste.",
+    "purpose_score": 4,
+    "purpose_rationale": "B Corp tackling food waste in supply chain.",
+    "design_team_notes": "Small tech/product team; product designer roles occasionally.",
+    "people": []
+  },
+  {
+    "id": "riverford",
+    "name": "Riverford",
+    "website": "https://www.riverford.co.uk",
+    "careers_url": "https://candidate.riverfordcareers.co.uk/",
+    "ats": {
+      "provider": "other",
+      "slug": "candidate.riverfordcareers.co.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/riverford/",
+    "sectors": [
+      "sustainable-food",
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "Buckfastleigh, Devon",
+    "uk_presence": "Devon HQ; some digital roles hybrid/remote",
+    "size": "1001-5000",
+    "mission": "Employee-owned organic veg box company championing sustainable farming.",
+    "purpose_score": 4,
+    "purpose_rationale": "Employee-owned B Corp, organic food.",
+    "design_team_notes": "Digital/ecommerce team with UX roles; careers portal on own domain (vendor not confirmed).",
+    "people": []
+  },
+  {
+    "id": "abel-and-cole",
+    "name": "Abel & Cole",
+    "website": "https://www.abelandcole.co.uk",
+    "careers_url": "https://abel-cole.breezy.hr",
+    "ats": {
+      "provider": "other",
+      "slug": "breezy:abel-cole",
+      "api_url": "https://abel-cole.breezy.hr/json"
+    },
+    "linkedin": "https://www.linkedin.com/company/abel-&-cole/",
+    "sectors": [
+      "sustainable-food",
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "Wandsworth, London; hybrid",
+    "size": "501-1000",
+    "mission": "Organic food delivery business focused on sustainable sourcing.",
+    "purpose_score": 4,
+    "purpose_rationale": "B Corp organic grocer.",
+    "design_team_notes": "Ecommerce/digital team; occasional UX roles. Breezy HR public JSON feed.",
+    "people": []
+  },
+  {
+    "id": "mindful-chef",
+    "name": "Mindful Chef",
+    "website": "https://www.mindfulchef.com",
+    "careers_url": "https://mindfulchef.jobs.personio.de/",
+    "ats": {
+      "provider": "personio",
+      "slug": "mindfulchef",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/mindful-chef/",
+    "sectors": [
+      "sustainable-food",
+      "health",
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Healthy recipe-box company that donates school meals with every meal sold.",
+    "purpose_score": 3,
+    "purpose_rationale": "B Corp with 1-for-1 meal donation; commercial core.",
+    "design_team_notes": "Small product & tech team (Nestle-owned). Personio XML feed disabled - scrape the Personio page instead.",
+    "people": []
+  },
+  {
+    "id": "depop",
+    "name": "Depop",
+    "website": "https://www.depop.com",
+    "careers_url": "https://etsy.wd5.myworkdayjobs.com/Depop_Careers",
+    "ats": {
+      "provider": "workday",
+      "slug": "etsy.wd5/Depop_Careers",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/depop/",
+    "sectors": [
+      "circular-economy",
+      "purpose-ecommerce"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid 'Flex' (~4 office days/month)",
+    "size": "501-1000",
+    "mission": "Peer-to-peer fashion resale marketplace extending the life of clothing.",
+    "purpose_score": 3,
+    "purpose_rationale": "Circular fashion resale; commercial marketplace (Etsy-owned).",
+    "design_team_notes": "Large, mature product design org (Head of Design, Director of Design & Research roles seen). Workday board (no public JSON API).",
+    "people": []
+  },
+  {
+    "id": "hurr",
+    "name": "HURR",
+    "website": "https://www.hurrcollective.com",
+    "careers_url": "https://www.hurrcollective.com/careers",
+    "ats": {
+      "provider": "workable",
+      "slug": "hurr",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/hurr"
+    },
+    "linkedin": "https://www.linkedin.com/company/hurr/",
+    "sectors": [
+      "circular-economy",
+      "purpose-ecommerce"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "11-50",
+    "mission": "Fashion rental platform reducing clothing waste.",
+    "purpose_score": 4,
+    "purpose_rationale": "Circular fashion rental.",
+    "design_team_notes": "Small team; design generalist. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "by-rotation",
+    "name": "By Rotation",
+    "website": "https://byrotation.com",
+    "careers_url": "https://byrotation.com/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/byrotation/",
+    "sectors": [
+      "circular-economy",
+      "purpose-ecommerce"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "1-10",
+    "mission": "Peer-to-peer fashion rental app.",
+    "purpose_score": 4,
+    "purpose_rationale": "Circular fashion.",
+    "design_team_notes": "Small app team; occasional product designer roles.",
+    "people": []
+  },
+  {
+    "id": "thrift-plus",
+    "name": "Thrift+",
+    "website": "https://thrift.plus",
+    "careers_url": "https://thrift.plus",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/thrift-plus/",
+    "sectors": [
+      "circular-economy",
+      "purpose-ecommerce",
+      "charity"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "Cambridge",
+    "uk_presence": "Cambridgeshire; hybrid",
+    "size": "51-200",
+    "mission": "Resale service that sells donated clothes online and splits proceeds with charities.",
+    "purpose_score": 4,
+    "purpose_rationale": "Circular fashion + charity giving.",
+    "design_team_notes": "Small ecommerce/product team.",
+    "people": []
+  },
+  {
+    "id": "raylo",
+    "name": "Raylo",
+    "website": "https://www.raylo.com",
+    "careers_url": "https://app.screenloop.com/careers/raylo",
+    "ats": {
+      "provider": "other",
+      "slug": "screenloop:raylo",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/raylo/",
+    "sectors": [
+      "circular-economy"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London Bridge; hybrid (~1 day/week office)",
+    "size": "51-200",
+    "mission": "Leases and refurbishes phones and laptops to keep devices in use longer.",
+    "purpose_score": 3,
+    "purpose_rationale": "Circular electronics model; FCA-regulated fintech.",
+    "design_team_notes": "Product & design team in London; uses Screenloop ATS.",
+    "people": []
+  },
+  {
+    "id": "neighbourly",
+    "name": "Neighbourly",
+    "website": "https://www.neighbourly.com",
+    "careers_url": "https://www.neighbourly.com/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/neighbourly/",
+    "sectors": [
+      "social-impact",
+      "circular-economy"
+    ],
+    "org_type": "b-corp",
+    "hq": "Bristol",
+    "uk_presence": "Bristol; hybrid",
+    "size": "51-200",
+    "mission": "Platform connecting businesses' surplus food, funds and volunteering with local good causes.",
+    "purpose_score": 5,
+    "purpose_rationale": "B Corp community-giving platform; impact is the product.",
+    "design_team_notes": "Small in-house product/tech team.",
+    "people": []
+  },
+  {
+    "id": "who-gives-a-crap",
+    "name": "Who Gives A Crap",
+    "website": "https://uk.whogivesacrap.org",
+    "careers_url": "https://job-boards.greenhouse.io/whogivesacrap",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "whogivesacrap",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/whogivesacrap/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/who-gives-a-crap/",
+    "sectors": [
+      "purpose-ecommerce",
+      "social-impact"
+    ],
+    "org_type": "b-corp",
+    "hq": "Melbourne",
+    "uk_presence": "London office; hybrid",
+    "size": "201-500",
+    "mission": "Sustainable toilet paper and household products; 50% of profits fund sanitation.",
+    "purpose_score": 4,
+    "purpose_rationale": "B Corp donating half its profits to sanitation.",
+    "design_team_notes": "Global digital/ecommerce team with UX/product design roles.",
+    "people": []
+  },
+  {
+    "id": "lush",
+    "name": "Lush",
+    "website": "https://www.lush.com",
+    "careers_url": "https://lush.pinpointhq.com",
+    "ats": {
+      "provider": "pinpoint",
+      "slug": "lush",
+      "api_url": "https://lush.pinpointhq.com/postings.json"
+    },
+    "linkedin": "https://www.linkedin.com/company/lushcosmetics/",
+    "sectors": [
+      "purpose-ecommerce"
+    ],
+    "org_type": "corporate",
+    "hq": "Poole",
+    "uk_presence": "Poole (Dorset) HQ, ~2h from London; hybrid for digital",
+    "size": "10001+",
+    "mission": "Ethical handmade cosmetics campaigning on animal welfare and environment.",
+    "purpose_score": 3,
+    "purpose_rationale": "Strong ethical stance; large retailer.",
+    "design_team_notes": "In-house Lush Digital team (Poole/remote) builds apps and web. UK = Pinpoint 'lush'; Greenhouse 'lush' is Lush North America.",
+    "people": []
+  },
+  {
+    "id": "teemill",
+    "name": "Teemill",
+    "website": "https://teemill.com",
+    "careers_url": "https://teemill.com/sustainable-careers/",
+    "ats": {
+      "provider": "workable",
+      "slug": "teemill",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/teemill"
+    },
+    "linkedin": "https://www.linkedin.com/company/teemill/",
+    "sectors": [
+      "circular-economy",
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "Isle of Wight",
+    "uk_presence": "Isle of Wight HQ; some remote",
+    "size": "51-200",
+    "mission": "Circular print-on-demand platform where products are designed to be sent back and remade.",
+    "purpose_score": 4,
+    "purpose_rationale": "Circular fashion tech (Rapanui sister company).",
+    "design_team_notes": "In-house tech platform team; design roles occasional.",
+    "people": []
+  },
+  {
+    "id": "wild",
+    "name": "Wild",
+    "website": "https://www.wearewild.com",
+    "careers_url": "https://careers.wearewild.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "careers.wearewild.com",
+      "api_url": "https://careers.wearewild.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/wildrefill/",
+    "sectors": [
+      "purpose-ecommerce",
+      "circular-economy"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Refillable, plastic-free personal care products sold DTC.",
+    "purpose_score": 3,
+    "purpose_rationale": "B Corp reducing single-use plastic; consumer brand (Unilever-owned).",
+    "design_team_notes": "DTC ecommerce team; occasional UX/product design roles.",
+    "people": []
+  },
+  {
+    "id": "smol",
+    "name": "smol",
+    "website": "https://smolproducts.com",
+    "careers_url": "https://careers.smolproducts.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "careers.smolproducts.com",
+      "api_url": "https://careers.smolproducts.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/smolproducts/",
+    "sectors": [
+      "purpose-ecommerce"
+    ],
+    "org_type": "b-corp",
+    "hq": "Sussex",
+    "uk_presence": "Sussex/London; hybrid, some remote roles",
+    "size": "51-200",
+    "mission": "Eco-friendly cleaning products by subscription with less plastic.",
+    "purpose_score": 3,
+    "purpose_rationale": "B Corp sustainable household goods.",
+    "design_team_notes": "Subscription ecommerce; small digital team.",
+    "people": []
+  },
+  {
+    "id": "wildlife-trusts",
+    "name": "The Wildlife Trusts",
+    "website": "https://www.wildlifetrusts.org",
+    "careers_url": "https://www.wildlifetrusts.org/jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/the-wildlife-trusts/",
+    "sectors": [
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Newark",
+    "uk_presence": "Central team Newark/London, many roles remote; 46 local trusts",
+    "size": "1001-5000",
+    "mission": "Federation of 46 Wildlife Trusts restoring nature across the UK.",
+    "purpose_score": 5,
+    "purpose_rationale": "Nature recovery charity.",
+    "design_team_notes": "Central digital team builds web and supporter products; ATS not determined (site blocks bots).",
+    "people": []
+  },
+  {
+    "id": "rspb",
+    "name": "RSPB",
+    "website": "https://www.rspb.org.uk",
+    "careers_url": "https://www.rspb.org.uk/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "rspb.org.uk vacancies",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/rspb/",
+    "sectors": [
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Sandy, Bedfordshire",
+    "uk_presence": "Sandy HQ (~1h from London) and London; hybrid",
+    "size": "1001-5000",
+    "mission": "The UK's largest nature conservation charity.",
+    "purpose_score": 5,
+    "purpose_rationale": "Nature conservation charity.",
+    "design_team_notes": "Digital & technology team includes product, UX and content design.",
+    "people": []
+  },
+  {
+    "id": "wwf-uk",
+    "name": "WWF-UK",
+    "website": "https://www.wwf.org.uk",
+    "careers_url": "https://www.wwf.org.uk/jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "itrent:ce0449li.webitrent.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/wwf-uk/",
+    "sectors": [
+      "nature-rewilding",
+      "climate",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Woking",
+    "uk_presence": "Woking (Surrey) Living Planet Centre; hybrid",
+    "size": "501-1000",
+    "mission": "Conservation charity working to restore nature and tackle climate change.",
+    "purpose_score": 5,
+    "purpose_rationale": "Global nature charity.",
+    "design_team_notes": "Digital team with UX/product roles; iTrent ATS.",
+    "people": []
+  },
+  {
+    "id": "national-trust",
+    "name": "National Trust",
+    "website": "https://www.nationaltrust.org.uk",
+    "careers_url": "https://jobs.nationaltrust.org.uk",
+    "ats": {
+      "provider": "smartrecruiters",
+      "slug": "nationaltrust",
+      "api_url": "https://api.smartrecruiters.com/v1/companies/nationaltrust/postings"
+    },
+    "linkedin": "https://www.linkedin.com/company/national-trust/",
+    "sectors": [
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Swindon",
+    "uk_presence": "Swindon HQ (~1h from London) and London; hybrid",
+    "size": "10001+",
+    "mission": "Conservation charity caring for nature, coast and historic places.",
+    "purpose_score": 4,
+    "purpose_rationale": "Heritage and nature conservation charity.",
+    "design_team_notes": "Sizeable digital product team (app, web, membership); product/UX designer roles appear.",
+    "people": []
+  },
+  {
+    "id": "woodland-trust",
+    "name": "Woodland Trust",
+    "website": "https://www.woodlandtrust.org.uk",
+    "careers_url": "https://jobs.woodlandtrust.org.uk/",
+    "ats": {
+      "provider": "other",
+      "slug": "accropress:jobs.woodlandtrust.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/the-woodland-trust/",
+    "sectors": [
+      "nature-rewilding",
+      "climate",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Grantham",
+    "uk_presence": "Grantham HQ; many roles home-based",
+    "size": "1001-5000",
+    "mission": "Protects, restores and plants woods and trees across the UK.",
+    "purpose_score": 5,
+    "purpose_rationale": "Nature charity.",
+    "design_team_notes": "Digital team with UX/content roles; AccroPress job site.",
+    "people": []
+  },
+  {
+    "id": "greenpeace-uk",
+    "name": "Greenpeace UK",
+    "website": "https://www.greenpeace.org.uk",
+    "careers_url": "https://jobs.greenpeace.org.uk",
+    "ats": {
+      "provider": "recruitee",
+      "slug": "greenpeaceltd",
+      "api_url": "https://jobs.greenpeace.org.uk/api/offers/"
+    },
+    "linkedin": "https://www.linkedin.com/company/greenpeaceuk/",
+    "sectors": [
+      "climate",
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Islington); hybrid",
+    "size": "51-200",
+    "mission": "Independent campaigning organisation defending the environment.",
+    "purpose_score": 5,
+    "purpose_rationale": "Environmental campaigning.",
+    "design_team_notes": "Digital/product team for campaigns and supporter experience. Recruitee (custom domain).",
+    "people": []
+  },
+  {
+    "id": "friends-of-the-earth",
+    "name": "Friends of the Earth",
+    "website": "https://friendsoftheearth.uk",
+    "careers_url": "https://jobs.friendsoftheearth.uk/vacancies",
+    "ats": {
+      "provider": "other",
+      "slug": "jobs.friendsoftheearth.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/friends-of-the-earth/",
+    "sectors": [
+      "climate",
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Environmental charity campaigning for climate action and nature.",
+    "purpose_score": 5,
+    "purpose_rationale": "Environmental campaigning charity.",
+    "design_team_notes": "Digital team with UX/product roles; ATS vendor not confirmed.",
+    "people": []
+  },
+  {
+    "id": "kew",
+    "name": "Royal Botanic Gardens, Kew",
+    "website": "https://www.kew.org",
+    "careers_url": "https://careers.kew.org/vacancies.html",
+    "ats": {
+      "provider": "other",
+      "slug": "careers.kew.org",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/royal-botanic-gardens-kew/",
+    "sectors": [
+      "nature-rewilding",
+      "education"
+    ],
+    "org_type": "public-sector",
+    "hq": "Richmond, London",
+    "uk_presence": "Kew (London) and Wakehurst (Sussex)",
+    "size": "1001-5000",
+    "mission": "Plant and fungal science and conservation, plus two world-famous gardens.",
+    "purpose_score": 5,
+    "purpose_rationale": "Science-led nature conservation.",
+    "design_team_notes": "Digital team (content design, product); designs kew.org and visitor tools.",
+    "people": []
+  },
+  {
+    "id": "natural-history-museum",
+    "name": "Natural History Museum",
+    "website": "https://www.nhm.ac.uk",
+    "careers_url": "https://jobs.nhm.ac.uk/",
+    "ats": {
+      "provider": "other",
+      "slug": "jobtrain:jobs.nhm.ac.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/natural-history-museum/",
+    "sectors": [
+      "nature-rewilding",
+      "education"
+    ],
+    "org_type": "public-sector",
+    "hq": "London",
+    "uk_presence": "South Kensington; hybrid",
+    "size": "1001-5000",
+    "mission": "Museum and research centre working to create advocates for the planet.",
+    "purpose_score": 4,
+    "purpose_rationale": "Science, education and nature advocacy.",
+    "design_team_notes": "Digital media and product team; UX/product designer roles occasionally. Jobtrain ATS.",
+    "people": []
+  },
+  {
+    "id": "zsl",
+    "name": "ZSL",
+    "website": "https://www.zsl.org",
+    "careers_url": "https://www.zsl.org/about-zsl/jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/zsl/",
+    "sectors": [
+      "nature-rewilding",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Regent's Park London and Whipsnade; hybrid",
+    "size": "1001-5000",
+    "mission": "Conservation charity running London and Whipsnade Zoos and global wildlife work.",
+    "purpose_score": 5,
+    "purpose_rationale": "Wildlife conservation charity.",
+    "design_team_notes": "Digital team (web, ticketing, membership). ATS not determined (site blocks bots).",
+    "people": []
+  },
+  {
+    "id": "cancer-research-uk",
+    "name": "Cancer Research UK",
+    "website": "https://www.cancerresearchuk.org",
+    "careers_url": "https://cancerresearchuk.wd3.myworkdayjobs.com/en-US/External_Careers",
+    "ats": {
+      "provider": "workday",
+      "slug": "cancerresearchuk.wd3/External_Careers",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/cancer-research-uk/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Stratford, London; hybrid",
+    "size": "1001-5000",
+    "mission": "The world's largest independent cancer research charity.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity funding research.",
+    "design_team_notes": "One of the biggest charity digital/product teams in UK - product designers, UX researchers, design system.",
+    "people": []
+  },
+  {
+    "id": "bhf",
+    "name": "British Heart Foundation",
+    "website": "https://www.bhf.org.uk",
+    "careers_url": "https://jobs.bhf.org.uk/",
+    "ats": {
+      "provider": "other",
+      "slug": "eploy:jobs.bhf.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/british-heart-foundation/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Hammersmith) and Glasgow; hybrid",
+    "size": "1001-5000",
+    "mission": "Funds research into heart and circulatory diseases.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health research charity.",
+    "design_team_notes": "Mature digital product team with product/UX designers. Eploy ATS.",
+    "people": []
+  },
+  {
+    "id": "macmillan",
+    "name": "Macmillan Cancer Support",
+    "website": "https://www.macmillan.org.uk",
+    "careers_url": "https://jobs.macmillan.org.uk/jobs/home/",
+    "ats": {
+      "provider": "other",
+      "slug": "earcu:jobs.macmillan.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/macmillan-cancer-support/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Vauxhall); hybrid/home-based",
+    "size": "5001-10000",
+    "mission": "Supports people living with cancer through services, information and campaigning.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity.",
+    "design_team_notes": "Large digital product team incl. product & service designers. eArcu ATS.",
+    "people": []
+  },
+  {
+    "id": "shelter",
+    "name": "Shelter",
+    "website": "https://england.shelter.org.uk",
+    "careers_url": "https://england.shelter.org.uk/what_we_do/shelter_jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "ats.shelter.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/shelter-uk/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London, Bristol, Sheffield; hybrid/remote",
+    "size": "1001-5000",
+    "mission": "Housing and homelessness charity providing advice, support and campaigns.",
+    "purpose_score": 5,
+    "purpose_rationale": "Social justice charity.",
+    "design_team_notes": "Digital team with UI/UX designers (London/Bristol/Sheffield/remote) and digital product managers.",
+    "people": []
+  },
+  {
+    "id": "citizens-advice",
+    "name": "Citizens Advice",
+    "website": "https://www.citizensadvice.org.uk",
+    "careers_url": "https://www.jobtrain.co.uk/citizensadvice",
+    "ats": {
+      "provider": "other",
+      "slug": "jobtrain:citizensadvice",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/citizens-advice/",
+    "sectors": [
+      "social-impact",
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; blended office/home, many remote roles",
+    "size": "1001-5000",
+    "mission": "Provides free, impartial advice on money, legal, consumer and other problems.",
+    "purpose_score": 5,
+    "purpose_rationale": "Social-justice advice charity.",
+    "design_team_notes": "Well-known design practice (Senior Product Designer, Human Centred Designer roles in 2026), own design system. Jobtrain ATS.",
+    "people": []
+  },
+  {
+    "id": "mind",
+    "name": "Mind",
+    "website": "https://www.mind.org.uk",
+    "careers_url": "https://mind.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "mind",
+      "api_url": "https://mind.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/mind_2/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Stratford); hybrid",
+    "size": "1001-5000",
+    "mission": "Mental health charity providing advice, support and campaigning.",
+    "purpose_score": 5,
+    "purpose_rationale": "Mental health charity.",
+    "design_team_notes": "Digital team with product/UX design roles.",
+    "people": []
+  },
+  {
+    "id": "samaritans",
+    "name": "Samaritans",
+    "website": "https://www.samaritans.org",
+    "careers_url": "https://samaritans.peoplehr.net",
+    "ats": {
+      "provider": "other",
+      "slug": "peoplehr:samaritans",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/samaritans/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Ewell, Surrey",
+    "uk_presence": "Surrey HQ and London; hybrid",
+    "size": "501-1000",
+    "mission": "Provides round-the-clock emotional support for anyone struggling to cope.",
+    "purpose_score": 5,
+    "purpose_rationale": "Suicide prevention charity.",
+    "design_team_notes": "Digital team building self-help and contact tools; PeopleHR ATS.",
+    "people": []
+  },
+  {
+    "id": "barnardos",
+    "name": "Barnardo's",
+    "website": "https://www.barnardos.org.uk",
+    "careers_url": "https://jobs.barnardos.org.uk/jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "earcu:jobs.barnardos.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/barnardo's/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Barkingside, London",
+    "uk_presence": "Essex/London HQ; many hybrid/remote roles",
+    "size": "5001-10000",
+    "mission": "The UK's largest children's charity.",
+    "purpose_score": 5,
+    "purpose_rationale": "Children's charity.",
+    "design_team_notes": "Digital & innovation team (product, service design). eArcu ATS.",
+    "people": []
+  },
+  {
+    "id": "save-the-children-uk",
+    "name": "Save the Children UK",
+    "website": "https://www.savethechildren.org.uk",
+    "careers_url": "https://jobs.savethechildren.org.uk/jobs/home/",
+    "ats": {
+      "provider": "other",
+      "slug": "earcu:jobs.savethechildren.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/save-the-children/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Farringdon); hybrid",
+    "size": "1001-5000",
+    "mission": "Fights for children's rights to survival, protection and education.",
+    "purpose_score": 5,
+    "purpose_rationale": "International children's charity.",
+    "design_team_notes": "Digital product team (fundraising journeys, apps). eArcu ATS.",
+    "people": []
+  },
+  {
+    "id": "oxfam-gb",
+    "name": "Oxfam GB",
+    "website": "https://www.oxfam.org.uk",
+    "careers_url": "https://jobs.oxfam.org.uk/jobs/home/",
+    "ats": {
+      "provider": "other",
+      "slug": "earcu:jobs.oxfam.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/oxfam/",
+    "sectors": [
+      "social-impact",
+      "charity",
+      "circular-economy"
+    ],
+    "org_type": "charity",
+    "hq": "Oxford",
+    "uk_presence": "Oxford HQ (~1h from London); hybrid",
+    "size": "5001-10000",
+    "mission": "Tackles poverty and inequality globally; runs a large charity retail and online shop.",
+    "purpose_score": 5,
+    "purpose_rationale": "Anti-poverty charity.",
+    "design_team_notes": "Digital team covering online shop and supporter experience. eArcu ATS.",
+    "people": []
+  },
+  {
+    "id": "british-red-cross",
+    "name": "British Red Cross",
+    "website": "https://www.redcross.org.uk",
+    "careers_url": "https://careers.redcross.org.uk/vacancies",
+    "ats": {
+      "provider": "other",
+      "slug": "eploy:careers.redcross.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/british-red-cross/",
+    "sectors": [
+      "social-impact",
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Moorgate) and UK-wide; hybrid",
+    "size": "10001+",
+    "mission": "Helps people in crisis in the UK and abroad.",
+    "purpose_score": 5,
+    "purpose_rationale": "Humanitarian charity.",
+    "design_team_notes": "Digital product/design team (UX, content design). Eploy ATS.",
+    "people": []
+  },
+  {
+    "id": "nspcc",
+    "name": "NSPCC",
+    "website": "https://www.nspcc.org.uk",
+    "careers_url": "https://join-us.nspcc.org.uk",
+    "ats": {
+      "provider": "other",
+      "slug": "earcu:join-us.nspcc.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/nspcc/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London and nationwide; hybrid/remote",
+    "size": "1001-5000",
+    "mission": "Children's charity working to prevent abuse and protect children.",
+    "purpose_score": 5,
+    "purpose_rationale": "Child protection charity.",
+    "design_team_notes": "Product team (product managers, engineers, creative); design roles occasional. eArcu ATS.",
+    "people": []
+  },
+  {
+    "id": "age-uk",
+    "name": "Age UK",
+    "website": "https://www.ageuk.org.uk",
+    "careers_url": "https://jobs.ageuk.org.uk/vacancies",
+    "ats": {
+      "provider": "other",
+      "slug": "talos360:jobs.ageuk.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/age-uk/",
+    "sectors": [
+      "social-impact",
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "5001-10000",
+    "mission": "Charity helping older people with advice, services and campaigns.",
+    "purpose_score": 5,
+    "purpose_rationale": "Social care charity.",
+    "design_team_notes": "Digital team with UX/content roles. Talos360 ATS.",
+    "people": []
+  },
+  {
+    "id": "alzheimers-society",
+    "name": "Alzheimer's Society",
+    "website": "https://www.alzheimers.org.uk",
+    "careers_url": "https://careers.alzheimers.org.uk",
+    "ats": {
+      "provider": "other",
+      "slug": "careers.alzheimers.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/alzheimer's-society/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; many home-based roles",
+    "size": "1001-5000",
+    "mission": "Dementia charity providing support, research and campaigning.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity.",
+    "design_team_notes": "Technology Transformation programme with Product Lead/Digital Product Manager roles in 2026; designers hired periodically.",
+    "people": []
+  },
+  {
+    "id": "marie-curie",
+    "name": "Marie Curie",
+    "website": "https://www.mariecurie.org.uk",
+    "careers_url": "https://careers.smartrecruiters.com/MarieCurie1",
+    "ats": {
+      "provider": "smartrecruiters",
+      "slug": "MarieCurie1",
+      "api_url": "https://api.smartrecruiters.com/v1/companies/MarieCurie1/postings"
+    },
+    "linkedin": "https://www.linkedin.com/company/marie-curie/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London and UK-wide; hybrid",
+    "size": "5001-10000",
+    "mission": "End-of-life care charity providing nursing, hospices and support.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity.",
+    "design_team_notes": "Digital team with product/UX roles.",
+    "people": []
+  },
+  {
+    "id": "scope",
+    "name": "Scope",
+    "website": "https://www.scope.org.uk",
+    "careers_url": "https://www.scope.org.uk/jobs-at-scope",
+    "ats": {
+      "provider": "other",
+      "slug": "itrent:ce0258li.webitrent.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/scope/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; remote-first",
+    "size": "1001-5000",
+    "mission": "Disability equality charity.",
+    "purpose_score": 5,
+    "purpose_rationale": "Disability rights charity.",
+    "design_team_notes": "Respected digital/accessibility practice; product/UX roles. iTrent ATS.",
+    "people": []
+  },
+  {
+    "id": "rnib",
+    "name": "RNIB",
+    "website": "https://www.rnib.org.uk",
+    "careers_url": "https://www.rnib.org.uk/about-us/careers-at-rnib/",
+    "ats": {
+      "provider": "other",
+      "slug": "itrent:ce0082li.webitrent.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/rnib/",
+    "sectors": [
+      "social-impact",
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London and UK-wide; hybrid",
+    "size": "1001-5000",
+    "mission": "Supports blind and partially sighted people.",
+    "purpose_score": 5,
+    "purpose_rationale": "Disability charity.",
+    "design_team_notes": "Accessibility-focused digital team. iTrent ATS.",
+    "people": []
+  },
+  {
+    "id": "breast-cancer-now",
+    "name": "Breast Cancer Now",
+    "website": "https://breastcancernow.org",
+    "careers_url": "https://breastcancernow.talosats-careers.com/",
+    "ats": {
+      "provider": "other",
+      "slug": "talos360:breastcancernow",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/breastcancernow/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Aldgate); hybrid",
+    "size": "201-500",
+    "mission": "Breast cancer research and support charity.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity.",
+    "design_team_notes": "Digital team; product/UX roles occasional. Talos360 ATS.",
+    "people": []
+  },
+  {
+    "id": "crisis",
+    "name": "Crisis",
+    "website": "https://www.crisis.org.uk",
+    "careers_url": "https://jobs.crisis.org.uk/",
+    "ats": {
+      "provider": "other",
+      "slug": "jobtrain:jobs.crisis.org.uk",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/crisis/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Whitechapel); hybrid",
+    "size": "1001-5000",
+    "mission": "National charity for people experiencing homelessness.",
+    "purpose_score": 5,
+    "purpose_rationale": "Homelessness charity.",
+    "design_team_notes": "Digital team; UX/product roles occasional. Jobtrain ATS.",
+    "people": []
+  },
+  {
+    "id": "comic-relief",
+    "name": "Comic Relief",
+    "website": "https://www.comicrelief.com",
+    "careers_url": "https://app.beapplied.com/org/comic-relief",
+    "ats": {
+      "provider": "other",
+      "slug": "applied:comic-relief",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/comic-relief/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Charity using entertainment to raise money to tackle poverty and injustice.",
+    "purpose_score": 5,
+    "purpose_rationale": "Grant-making charity.",
+    "design_team_notes": "Product & engineering team (donation platform, apps) with product designers. Uses Applied (beapplied.com).",
+    "people": []
+  },
+  {
+    "id": "rnli",
+    "name": "RNLI",
+    "website": "https://rnli.org",
+    "careers_url": "https://rnli.pinpointhq.com",
+    "ats": {
+      "provider": "pinpoint",
+      "slug": "rnli",
+      "api_url": "https://rnli.pinpointhq.com/postings.json"
+    },
+    "linkedin": "https://www.linkedin.com/company/rnli/",
+    "sectors": [
+      "social-impact",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Poole",
+    "uk_presence": "Poole (Dorset) HQ; hybrid",
+    "size": "5001-10000",
+    "mission": "Lifeboat and lifeguard charity saving lives at sea.",
+    "purpose_score": 5,
+    "purpose_rationale": "Lifesaving charity.",
+    "design_team_notes": "Digital product team in Poole; UX/product design roles appear.",
+    "people": []
+  },
+  {
+    "id": "turn2us",
+    "name": "Turn2us",
+    "website": "https://www.turn2us.org.uk",
+    "careers_url": "https://www.turn2us.org.uk/about-us/jobs",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/turn2us/",
+    "sectors": [
+      "social-impact",
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Hammersmith); hybrid",
+    "size": "51-200",
+    "mission": "Helps people in financial hardship access benefits, grants and support.",
+    "purpose_score": 5,
+    "purpose_rationale": "Anti-poverty charity with digital tools (benefits calculator).",
+    "design_team_notes": "Digital-first charity with product/UX roles.",
+    "people": []
+  },
+  {
+    "id": "parkinsons-uk",
+    "name": "Parkinson's UK",
+    "website": "https://www.parkinsons.org.uk",
+    "careers_url": "https://parkinsonsuk.teamtailor.com",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "parkinsonsuk",
+      "api_url": "https://parkinsonsuk.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/parkinsons-uk/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Research and support charity for people with Parkinson's.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health charity.",
+    "design_team_notes": "Digital team with UX/product roles.",
+    "people": []
+  },
+  {
+    "id": "wellcome",
+    "name": "Wellcome",
+    "website": "https://wellcome.org",
+    "careers_url": "https://wellcome.wd3.myworkdayjobs.com/Wellcome",
+    "ats": {
+      "provider": "workday",
+      "slug": "wellcome.wd3/Wellcome",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/wellcome-trust/",
+    "sectors": [
+      "health",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Euston, London; hybrid",
+    "size": "1001-5000",
+    "mission": "Global charitable foundation funding health research.",
+    "purpose_score": 5,
+    "purpose_rationale": "Health research foundation.",
+    "design_team_notes": "Digital & technology team incl. product designers (grants platform, wellcome.org).",
+    "people": []
+  },
+  {
+    "id": "nesta",
+    "name": "Nesta",
+    "website": "https://www.nesta.org.uk",
+    "careers_url": "https://www.nesta.org.uk/jobs/",
+    "ats": {
+      "provider": "other",
+      "slug": "applied:nesta",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/nesta/",
+    "sectors": [
+      "social-impact",
+      "education",
+      "health",
+      "climate"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Blackfriars, London; hybrid (2 days/week)",
+    "size": "201-500",
+    "mission": "Innovation agency for social good (fairer start, healthy life, sustainable future).",
+    "purpose_score": 5,
+    "purpose_rationale": "Social-impact innovation charity.",
+    "design_team_notes": "Has product designers (e.g. CCID Product Designer). Uses Applied (beapplied.com).",
+    "people": []
+  },
+  {
+    "id": "cast",
+    "name": "CAST",
+    "website": "https://www.wearecast.org.uk",
+    "careers_url": "https://www.wearecast.org.uk/jobs/",
+    "ats": {
+      "provider": "workable",
+      "slug": "cast-1",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/cast-1"
+    },
+    "linkedin": "https://www.linkedin.com/company/cast-centre-for-the-acceleration-of-social-technology/",
+    "sectors": [
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Remote-first UK",
+    "size": "11-50",
+    "mission": "Helps charities use digital to deliver more impact.",
+    "purpose_score": 5,
+    "purpose_rationale": "Digital-for-good charity.",
+    "design_team_notes": "Small team of service/product designers working with charities. Workable account 'cast-1' (0 live).",
+    "people": []
+  },
+  {
+    "id": "dxw",
+    "name": "dxw",
+    "website": "https://www.dxw.com",
+    "careers_url": "https://www.dxw.com/careers/",
+    "ats": {
+      "provider": "workable",
+      "slug": "dxw",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/dxw"
+    },
+    "linkedin": "https://www.linkedin.com/company/dxw/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "Leeds",
+    "uk_presence": "Leeds and London offices; staff UK-wide (remote-friendly)",
+    "size": "201-500",
+    "mission": "Employee-owned digital agency building public services.",
+    "purpose_score": 4,
+    "purpose_rationale": "Public-good digital agency (employee-owned).",
+    "design_team_notes": "Strong design practice (service, interaction, content design). Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "made-tech",
+    "name": "Made Tech",
+    "website": "https://www.madetech.com",
+    "careers_url": "https://www.madetech.com/careers/",
+    "ats": {
+      "provider": "pinpoint",
+      "slug": "made-tech",
+      "api_url": "https://made-tech.pinpointhq.com/postings.json"
+    },
+    "linkedin": "https://www.linkedin.com/company/madetech/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London, Bristol, Manchester, Swansea; remote-first",
+    "size": "501-1000",
+    "mission": "Digital and technology services for the public sector.",
+    "purpose_score": 3,
+    "purpose_rationale": "Public sector delivery; commercial consultancy.",
+    "design_team_notes": "Growing user-centred design practice.",
+    "people": []
+  },
+  {
+    "id": "public-digital",
+    "name": "Public Digital",
+    "website": "https://public.digital",
+    "careers_url": "https://apply.workable.com/public-digital-1/",
+    "ats": {
+      "provider": "workable",
+      "slug": "public-digital-1",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/public-digital-1"
+    },
+    "linkedin": "https://www.linkedin.com/company/public-digital/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Consultancy helping governments and organisations adapt to the internet era.",
+    "purpose_score": 4,
+    "purpose_rationale": "Founded by GDS alumni; public-good focus.",
+    "design_team_notes": "Senior-heavy; design roles occasionally.",
+    "people": []
+  },
+  {
+    "id": "torchbox",
+    "name": "Torchbox",
+    "website": "https://torchbox.com",
+    "careers_url": "https://torchbox.jobs.personio.com",
+    "ats": {
+      "provider": "personio",
+      "slug": "torchbox",
+      "api_url": "https://torchbox.jobs.personio.de/xml"
+    },
+    "linkedin": "https://www.linkedin.com/company/torchbox/",
+    "sectors": [
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "b-corp",
+    "hq": "Oxford",
+    "uk_presence": "Oxford/Bristol; remote-first",
+    "size": "51-200",
+    "mission": "Employee-owned B Corp digital agency for charities and non-profits.",
+    "purpose_score": 4,
+    "purpose_rationale": "Works almost exclusively for charities and good causes.",
+    "design_team_notes": "UX/design team works on charity sites (Wagtail CMS).",
+    "people": []
+  },
+  {
+    "id": "snook",
+    "name": "Snook",
+    "website": "https://wearesnook.com",
+    "careers_url": "https://apply.workable.com/snook/",
+    "ats": {
+      "provider": "workable",
+      "slug": "snook",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/snook"
+    },
+    "linkedin": "https://www.linkedin.com/company/we-are-snook/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London and Glasgow; hybrid/remote (part of NEC group)",
+    "size": "51-200",
+    "mission": "Service design agency for public and third sector.",
+    "purpose_score": 4,
+    "purpose_rationale": "Public-good service design.",
+    "design_team_notes": "Service/interaction designers. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "tpximpact",
+    "name": "TPXimpact",
+    "website": "https://www.tpximpact.com",
+    "careers_url": "https://careers.tpximpact.com",
+    "ats": {
+      "provider": "other",
+      "slug": "eploy:careers.tpximpact.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/tpximpact/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London and UK hubs; hybrid",
+    "size": "501-1000",
+    "mission": "Digital transformation for public sector and impact organisations (incl. former FutureGov).",
+    "purpose_score": 3,
+    "purpose_rationale": "Public-sector focus; listed company.",
+    "design_team_notes": "Large experience design practice. Eploy ATS.",
+    "people": []
+  },
+  {
+    "id": "caution-your-blast",
+    "name": "Caution Your Blast",
+    "website": "https://cyb.co.uk",
+    "careers_url": "https://apply.workable.com/cyb/",
+    "ats": {
+      "provider": "workable",
+      "slug": "cyb",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/cyb"
+    },
+    "linkedin": "https://www.linkedin.com/company/caution-your-blast/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "corporate",
+    "hq": "Brighton",
+    "uk_presence": "Brighton and London; remote-friendly",
+    "size": "51-200",
+    "mission": "Digital agency delivering public services (FCDO, MoJ, etc.).",
+    "purpose_score": 4,
+    "purpose_rationale": "Public-good digital agency.",
+    "design_team_notes": "Interaction/service designers. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "unboxed",
+    "name": "Unboxed",
+    "website": "https://unboxed.co",
+    "careers_url": "https://apply.workable.com/unboxed/",
+    "ats": {
+      "provider": "workable",
+      "slug": "unboxed",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/unboxed"
+    },
+    "linkedin": "https://www.linkedin.com/company/unboxed-consulting/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Product and service design consultancy for public sector and purpose-led orgs.",
+    "purpose_score": 4,
+    "purpose_rationale": "Public-good product studio.",
+    "design_team_notes": "Product/service designers. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "mysociety",
+    "name": "mySociety",
+    "website": "https://www.mysociety.org",
+    "careers_url": "https://www.mysociety.org/about/jobs/",
+    "ats": {
+      "provider": "workable",
+      "slug": "mysociety",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/mysociety"
+    },
+    "linkedin": "https://www.linkedin.com/company/mysociety/",
+    "sectors": [
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "Fully remote UK",
+    "size": "11-50",
+    "mission": "Civic tech charity building tools (FixMyStreet, WhatDoTheyKnow) for democracy and climate.",
+    "purpose_score": 5,
+    "purpose_rationale": "Civic-tech charity.",
+    "design_team_notes": "Small design team (designer roles occasional). Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "good-things-foundation",
+    "name": "Good Things Foundation",
+    "website": "https://www.goodthingsfoundation.org",
+    "careers_url": "https://www.goodthingsfoundation.org/about/working-at-good-things",
+    "ats": {
+      "provider": "none",
+      "slug": "",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/good-things-foundation/",
+    "sectors": [
+      "social-impact",
+      "civic-tech",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Sheffield",
+    "uk_presence": "Sheffield hub and London; hybrid/remote",
+    "size": "51-200",
+    "mission": "Digital inclusion charity fixing the digital divide.",
+    "purpose_score": 5,
+    "purpose_rationale": "Digital-inclusion charity.",
+    "design_team_notes": "Small digital team; applications by email (recruitment@...).",
+    "people": []
+  },
+  {
+    "id": "gds",
+    "name": "Government Digital Service",
+    "website": "https://www.gov.uk/government/organisations/government-digital-service",
+    "careers_url": "https://www.civilservicejobs.service.gov.uk",
+    "ats": {
+      "provider": "other",
+      "slug": "civilservicejobs",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/government-digital-service/",
+    "sectors": [
+      "civic-tech"
+    ],
+    "org_type": "public-sector",
+    "hq": "London",
+    "uk_presence": "London (Whitechapel), Manchester, Bristol; hybrid (60% office)",
+    "size": "1001-5000",
+    "mission": "Builds GOV.UK and shared platforms to make government digital services simpler.",
+    "purpose_score": 4,
+    "purpose_rationale": "Public-service digital.",
+    "design_team_notes": "Home of the GOV.UK Design System; large interaction/product design community. Civil Service Jobs.",
+    "people": []
+  },
+  {
+    "id": "nhs-england",
+    "name": "NHS England (Transformation Directorate)",
+    "website": "https://www.england.nhs.uk",
+    "careers_url": "https://www.jobs.nhs.uk",
+    "ats": {
+      "provider": "other",
+      "slug": "trac/nhs-jobs",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/nhs-england/",
+    "sectors": [
+      "health",
+      "civic-tech"
+    ],
+    "org_type": "public-sector",
+    "hq": "Leeds",
+    "uk_presence": "London, Leeds and remote; hybrid",
+    "size": "10001+",
+    "mission": "Leads the NHS in England, incl. digital services like the NHS App and NHS.UK.",
+    "purpose_score": 5,
+    "purpose_rationale": "Public health service.",
+    "design_team_notes": "Large design community (NHS digital service manual); interaction/product designers. NHS Jobs/Trac.",
+    "people": []
+  },
+  {
+    "id": "oak-national-academy",
+    "name": "Oak National Academy",
+    "website": "https://www.thenational.academy",
+    "careers_url": "https://app.beapplied.com/org/1574/oak-national-academy",
+    "ats": {
+      "provider": "other",
+      "slug": "applied:1574/oak-national-academy",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/oak-national-academy/",
+    "sectors": [
+      "education",
+      "civic-tech"
+    ],
+    "org_type": "public-sector",
+    "hq": "London",
+    "uk_presence": "Remote-first UK",
+    "size": "51-200",
+    "mission": "Free, high-quality curriculum resources and AI tools for teachers.",
+    "purpose_score": 5,
+    "purpose_rationale": "Public-body edtech.",
+    "design_team_notes": "In-house product design team (Aila AI tool, curriculum platform). Applied ATS.",
+    "people": []
+  },
+  {
+    "id": "raspberry-pi-foundation",
+    "name": "Raspberry Pi Foundation",
+    "website": "https://www.raspberrypi.org",
+    "careers_url": "https://apply.workable.com/raspberrypifoundation/",
+    "ats": {
+      "provider": "workable",
+      "slug": "raspberrypifoundation",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/raspberrypifoundation"
+    },
+    "linkedin": "https://www.linkedin.com/company/raspberrypifoundation/",
+    "sectors": [
+      "education",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Cambridge",
+    "uk_presence": "Cambridge; remote-friendly UK",
+    "size": "201-500",
+    "mission": "Educational charity helping young people learn computing.",
+    "purpose_score": 5,
+    "purpose_rationale": "Education charity.",
+    "design_team_notes": "Product and design team for learning platforms (Code Editor, Code Club).",
+    "people": []
+  },
+  {
+    "id": "multiverse",
+    "name": "Multiverse",
+    "website": "https://www.multiverse.io",
+    "careers_url": "https://www.multiverse.io/en-GB/careers",
+    "ats": {
+      "provider": "ashby",
+      "slug": "multiverse",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/multiverse?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/joinmultiverse/",
+    "sectors": [
+      "education",
+      "social-impact"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "1001-5000",
+    "mission": "Apprenticeship and upskilling platform offering an alternative to university.",
+    "purpose_score": 3,
+    "purpose_rationale": "Social mobility framing; commercial edtech.",
+    "design_team_notes": "Mature product design team.",
+    "people": []
+  },
+  {
+    "id": "code-first-girls",
+    "name": "Code First Girls",
+    "website": "https://codefirstgirls.com",
+    "careers_url": "https://codefirstgirls.bamboohr.com/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "bamboohr:codefirstgirls",
+      "api_url": "https://codefirstgirls.bamboohr.com/careers/list"
+    },
+    "linkedin": "https://www.linkedin.com/company/code-first-girls/",
+    "sectors": [
+      "education",
+      "social-impact"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "London",
+    "uk_presence": "London; remote-friendly",
+    "size": "51-200",
+    "mission": "Free coding courses for women to close the tech gender gap.",
+    "purpose_score": 4,
+    "purpose_rationale": "Social enterprise for gender equity in tech.",
+    "design_team_notes": "Small product team. Also has a Teamtailor board (codefirstgirls) with roles.",
+    "people": []
+  },
+  {
+    "id": "teach-first",
+    "name": "Teach First",
+    "website": "https://www.teachfirst.org.uk",
+    "careers_url": "https://www.teachfirst.org.uk/working-teach-first",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/teach-first/",
+    "sectors": [
+      "education",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "London",
+    "uk_presence": "London (Canary Wharf) and regions; hybrid",
+    "size": "1001-5000",
+    "mission": "Education charity tackling educational inequality.",
+    "purpose_score": 5,
+    "purpose_rationale": "Education charity.",
+    "design_team_notes": "Digital & technology team; UX roles occasional.",
+    "people": []
+  },
+  {
+    "id": "apolitical",
+    "name": "Apolitical",
+    "website": "https://apolitical.co",
+    "careers_url": "https://apply.workable.com/apolitical/",
+    "ats": {
+      "provider": "workable",
+      "slug": "apolitical",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/apolitical"
+    },
+    "linkedin": "https://www.linkedin.com/company/apolitical/",
+    "sectors": [
+      "civic-tech",
+      "education"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Learning platform helping public servants build skills (e.g. AI, climate).",
+    "purpose_score": 4,
+    "purpose_rationale": "Better government via learning.",
+    "design_team_notes": "Product designers on platform team. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "cera",
+    "name": "Cera",
+    "website": "https://ceracare.co.uk",
+    "careers_url": "https://careers.smartrecruiters.com/ceracare",
+    "ats": {
+      "provider": "smartrecruiters",
+      "slug": "ceracare",
+      "api_url": "https://api.smartrecruiters.com/v1/companies/ceracare/postings"
+    },
+    "linkedin": "https://www.linkedin.com/company/ceracare/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "5001-10000",
+    "mission": "Tech-enabled home healthcare provider using AI to keep people well at home.",
+    "purpose_score": 4,
+    "purpose_rationale": "Health-for-good: scaling home care and reducing hospitalisations.",
+    "design_team_notes": "Product & design team in London for carer and client apps; SmartRecruiters board dominated by carer roles - filter for product/design.",
+    "people": []
+  },
+  {
+    "id": "lantum",
+    "name": "Lantum",
+    "website": "https://lantum.com",
+    "careers_url": "https://apply.workable.com/lantum/",
+    "ats": {
+      "provider": "workable",
+      "slug": "lantum",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/lantum"
+    },
+    "linkedin": "https://www.linkedin.com/company/lantum/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Workforce platform helping NHS organisations fill shifts and reduce agency spend.",
+    "purpose_score": 4,
+    "purpose_rationale": "Supports NHS staffing.",
+    "design_team_notes": "Small product design team.",
+    "people": []
+  },
+  {
+    "id": "healios",
+    "name": "Healios",
+    "website": "https://www.healios.org.uk",
+    "careers_url": "https://job-boards.eu.greenhouse.io/healios",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "healios",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/healios/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/healios/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; remote-friendly",
+    "size": "201-500",
+    "mission": "Online mental health and neurodevelopmental assessment services for children and families (NHS partner).",
+    "purpose_score": 4,
+    "purpose_rationale": "Expands access to child mental health care.",
+    "design_team_notes": "Product team building clinician/family platform; designer roles occasional. Board mostly clinical roles.",
+    "people": []
+  },
+  {
+    "id": "ieso",
+    "name": "Mindler UK (formerly ieso Digital Health UK)",
+    "website": "https://mindlercare.com",
+    "careers_url": "https://career.mindlercare.com/jobs",
+    "ats": {
+      "provider": "teamtailor",
+      "slug": "mindler",
+      "api_url": "https://mindler.teamtailor.com/jobs.rss"
+    },
+    "linkedin": "https://www.linkedin.com/company/mindleruk/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "Stockholm",
+    "uk_presence": "UK business based in Cambridge (ex-ieso); remote/hybrid",
+    "size": "201-500",
+    "mission": "Digital mental health provider delivering NHS online talking therapies (typed/video CBT) in the UK.",
+    "purpose_score": 4,
+    "purpose_rationale": "Expands access to NHS mental health care.",
+    "design_team_notes": "Mindler (Stockholm) acquired ieso's UK telecare business in Aug 2025; product/design largely Stockholm-led - check UK eligibility. Old Workable 'ieso' account is stale; Mindler uses Teamtailor (career.mindlercare.com).",
+    "people": []
+  },
+  {
+    "id": "thriva",
+    "name": "Thriva",
+    "website": "https://thriva.co",
+    "careers_url": "https://thrivalimited.recruit.charliehr.com/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "charliehr:thrivalimited",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/thriva/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "At-home blood testing to help people increase their healthspan.",
+    "purpose_score": 3,
+    "purpose_rationale": "Preventive health; commercial consumer service.",
+    "design_team_notes": "Small product & design team; careers board looks stale.",
+    "people": []
+  },
+  {
+    "id": "accurx",
+    "name": "Accurx",
+    "website": "https://www.accurx.com",
+    "careers_url": "https://jobs.ashbyhq.com/accurx",
+    "ats": {
+      "provider": "ashby",
+      "slug": "accurx",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/accurx?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/accurx/",
+    "sectors": [
+      "health",
+      "civic-tech"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "Shoreditch, London; hybrid",
+    "size": "501-1000",
+    "mission": "Communication software used across NHS primary and secondary care.",
+    "purpose_score": 4,
+    "purpose_rationale": "Improves NHS care delivery.",
+    "design_team_notes": "Large, well-regarded product design team (design system, research).",
+    "people": []
+  },
+  {
+    "id": "birdie",
+    "name": "Birdie",
+    "website": "https://www.birdie.care",
+    "careers_url": "https://jobs.ashbyhq.com/birdie",
+    "ats": {
+      "provider": "ashby",
+      "slug": "birdie",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/birdie?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/birdiecare/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "b-corp",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Home care software helping care providers deliver better, preventive care.",
+    "purpose_score": 4,
+    "purpose_rationale": "Health-for-good in social care.",
+    "design_team_notes": "Product design team (care-worker app, agency platform).",
+    "people": []
+  },
+  {
+    "id": "kooth",
+    "name": "Kooth",
+    "website": "https://www.kooth.com",
+    "careers_url": "https://apply.workable.com/koothjobs/",
+    "ats": {
+      "provider": "workable",
+      "slug": "koothjobs",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/koothjobs"
+    },
+    "linkedin": "https://www.linkedin.com/company/koothplc/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid/remote UK",
+    "size": "501-1000",
+    "mission": "Digital mental health service for young people and adults.",
+    "purpose_score": 5,
+    "purpose_rationale": "Social-purpose mental health platform (NHS & schools).",
+    "design_team_notes": "In-house product designers (Product Designer maternity cover posted).",
+    "people": []
+  },
+  {
+    "id": "unmind",
+    "name": "Unmind",
+    "website": "https://unmind.com",
+    "careers_url": "https://jobs.ashbyhq.com/unmind",
+    "ats": {
+      "provider": "ashby",
+      "slug": "unmind",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/unmind?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/unmind/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "201-500",
+    "mission": "Workplace mental health platform.",
+    "purpose_score": 3,
+    "purpose_rationale": "Mental health focus, B2B wellbeing.",
+    "design_team_notes": "Design-led product with in-house design team.",
+    "people": []
+  },
+  {
+    "id": "oviva",
+    "name": "Oviva",
+    "website": "https://oviva.com/uk/en/",
+    "careers_url": "https://jobs.ashbyhq.com/oviva",
+    "ats": {
+      "provider": "ashby",
+      "slug": "oviva",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/oviva?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/oviva/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London UK HQ; remote UK roles",
+    "size": "501-1000",
+    "mission": "Digital-first care for diabetes, obesity and related conditions, often NHS-commissioned.",
+    "purpose_score": 4,
+    "purpose_rationale": "Health outcomes at scale.",
+    "design_team_notes": "Product design team across Berlin/London.",
+    "people": []
+  },
+  {
+    "id": "patchwork-health",
+    "name": "Patchwork Health",
+    "website": "https://patchwork.health",
+    "careers_url": "https://apply.workable.com/patchworkhealth/",
+    "ats": {
+      "provider": "workable",
+      "slug": "patchworkhealth",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/patchworkhealth"
+    },
+    "linkedin": "https://www.linkedin.com/company/patchwork-health/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Workforce technology helping NHS staff work flexibly and reducing agency costs.",
+    "purpose_score": 4,
+    "purpose_rationale": "Supports NHS workforce wellbeing.",
+    "design_team_notes": "Small product/design team.",
+    "people": []
+  },
+  {
+    "id": "flo-health",
+    "name": "Flo Health",
+    "website": "https://flo.health",
+    "careers_url": "https://job-boards.greenhouse.io/flohealth",
+    "ats": {
+      "provider": "greenhouse",
+      "slug": "flohealth",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/flohealth/jobs?content=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/flohealth/",
+    "sectors": [
+      "health"
+    ],
+    "org_type": "scaleup",
+    "hq": "London",
+    "uk_presence": "London HQ; hybrid",
+    "size": "501-1000",
+    "mission": "Women's health app supporting cycles, pregnancy and menopause.",
+    "purpose_score": 3,
+    "purpose_rationale": "Women's health; commercial app.",
+    "design_team_notes": "Large, mature design org (product designers, design systems).",
+    "people": []
+  },
+  {
+    "id": "triodos-uk",
+    "name": "Triodos Bank UK",
+    "website": "https://www.triodos.co.uk",
+    "careers_url": "https://careers.triodos.com",
+    "ats": {
+      "provider": "other",
+      "slug": "successfactors:careers.triodos.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/triodos-bank/",
+    "sectors": [
+      "ethical-finance"
+    ],
+    "org_type": "b-corp",
+    "hq": "Bristol",
+    "uk_presence": "Bristol HQ; hybrid",
+    "size": "201-500",
+    "mission": "Ethical bank lending only to organisations that benefit people and planet.",
+    "purpose_score": 5,
+    "purpose_rationale": "Values-based bank; B Corp.",
+    "design_team_notes": "Small digital team; UX roles occasional.",
+    "people": []
+  },
+  {
+    "id": "abundance-investment",
+    "name": "Abundance Investment",
+    "website": "https://www.abundanceinvestment.com",
+    "careers_url": "https://www.abundanceinvestment.com",
+    "ats": {
+      "provider": "other",
+      "slug": "unknown",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/abundance/",
+    "sectors": [
+      "ethical-finance",
+      "climate"
+    ],
+    "org_type": "startup",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "11-50",
+    "mission": "Platform letting people invest in green and community projects and council climate bonds.",
+    "purpose_score": 5,
+    "purpose_rationale": "Democratised green investment.",
+    "design_team_notes": "Very small team; design generalist.",
+    "people": []
+  },
+  {
+    "id": "tumelo",
+    "name": "Tumelo",
+    "website": "https://www.tumelo.com",
+    "careers_url": "https://tumelo.bamboohr.com/careers",
+    "ats": {
+      "provider": "other",
+      "slug": "bamboohr:tumelo",
+      "api_url": "https://tumelo.bamboohr.com/careers/list"
+    },
+    "linkedin": "https://www.linkedin.com/company/tumelo/",
+    "sectors": [
+      "ethical-finance"
+    ],
+    "org_type": "b-corp",
+    "hq": "Bristol",
+    "uk_presence": "Bristol; hybrid/remote",
+    "size": "51-200",
+    "mission": "Shareholder voting tech letting pension savers have a say on how their money is used.",
+    "purpose_score": 4,
+    "purpose_rationale": "Investor stewardship for ESG (B Corp).",
+    "design_team_notes": "Small product design team.",
+    "people": []
+  },
+  {
+    "id": "cushon",
+    "name": "Cushon",
+    "website": "https://www.cushon.co.uk",
+    "careers_url": "https://apply.workable.com/cushon/",
+    "ats": {
+      "provider": "workable",
+      "slug": "cushon",
+      "api_url": "https://apply.workable.com/api/v1/widget/accounts/cushon"
+    },
+    "linkedin": "https://www.linkedin.com/company/cushon/",
+    "sectors": [
+      "ethical-finance",
+      "climate"
+    ],
+    "org_type": "corporate",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Workplace pensions and savings app with net-zero investment strategy (NatWest-owned).",
+    "purpose_score": 3,
+    "purpose_rationale": "Net-zero pension provider; commercial.",
+    "design_team_notes": "Product & design team for savings app. Workable account (0 live).",
+    "people": []
+  },
+  {
+    "id": "beam",
+    "name": "Beam",
+    "website": "https://beam.org",
+    "careers_url": "https://jobs.ashbyhq.com/beam-up",
+    "ats": {
+      "provider": "ashby",
+      "slug": "beam-up",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/beam-up?includeCompensation=true"
+    },
+    "linkedin": "https://www.linkedin.com/company/wearebeam/",
+    "sectors": [
+      "social-impact"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "51-200",
+    "mission": "Uses technology and crowdfunding to help people out of homelessness and into work.",
+    "purpose_score": 5,
+    "purpose_rationale": "Tech-for-good social enterprise.",
+    "design_team_notes": "Product designers in-house (AI caseworker tools for councils). Note: Greenhouse 'beam' is a different US org.",
+    "people": []
+  },
+  {
+    "id": "big-issue",
+    "name": "The Big Issue Group",
+    "website": "https://www.bigissue.com",
+    "careers_url": "https://www.bigissue.com/big-issue-recruit/",
+    "ats": {
+      "provider": "other",
+      "slug": "hireful:jobs.bigissue.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/the-big-issue/",
+    "sectors": [
+      "social-impact",
+      "ethical-finance"
+    ],
+    "org_type": "social-enterprise",
+    "hq": "London",
+    "uk_presence": "London; hybrid",
+    "size": "201-500",
+    "mission": "Social enterprise offering vendors income, plus Big Issue Invest social investment.",
+    "purpose_score": 5,
+    "purpose_rationale": "Poverty-dismantling social enterprise.",
+    "design_team_notes": "Small digital team. Hireful/LiveVacancies ATS.",
+    "people": []
+  },
+  {
+    "id": "wrap",
+    "name": "WRAP",
+    "website": "https://www.wrap.ngo",
+    "careers_url": "https://wrap.current-vacancies.com/Careers",
+    "ats": {
+      "provider": "other",
+      "slug": "networx:wrap.current-vacancies.com",
+      "api_url": ""
+    },
+    "linkedin": "https://www.linkedin.com/company/wrap/",
+    "sectors": [
+      "circular-economy",
+      "climate",
+      "charity"
+    ],
+    "org_type": "charity",
+    "hq": "Banbury",
+    "uk_presence": "Banbury (~1h from London) and London; hybrid",
+    "size": "201-500",
+    "mission": "Climate action NGO tackling waste and driving the circular economy.",
+    "purpose_score": 5,
+    "purpose_rationale": "Circular economy charity.",
+    "design_team_notes": "Digital/campaigns team (Love Food Hate Waste); design roles occasional. Networx ATS.",
+    "people": []
+  }
+]

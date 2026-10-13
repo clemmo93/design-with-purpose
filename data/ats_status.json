@@ -1,0 +1,652 @@
+{
+ "octopus-energy": {
+  "status": "ok",
+  "total": 151,
+  "design": 2
+ },
+ "kraken": {
+  "status": "ok",
+  "total": 61,
+  "design": 0
+ },
+ "ovo": {
+  "status": "ok",
+  "total": 6,
+  "design": 0
+ },
+ "kaluza": {
+  "status": "ok",
+  "total": 31,
+  "design": 0
+ },
+ "ohme": {
+  "status": "ok",
+  "total": 21,
+  "design": 0
+ },
+ "pod-point": {
+  "status": "ok",
+  "total": 12,
+  "design": 0
+ },
+ "lightsource-bp": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "good-energy": {
+  "status": "ok",
+  "total": 4,
+  "design": 0
+ },
+ "ecotricity": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "sunsave": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "aira": {
+  "status": "ok",
+  "total": 100,
+  "design": 0
+ },
+ "zapmap": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "hometree": {
+  "status": "ok",
+  "total": 17,
+  "design": 0
+ },
+ "heat-geek": {
+  "status": "ok",
+  "total": 6,
+  "design": 0
+ },
+ "lunar-energy": {
+  "status": "ok",
+  "total": 26,
+  "design": 0
+ },
+ "axle-energy": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "modo-energy": {
+  "status": "ok",
+  "total": 11,
+  "design": 0
+ },
+ "piclo": {
+  "status": "error: HTTP Error 404: Not Found",
+  "total": 0,
+  "design": 0
+ },
+ "zenobe": {
+  "status": "ok",
+  "total": 14,
+  "design": 0
+ },
+ "electron": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "ripple-energy": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "so-energy": {
+  "status": "ok",
+  "total": 4,
+  "design": 0
+ },
+ "hypervolt": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "connected-kerb": {
+  "status": "ok",
+  "total": 3,
+  "design": 0
+ },
+ "gridserve": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "energy-saving-trust": {
+  "status": "ok",
+  "total": 2,
+  "design": 0
+ },
+ "sylvera": {
+  "status": "ok",
+  "total": 4,
+  "design": 0
+ },
+ "altruistiq": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "carbonchain": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "treefera": {
+  "status": "ok",
+  "total": 3,
+  "design": 0
+ },
+ "watershed": {
+  "status": "ok",
+  "total": 36,
+  "design": 3
+ },
+ "sweep": {
+  "status": "ok",
+  "total": 7,
+  "design": 0
+ },
+ "plan-a": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "naturemetrics": {
+  "status": "error: HTTP Error 404: Not Found",
+  "total": 0,
+  "design": 0
+ },
+ "ecologi": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "isometric": {
+  "status": "ok",
+  "total": 6,
+  "design": 0
+ },
+ "supercritical": {
+  "status": "ok",
+  "total": 6,
+  "design": 0
+ },
+ "climate-x": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "pawprint": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "ecosia": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "olio": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "too-good-to-go": {
+  "status": "ok",
+  "total": 42,
+  "design": 0
+ },
+ "oddbox": {
+  "status": "ok",
+  "total": 2,
+  "design": 0
+ },
+ "riverford": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "abel-and-cole": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "mindful-chef": {
+  "status": "error: HTTP Error 404: Not Found",
+  "total": 0,
+  "design": 0
+ },
+ "depop": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "hurr": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "by-rotation": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "thrift-plus": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "raylo": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "neighbourly": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "who-gives-a-crap": {
+  "status": "ok",
+  "total": 9,
+  "design": 2
+ },
+ "lush": {
+  "status": "ok",
+  "total": 33,
+  "design": 0
+ },
+ "teemill": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "wild": {
+  "status": "ok",
+  "total": 3,
+  "design": 0
+ },
+ "smol": {
+  "status": "ok",
+  "total": 3,
+  "design": 0
+ },
+ "wildlife-trusts": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "rspb": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "wwf-uk": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "national-trust": {
+  "status": "ok",
+  "total": 24,
+  "design": 0
+ },
+ "woodland-trust": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "greenpeace-uk": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "friends-of-the-earth": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "kew": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "natural-history-museum": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "zsl": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "cancer-research-uk": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "bhf": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "macmillan": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "shelter": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "citizens-advice": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "mind": {
+  "status": "ok",
+  "total": 2,
+  "design": 0
+ },
+ "samaritans": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "barnardos": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "save-the-children-uk": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "oxfam-gb": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "british-red-cross": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "nspcc": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "age-uk": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "alzheimers-society": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "marie-curie": {
+  "status": "ok",
+  "total": 45,
+  "design": 0
+ },
+ "scope": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "rnib": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "breast-cancer-now": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "crisis": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "comic-relief": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "rnli": {
+  "status": "ok",
+  "total": 5,
+  "design": 0
+ },
+ "turn2us": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "parkinsons-uk": {
+  "status": "ok",
+  "total": 5,
+  "design": 0
+ },
+ "wellcome": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "nesta": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "cast": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "dxw": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "made-tech": {
+  "status": "ok",
+  "total": 28,
+  "design": 3
+ },
+ "public-digital": {
+  "status": "ok",
+  "total": 2,
+  "design": 0
+ },
+ "torchbox": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "snook": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "tpximpact": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "caution-your-blast": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "unboxed": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "mysociety": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "good-things-foundation": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "gds": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "nhs-england": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "oak-national-academy": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "raspberry-pi-foundation": {
+  "status": "ok",
+  "total": 9,
+  "design": 0
+ },
+ "multiverse": {
+  "status": "ok",
+  "total": 26,
+  "design": 0
+ },
+ "code-first-girls": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "teach-first": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "apolitical": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "cera": {
+  "status": "ok",
+  "total": 100,
+  "design": 0
+ },
+ "lantum": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "healios": {
+  "status": "ok",
+  "total": 7,
+  "design": 0
+ },
+ "ieso": {
+  "status": "ok",
+  "total": 8,
+  "design": 0
+ },
+ "thriva": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "accurx": {
+  "status": "ok",
+  "total": 15,
+  "design": 0
+ },
+ "birdie": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "kooth": {
+  "status": "ok",
+  "total": 10,
+  "design": 0
+ },
+ "unmind": {
+  "status": "ok",
+  "total": 1,
+  "design": 0
+ },
+ "oviva": {
+  "status": "ok",
+  "total": 35,
+  "design": 1
+ },
+ "patchwork-health": {
+  "status": "ok",
+  "total": 2,
+  "design": 0
+ },
+ "flo-health": {
+  "status": "ok",
+  "total": 25,
+  "design": 2
+ },
+ "triodos-uk": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "abundance-investment": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "tumelo": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "cushon": {
+  "status": "ok",
+  "total": 0,
+  "design": 0
+ },
+ "beam": {
+  "status": "ok",
+  "total": 29,
+  "design": 0
+ },
+ "big-issue": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ },
+ "wrap": {
+  "status": "no-api",
+  "total": 0,
+  "design": 0
+ }
+}

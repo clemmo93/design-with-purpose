@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}</style></head><body>
+<title>Design with Purpose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: masthead + tab strip; Roles = filter rail (left) + ranked list, detail opens in a side sheet. */
+:root {
+  --bg: #f2f4f0;          /* lichen-pale stone */
+  --surface: #ffffff;
+  --surface-2: #e8ece6;
+  --ink: #15302a;         /* spruce */
+  --ink-2: #4c6159;
+  --ink-3: #7d8f87;
+  --line: #d3dad3;
+  --accent: #1d6a96;      /* kingfisher */
+  --accent-soft: #dcebf3;
+  --leaf: #3f8a4e;
+  --strong: #2f7a43; --strong-bg: #dff0e2;
+  --good: #9a6b06;   --good-bg: #f8ecc9;
+  --stretch: #8a5a68; --stretch-bg: #f1e3e7;
+  --shadow: 0 1px 2px rgba(21,48,42,.06), 0 6px 24px rgba(21,48,42,.08);
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1a17; --surface: #16241f; --surface-2: #1d2e28; --ink: #e3ece7; --ink-2: #a9bab2; --ink-3: #74877f;
+  --line: #2a3d36; --accent: #6db7e0; --accent-soft: #19323f; --leaf: #74c486;
+  --strong: #7fd28f; --strong-bg: #173a22; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d6a3b2; --stretch-bg: #3a2229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f1a17; --surface: #16241f; --surface-2: #1d2e28; --ink: #e3ece7; --ink-2: #a9bab2; --ink-3: #74877f;
+  --line: #2a3d36; --accent: #6db7e0; --accent-soft: #19323f; --leaf: #74c486;
+  --strong: #7fd28f; --strong-bg: #173a22; --good: #e7bf5a; --good-bg: #3a2f10; --stretch: #d6a3b2; --stretch-bg: #3a2229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); }
+a { color: var(--accent); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: 20px; }
+@media (max-width: 600px) { .wrap { padding-inline: 16px; } }
+
+/* masthead */
+header.mast { padding-block: 28px 0; }
+.mast-row { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: flex-end; justify-content: space-between; }
+h1 { font: 800 clamp(28px, 4.4vw, 44px)/1 var(--f-display); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+h1 .sprout { color: var(--leaf); }
+.kicker { font: 500 12px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin-bottom: 10px; }
+.brief { color: var(--ink-2); max-width: 62ch; margin: 10px 0 0; }
+.stats { display: flex; gap: 22px; flex-wrap: wrap; }
+@media (max-width: 600px) { .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; } }
+.stat b { display: block; font: 700 26px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.stat span { font: 500 11px/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.stat.hl b { color: var(--strong); }
+nav.tabs { display: flex; gap: 4px; margin-top: 22px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+nav.tabs button { background: none; border: 0; padding: 10px 14px; font-weight: 600; color: var(--ink-2); border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+nav.tabs .count { font: 500 11px var(--f-mono); color: var(--ink-3); margin-left: 4px; }
+
+/* roles layout */
+.layout { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; padding-block: 22px 60px; }
+@media (max-width: 900px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+aside.filters { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); align-self: start; max-height: calc(100vh - 24px); overflow-y: auto; padding-right: 4px; }
+@media (max-width: 900px) { aside.filters { position: static; max-height: none; } }
+details.fwrap > summary { display: none; }
+@media (max-width: 900px) {
+  details.fwrap > summary { display: flex; justify-content: space-between; cursor: pointer; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); font-weight: 600; list-style: none; }
+  details.fwrap[open] > summary { margin-bottom: 12px; }
+}
+.fgroup { padding-block: 12px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+.fgroup:first-child { padding-top: 0; }
+.flabel { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); display: flex; justify-content: space-between; }
+.flabel button { background: none; border: 0; color: var(--accent); font: inherit; text-transform: none; letter-spacing: 0; cursor: pointer; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 10px; font-size: 13px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.chip .n { font: 500 11px var(--f-mono); color: var(--ink-3); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip[aria-pressed="true"] .n { color: inherit; opacity: .7; }
+.chip.zero { opacity: .45; }
+input[type="search"], select, textarea { width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+input[type="range"] { width: 100%; accent-color: var(--ink); }
+.toggle { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.toggle input { accent-color: var(--ink); }
+.reset { margin-top: 14px; width: 100%; padding: 8px; border: 1px dashed var(--line); background: none; border-radius: 8px; cursor: pointer; color: var(--ink-2); }
+
+/* results */
+.rhead { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.rhead .count { font: 600 15px var(--f-display); }
+.rhead .count small { font: 400 13px var(--f-body); color: var(--ink-3); }
+.rhead select, #ssort { width: auto; }
+.list { display: grid; gap: 10px; }
+.job { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 16px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; text-align: left; width: 100%; transition: border-color .15s, box-shadow .15s; }
+.job:hover { border-color: var(--ink-3); box-shadow: var(--shadow); }
+.job.dim { opacity: .55; }
+@media (max-width: 600px) { .job { grid-template-columns: 44px minmax(0, 1fr); } .job .side { grid-column: 1 / -1; justify-self: start; flex-direction: row; } }
+.ring { width: 52px; height: 52px; position: relative; }
+@media (max-width: 600px) { .ring { width: 44px; height: 44px; } }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .trk { stroke: var(--surface-2); }
+.ring b { position: absolute; inset: 0; display: grid; place-items: center; font: 700 16px var(--f-display); font-variant-numeric: tabular-nums; }
+.tier-strong { --t: var(--strong); --tb: var(--strong-bg); }
+.tier-good { --t: var(--good); --tb: var(--good-bg); }
+.tier-stretch { --t: var(--stretch); --tb: var(--stretch-bg); }
+.ring .val { stroke: var(--t); }
+.jt { font: 700 17px/1.25 var(--f-display); margin: 0; text-wrap: balance; }
+.jc { color: var(--ink-2); font-size: 14px; margin-top: 2px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.jc strong { color: var(--ink); font-weight: 600; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 13px; color: var(--ink-2); align-items: center; }
+.tag { font: 500 11px/1 var(--f-mono); padding: 4px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); text-transform: lowercase; }
+.tag.unconf { background: var(--good-bg); color: var(--good); text-transform: none; }
+.tag.new { background: var(--accent-soft); color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+.side { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.pill { font: 600 11px/1 var(--f-body); padding: 5px 9px; border-radius: 999px; background: var(--tb, var(--surface-2)); color: var(--t, var(--ink-2)); white-space: nowrap; }
+.li-link { font: 700 11px/1 var(--f-body); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 6px; text-decoration: none; }
+.li-link:hover { border-color: var(--accent); }
+.status { font: 600 11px/1 var(--f-body); padding: 5px 9px; border-radius: 999px; border: 1px solid currentColor; color: var(--accent); white-space: nowrap; }
+.status[data-s="pass"], .status[data-s="closed"] { color: var(--ink-3); }
+
+/* the office week: Mon–Fri, filled = days in office */
+.week { display: inline-flex; gap: 3px; align-items: center; }
+.week i { width: 9px; height: 9px; border-radius: 2px; border: 1.5px solid var(--ink-3); display: block; }
+.week i.on { background: var(--ink); border-color: var(--ink); }
+.week.unk i { border-style: dashed; }
+.week span { margin-left: 6px; }
+.pips { display: inline-flex; gap: 2px; }
+.pips i { width: 7px; height: 12px; border-radius: 7px 0; background: var(--surface-2); display: block; }
+.pips i.on { background: var(--leaf); }
+
+.empty { padding: 40px 20px; text-align: center; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r); }
+
+/* drawer */
+.scrim { position: fixed; inset: 0; background: rgba(10,20,17,.35); z-index: 20; }
+.sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(620px, 100%); background: var(--bg); z-index: 21; overflow-y: auto; box-shadow: -10px 0 40px rgba(0,0,0,.18); padding: calc(env(safe-area-inset-top, 0px) + 20px) 24px calc(env(safe-area-inset-bottom, 0px) + 40px); }
+@media (max-width: 600px) { .sheet { padding-inline: 16px; } }
+.sheet .close { position: sticky; top: 0; float: right; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 18px; line-height: 1; }
+.sheet h2 { font: 800 26px/1.15 var(--f-display); margin: 6px 0 4px; letter-spacing: -.01em; text-wrap: balance; padding-right: 44px; }
+.sheet h3 { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin: 26px 0 10px; }
+.sheet p { margin: 0 0 8px; max-width: 65ch; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; color: var(--ink); font-weight: 500; font-size: 14px; cursor: pointer; }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin-top: 16px; }
+.facts dt { font: 500 10.5px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); margin-bottom: 5px; }
+.facts dd { margin: 0; font-size: 14px; }
+.score { display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: 90px minmax(0, 1fr) 54px; gap: 10px; align-items: center; font-size: 13px; }
+.bar .tr { height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.bar .fl { height: 100%; background: var(--ink); border-radius: 4px; }
+.bar .v { font: 500 12px var(--f-mono); text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.people { display: grid; gap: 8px; }
+.person { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.person b { font-weight: 600; }
+.person small { display: block; color: var(--ink-2); font-size: 13px; }
+.person .role { display: block; margin-bottom: 2px; font: 500 10.5px var(--f-mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; }
+.muted { color: var(--ink-3); font-size: 13px; }
+.track { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; }
+.track .sts { display: flex; flex-wrap: wrap; gap: 6px; }
+.saved { font: 500 11px var(--f-mono); color: var(--ink-3); min-height: 1em; }
+
+/* companies + sources */
+.cfilters { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding-block: 18px 14px; }
+.cfilters input[type="search"] { max-width: 280px; }
+.cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 12px; padding-bottom: 60px; }
+.co { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 10px; align-content: start; }
+.co h4 { margin: 0; font: 700 17px/1.2 var(--f-display); display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.co p { margin: 0; color: var(--ink-2); font-size: 14px; }
+.co .hiring { font: 600 12px var(--f-body); color: var(--strong); background: var(--strong-bg); padding: 4px 8px; border-radius: 999px; border: 0; cursor: pointer; white-space: nowrap; }
+.tbl-wrap { overflow-x: auto; padding-bottom: 60px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+th { font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); background: var(--surface-2); }
+td.notes { color: var(--ink-2); max-width: 46ch; }
+.foot { color: var(--ink-3); font-size: 12px; padding-block: 0 40px; }
+.howgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 10px; padding-top: 16px; }
+.howcard { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; cursor: pointer; display: grid; gap: 6px; align-content: start; }
+.howcard[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.howcard .hc-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.howcard p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.howpill { font: 600 11px/1 var(--f-body); padding: 5px 9px; border-radius: 999px; white-space: nowrap; display: inline-block; }
+.how-auto { background: var(--strong-bg); color: var(--strong); }
+.how-sweep { background: var(--accent-soft); color: var(--accent); }
+.how-feed { background: var(--surface-2); color: var(--ink-2); }
+.how-alert { background: var(--good-bg); color: var(--good); }
+.how-join { background: var(--stretch-bg); color: var(--stretch); }
+.how-retired { background: var(--surface-2); color: var(--ink-3); }
+td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.score-page { display: grid; gap: 28px; padding-block: 22px 60px; max-width: 980px; }
+.score-page h2 { font: 800 24px/1.2 var(--f-display); margin: 0 0 6px; }
+.score-page h3 { font: 700 18px/1.25 var(--f-display); margin: 0 0 8px; }
+.score-page p { margin: 0 0 8px; color: var(--ink-2); max-width: 70ch; }
+.formula { display: grid; grid-template-columns: 40fr 30fr 30fr; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); }
+.formula div { padding: 14px; display: grid; gap: 4px; }
+.formula b { font: 700 22px var(--f-display); font-variant-numeric: tabular-nums; }
+.formula span { font-size: 13px; }
+.f-purpose { background: var(--strong-bg); color: var(--strong); }
+.f-work { background: var(--accent-soft); color: var(--accent); }
+.f-level { background: var(--good-bg); color: var(--good); }
+@media (max-width: 600px) { .formula { grid-template-columns: 1fr; } }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.rulecard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 10px; align-content: start; }
+.rulecard table { min-width: 0; border: 0; }
+.rulecard td, .rulecard th { padding: 7px 6px; font-size: 13px; }
+.pts { font: 600 13px var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.tierrow { display: flex; flex-wrap: wrap; gap: 10px; }
+.tierbox { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 16px; display: grid; gap: 4px; min-width: 150px; }
+.examples { display: grid; gap: 10px; }
+.example { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; gap: 8px; cursor: pointer; text-align: left; width: 100%; }
+.example .ex-parts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
+.example .ex-parts b { color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-row">
+      <div>
+        <div class="kicker">Product design roles · purpose-led · London &amp; ≤2h</div>
+        <h1>Design with Purpose<span class="sprout">.</span></h1>
+        <p class="brief">Product design roles at organisations making real change: energy transition, climate, nature, charities and tech for good. Ranked for Robyn by purpose, office days and level.</p>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <nav class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="roles" aria-selected="true">Roles<span class="count" id="c-roles"></span></button>
+      <button role="tab" data-tab="companies" aria-selected="false">Companies<span class="count" id="c-cos"></span></button>
+      <button role="tab" data-tab="sources" aria-selected="false">Sources<span class="count" id="c-src"></span></button>
+      <button role="tab" data-tab="scoring" aria-selected="false">How scoring works</button>
+    </nav>
+  </header>
+
+  <section id="v-roles" class="layout">
+    <aside class="filters">
+      <details class="fwrap" id="fwrap" open>
+        <summary>Filters <span id="factive" class="muted"></span></summary>
+        <div class="fgroup"><input type="search" id="q" placeholder="Search title, company, keyword…" aria-label="Search roles"></div>
+        <div class="fgroup"><div class="flabel">Match</div><div class="chips" data-facet="tier"></div></div>
+        <div class="fgroup"><div class="flabel">Work model</div><div class="chips" data-facet="work_model"></div></div>
+        <div class="fgroup">
+          <div class="flabel">Max office days / week <span id="dval"></span></div>
+          <input type="range" id="days" min="0" max="5" step="1" value="5" aria-label="Maximum office days per week">
+          <label class="toggle"><input type="checkbox" id="unkdays" checked> Include roles with unstated days</label>
+        </div>
+        <div class="fgroup"><div class="flabel">Mission / sector</div><div class="chips" data-facet="sectors"></div></div>
+        <div class="fgroup"><div class="flabel">Purpose score <span id="pval"></span></div>
+          <input type="range" id="purpose" min="1" max="5" step="1" value="1" aria-label="Minimum purpose score"></div>
+        <div class="fgroup"><div class="flabel">Level</div><div class="chips" data-facet="seniority"></div></div>
+        <div class="fgroup"><div class="flabel">Region</div><div class="chips" data-facet="region"></div></div>
+        <div class="fgroup"><div class="flabel">Found via</div><div class="chips" data-facet="source_kind"></div>
+          <label class="toggle"><input type="checkbox" id="unconf" checked> Include roles we couldn't confirm are open</label></div>
+        <div class="fgroup"><div class="flabel">Robyn's status</div><div class="chips" data-facet="status"></div>
+          <label class="toggle"><input type="checkbox" id="hidepass" checked> Hide “Not for me”</label></div>
+        <button class="reset" id="reset">Clear all filters</button>
+      </details>
+    </aside>
+    <div>
+      <div class="rhead">
+        <div class="count" id="rcount"></div>
+        <select id="sort" aria-label="Sort roles">
+          <option value="match">Best match</option>
+          <option value="new">Newest first</option>
+          <option value="purpose">Most purpose-driven</option>
+          <option value="company">Company A–Z</option>
+        </select>
+      </div>
+      <div class="list" id="list"><div class="empty">Loading roles…</div></div>
+    </div>
+  </section>
+
+  <section id="v-companies" hidden>
+    <div class="cfilters">
+      <input type="search" id="cq" placeholder="Search companies…" aria-label="Search companies">
+      <div class="chips" id="csec"></div>
+      <label class="toggle"><input type="checkbox" id="chiring"> Hiring designers now</label>
+    </div>
+    <div class="cgrid" id="cgrid"></div>
+  </section>
+
+  <section id="v-sources" hidden>
+    <p class="brief" style="padding-top:18px">Every place we look for roles. Each source is labelled with what kind of board it is and how its roles reach this page. Click a card to filter.</p>
+    <div class="howgrid" id="howgrid"></div>
+    <div class="cfilters">
+      <input type="search" id="sq" placeholder="Search sources…" aria-label="Search sources">
+      <div class="chips" id="stype"></div>
+      <label class="toggle"><input type="checkbox" id="shideretired" checked> Hide “Not useful”</label>
+      <select id="ssort" aria-label="Sort sources"><option value="roles">Most roles on board</option><option value="fit">Best fit for Robyn</option><option value="name">A–Z</option></select>
+    </div>
+    <div class="tbl-wrap"><table id="stbl"></table></div>
+  </section>
+
+  <section id="v-scoring" hidden>
+    <div class="score-page" id="scorepage"></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" hidden aria-modal="true" role="dialog" aria-labelledby="sh-title"></aside>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "";
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("gwb:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem("gwb:" + k, JSON.stringify(v)); } catch {} },
+  };
+
+  const LABELS = {
+    tier: { strong: "Strong", good: "Good", stretch: "Stretch" },
+    work_model: { remote: "Remote", hybrid: "Hybrid", office: "Office", unknown: "Not stated" },
+    seniority: { junior: "Junior", mid: "Mid", senior: "Senior", lead: "Lead / Head", unknown: "Unclear" },
+    source_kind: { api: "Company careers site", aggregator: "Job boards", linkedin: "LinkedIn" },
+    status: { none: "Not reviewed", shortlist: "Shortlisted", applied: "Applied", interview: "Interviewing", offer: "Offer", closed: "Closed / rejected", pass: "Not for me" },
+    sectors: {
+      "energy-transition": "Energy transition", climate: "Climate", "nature-rewilding": "Nature & rewilding", "circular-economy": "Circular economy",
+      "sustainable-food": "Sustainable food", charity: "Charity", health: "Health", education: "Education", "civic-tech": "Civic & public good",
+      "ethical-finance": "Ethical finance", "social-impact": "Social impact", "purpose-ecommerce": "Purpose-led commerce", other: "Other",
+    },
+  };
+  const ORDER = {
+    tier: ["strong", "good", "stretch"], work_model: ["remote", "hybrid", "office", "unknown"],
+    seniority: ["junior", "mid", "senior", "lead", "unknown"], source_kind: ["api", "aggregator", "linkedin"],
+    status: ["none", "shortlist", "applied", "interview", "offer", "closed", "pass"],
+    region: ["Remote UK", "London", "South East", "South West", "East / ≤2h", "Midlands / ≤2h", "UK (unspecified)", "North / Far", "Non-UK", "Unknown"],
+  };
+  const ROLE_LABEL = { "head-of-design": "Head of Design", "design-lead": "Design lead", "hiring-manager": "Hiring manager", "product-designer": "Product designer", recruiter: "Recruiter", "head-of-product": "Head of Product" };
+  const ROLE_ORDER = ["hiring-manager", "head-of-design", "design-lead", "head-of-product", "product-designer", "recruiter"];
+
+  let DATA = { jobs: [], companies: [], sources: [] };
+  let COS = {};
+  let TRACK = {};               // jobId -> {status, note, updated}
+  let db = null, canWrite = true;
+
+  const defaults = () => ({ q: "", tier: [], work_model: [], sectors: [], seniority: [], region: [], source_kind: [], status: [], days: 5, unkdays: true, purpose: 1, hidepass: true, sort: "match", unconf: true });
+  let F = Object.assign(defaults(), store.get("filters", {}));
+
+  const statusOf = j => (TRACK[j.id] && TRACK[j.id].status) || "none";
+  const val = (j, facet) => facet === "status" ? statusOf(j) : j[facet];
+
+  function matches(j, skip) {
+    if (F.q) {
+      const hay = [j.title, j.company_name, j.role_summary, j.location, (COS[j.company_id] || {}).mission].join(" ").toLowerCase();
+      if (!F.q.toLowerCase().split(/\s+/).every(w => hay.includes(w))) return false;
+    }
+    for (const f of ["tier", "work_model", "seniority", "region", "source_kind", "status"]) {
+      if (f !== skip && F[f].length && !F[f].includes(val(j, f))) return false;
+    }
+    if (skip !== "sectors" && F.sectors.length && !(j.sectors || []).some(s => F.sectors.includes(s))) return false;
+    if (j.work_model !== "remote") {
+      if (j.office_days == null) { if (!F.unkdays) return false; }
+      else if (j.office_days > F.days) return false;
+    }
+    if ((j.purpose_score || 0) < F.purpose) return false;
+    if (!F.unconf && j.unconfirmed) return false;
+    if (F.hidepass && skip !== "status" && statusOf(j) === "pass" && !F.status.includes("pass")) return false;
+    return true;
+  }
+
+  function renderFacets() {
+    document.querySelectorAll("[data-facet]").forEach(box => {
+      const facet = box.dataset.facet;
+      const pool = DATA.jobs.filter(j => matches(j, facet));
+      const counts = {};
+      pool.forEach(j => {
+        const v = facet === "sectors" ? (j.sectors || []) : [val(j, facet)];
+        v.forEach(x => counts[x] = (counts[x] || 0) + 1);
+      });
+      let keys = ORDER[facet] || Object.keys(LABELS[facet] || {});
+      if (facet === "sectors") keys = keys.filter(k => DATA.jobs.some(j => (j.sectors || []).includes(k)));
+      else keys = keys.filter(k => DATA.jobs.some(j => val(j, facet) === k) || facet === "status");
+      box.innerHTML = keys.map(k => {
+        const on = F[facet].includes(k), n = counts[k] || 0;
+        return `<button class="chip ${n ? "" : "zero"}" aria-pressed="${on}" data-k="${esc(k)}">${esc((LABELS[facet] || {})[k] || k)}<span class="n">${n}</span></button>`;
+      }).join("");
+    });
+  }
+
+  const ring = (m, tier) => {
+    const c = 2 * Math.PI * 22, off = c * (1 - Math.min(m, 100) / 100);
+    return `<div class="ring tier-${tier}"><svg viewBox="0 0 52 52"><circle class="trk" cx="26" cy="26" r="22" fill="none" stroke-width="5"/><circle class="val" cx="26" cy="26" r="22" fill="none" stroke-width="5" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}"/></svg><b>${m}</b></div>`;
+  };
+  function week(j) {
+    if (j.work_model === "remote") return `<span class="week" title="Fully remote"><i></i><i></i><i></i><i></i><i></i><span>Remote</span></span>`;
+    const d = j.office_days;
+    if (d == null) return `<span class="week unk" title="Office days not stated"><i></i><i></i><i></i><i></i><i></i><span>${j.work_model === "hybrid" ? "Hybrid · days ?" : j.work_model === "office" ? "Office" : "Days not stated"}</span></span>`;
+    return `<span class="week" title="${d} day(s) in office">${[0,1,2,3,4].map(i => `<i class="${i < d ? "on" : ""}"></i>`).join("")}<span>${d} day${d === 1 ? "" : "s"} in office</span></span>`;
+  }
+  const pips = n => `<span class="pips" title="Purpose ${n || "?"}/5">${[1,2,3,4,5].map(i => `<i class="${i <= (n || 0) ? "on" : ""}"></i>`).join("")}</span>`;
+  let BASELINE = "";  // the first refresh's date: everything seen then is the starting set, not "new"
+  const isNew = j => j.first_seen && j.first_seen > BASELINE && (Date.now() - new Date(j.first_seen).getTime()) < 7 * 864e5;
+  const fmtDate = d => { if (!d) return ""; const t = new Date(d); return isNaN(t) ? d : t.toLocaleDateString("en-GB", { day: "numeric", month: "short" }); };
+
+  function renderList() {
+    let jobs = DATA.jobs.filter(j => matches(j));
+    const sorters = {
+      match: (a, b) => b.match - a.match,
+      new: (a, b) => String(b.posted || b.first_seen || "").localeCompare(String(a.posted || a.first_seen || "")),
+      purpose: (a, b) => (b.purpose_score || 0) - (a.purpose_score || 0) || b.match - a.match,
+      company: (a, b) => a.company_name.localeCompare(b.company_name),
+    };
+    jobs.sort(sorters[F.sort] || sorters.match);
+    const strong = jobs.filter(j => j.tier === "strong").length;
+    $("#rcount").innerHTML = `${jobs.length} role${jobs.length === 1 ? "" : "s"} <small>· ${strong} strong match${strong === 1 ? "" : "es"} · of ${DATA.jobs.length}</small>`;
+    $("#list").innerHTML = jobs.length ? jobs.map(j => {
+      const st = statusOf(j);
+      return `<div class="job ${st === "pass" ? "dim" : ""}" data-id="${esc(j.id)}" role="button" tabindex="0" aria-label="${esc(j.title)} at ${esc(j.company_name)}">
+        ${ring(j.match, j.tier)}
+        <div style="min-width:0">
+          <p class="jt">${esc(j.title)}</p>
+          <div class="jc"><strong>${esc(j.company_name)}</strong>${pips(j.purpose_score)}<span>${esc(j.location || j.region)}</span></div>
+          <div class="meta">${week(j)}<span>${esc(LABELS.seniority[j.seniority] || j.seniority)}${j.years_experience ? ` · ${esc(j.years_experience)} yrs` : ""}</span>${j.salary ? `<span>${esc(j.salary)}</span>` : ""}
+            ${(j.sectors || []).slice(0, 3).map(s => `<span class="tag">${esc(LABELS.sectors[s] || s)}</span>`).join("")}
+            ${isNew(j) ? `<span class="tag new">New</span>` : ""}
+            ${j.unconfirmed ? `<span class="tag unconf" title="Seen on a job board, but the live posting couldn't be opened (bot check or login). Check it's still open before applying.">Unconfirmed</span>` : ""}
+            ${(() => { const n = (j.people || []).length + ((COS[j.company_id] || {}).people || []).length; return n ? `<span class="tag">${n} contact${n > 1 ? "s" : ""}</span>` : ""; })()}</div>
+        </div>
+        <div class="side"><span class="pill tier-${j.tier}">${LABELS.tier[j.tier]}</span>${liCompany(COS[j.company_id], j) ? `<a class="li-link" href="${esc(liCompany(COS[j.company_id], j))}" target="_blank" rel="noopener" title="${esc(j.company_name)} on LinkedIn" aria-label="${esc(j.company_name)} on LinkedIn">in</a>` : ""}${st !== "none" ? `<span class="status" data-s="${st}">${esc(LABELS.status[st])}</span>` : ""}${j.posted ? `<span class="muted">${fmtDate(j.posted)}</span>` : ""}</div>
+      </div>`;
+    }).join("") : `<div class="empty">No roles match these filters. Try widening office days or clearing a filter.</div>`;
+    const active = ["tier", "work_model", "sectors", "seniority", "region", "source_kind", "status"].reduce((n, k) => n + F[k].length, 0) + (F.q ? 1 : 0) + (F.days < 5 ? 1 : 0) + (F.purpose > 1 ? 1 : 0);
+    $("#factive").textContent = active ? `${active} active` : "";
+  }
+
+  function render() {
+    $("#dval").textContent = F.days === 5 ? "any" : `≤ ${F.days}`;
+    $("#pval").textContent = F.purpose === 1 ? "any" : `≥ ${F.purpose}`;
+    renderFacets(); renderList(); store.set("filters", F);
+  }
+
+  /* ---------- detail sheet ---------- */
+  const liSearch = (q) => `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(q)}`;
+  const liCompany = (c, j) => { const u = safeUrl((c && c.linkedin) || (j && j.company_linkedin)); return u ? u.replace(/\/+$/, "") : ""; };
+  // A company's People tab lists current employees only, so it beats a general people search.
+  const liPeople = (coUrl, kw) => `${coUrl}/people/?keywords=${encodeURIComponent(kw)}`;
+  function peopleBlock(list, coName, coUrl) {
+    const seen = new Set();
+    const ppl = list.filter(p => { const k = (p.linkedin || p.name || "").toLowerCase(); if (!k || seen.has(k)) return false; seen.add(k); return true; })
+      .sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role));
+    const rows = ppl.map(p => `<div class="person"><div style="min-width:0"><span class="role">${esc(ROLE_LABEL[p.role] || p.role || "")}${p.verified === false ? " · unverified" : ""}</span><b>${esc(p.name)}</b><small>${esc(p.title || "")}</small></div>
+      ${safeUrl(p.linkedin) ? `<a class="btn" href="${esc(p.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a>` : `<a class="btn" href="${liSearch(p.name + " " + coName)}" target="_blank" rel="noopener">Find ↗</a>`}</div>`).join("");
+    const finds = coUrl
+      ? `<p class="muted" style="margin:10px 0 6px">Current staff at ${esc(coName)} on LinkedIn:</p><div class="links">
+      <a class="btn" href="${liPeople(coUrl, "design")}" target="_blank" rel="noopener">Designers ↗</a>
+      <a class="btn" href="${liPeople(coUrl, "product")}" target="_blank" rel="noopener">Product team ↗</a>
+      <a class="btn" href="${liPeople(coUrl, "talent")}" target="_blank" rel="noopener">Recruiters ↗</a></div>`
+      : "";
+    return (rows ? `<div class="people">${rows}</div>` : `<p class="muted">No named people found yet.</p>`) + finds;
+  }
+
+  function openJob(id) {
+    const j = DATA.jobs.find(x => x.id === id); if (!j) return;
+    const c = COS[j.company_id] || {};
+    const t = TRACK[j.id] || {};
+    const sp = j.score_parts || {};
+    const links = [
+      safeUrl(j.apply_url) && `<a class="btn primary" href="${esc(j.apply_url)}" target="_blank" rel="noopener">View &amp; apply ↗</a>`,
+      safeUrl(c.careers_url) && `<a class="btn" href="${esc(c.careers_url)}" target="_blank" rel="noopener">Careers page ↗</a>`,
+      safeUrl(c.website) && `<a class="btn" href="${esc(c.website)}" target="_blank" rel="noopener">Website ↗</a>`,
+      liCompany(c, j) && `<a class="btn" href="${esc(liCompany(c, j))}" target="_blank" rel="noopener">LinkedIn company page ↗</a>`,
+      ...(j.sources || []).filter(s => safeUrl(s.url) && s.url !== j.apply_url).map(s => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">Seen on ${esc(s.name)} ↗</a>`),
+    ].filter(Boolean).join("");
+    $("#sheet").innerHTML = `<button class="close" id="sh-close" aria-label="Close">×</button>
+      <div class="kicker">${esc(j.company_name)}</div>
+      ${j.unconfirmed ? `<p class="muted" style="margin:0">Unconfirmed: we saw this on a job board but couldn't open the live posting (bot check or login wall). Check it's still open before applying.</p>` : ""}
+      ${j.client_unnamed ? `<p class="muted" style="margin:0">Posted by a recruiter who doesn't name the client, so there's no company page to link. Ask the recruiter who it is.</p>` : ""}
+      <h2 id="sh-title">${esc(j.title)}</h2>
+      <div class="meta">${week(j)}<span class="pill tier-${j.tier}">${LABELS.tier[j.tier]} match · ${j.match}</span>${isNew(j) ? `<span class="tag new">New</span>` : ""}</div>
+      <div class="links" style="margin-top:16px">${links}</div>
+      <dl class="facts">
+        <div><dt>Location</dt><dd>${esc(j.location || "—")}</dd></div>
+        <div><dt>Region</dt><dd>${esc(j.region)}</dd></div>
+        <div><dt>Level</dt><dd>${esc(LABELS.seniority[j.seniority])}${j.years_experience ? ` · ${esc(j.years_experience)} yrs` : ""}</dd></div>
+        <div><dt>Salary</dt><dd>${esc(j.salary || "Not stated")}</dd></div>
+        <div><dt>Posted</dt><dd>${esc(fmtDate(j.posted) || "—")}</dd></div>
+        <div><dt>Closes</dt><dd>${esc(fmtDate(j.closes) || "—")}</dd></div>
+      </dl>
+      <h3>Robyn's tracker</h3>
+      <div class="track">
+        <div class="sts" id="sts">${ORDER.status.map(s => `<button class="chip" aria-pressed="${(t.status || "none") === s}" data-s="${s}" ${canWrite ? "" : "disabled"}>${LABELS.status[s]}</button>`).join("")}</div>
+        <textarea id="note" rows="3" placeholder="Notes: who to contact, deadline, how it went…" ${canWrite ? "" : "disabled"}>${esc(t.note || "")}</textarea>
+        <div class="saved" id="saved">${t.updated ? "Saved " + new Date(t.updated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : ""}</div>
+      </div>
+      <h3>The role</h3><p>${esc(j.role_summary || "No summary captured. Open the posting for details.")}</p>
+      <h3>The company</h3>
+      <p>${esc(c.mission || "")}</p>
+      <div class="meta">${pips(j.purpose_score)}<span>Purpose ${j.purpose_score || "?"}/5</span>${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}${c.size ? `<span class="tag">${esc(c.size)} people</span>` : ""}${c.hq ? `<span class="tag">${esc(c.hq)}</span>` : ""}</div>
+      ${c.purpose_rationale ? `<p class="muted" style="margin-top:8px">${esc(c.purpose_rationale)}</p>` : ""}
+      ${c.design_team_notes ? `<p class="muted">${esc(c.design_team_notes)}</p>` : ""}
+      <h3>People to know</h3>${peopleBlock([...(j.people || []), ...(c.people || [])], j.company_name, liCompany(c, j))}
+      <h3>Why this score</h3>
+      <div class="score">
+        ${[["Purpose", sp.purpose, 40], ["Work pattern", sp.location, 30], ["Level fit", sp.seniority, 30]].map(([l, v, m]) => `<div class="bar"><span>${l}</span><div class="tr"><div class="fl" style="width:${(v || 0) / m * 100}%"></div></div><span class="v">${v ?? 0}/${m}</span></div>`).join("")}
+      </div>
+      <p class="muted" style="margin-top:14px">Checked ${esc(j.checked || "")} · first seen ${esc(j.first_seen || "")}</p>`;
+    $("#sheet").hidden = $("#scrim").hidden = false;
+    $("#sh-close").focus();
+    $("#sh-close").onclick = closeSheet;
+    $("#sts").onclick = e => { const b = e.target.closest("[data-s]"); if (b) saveTrack(j.id, { status: b.dataset.s }); };
+    let tmr; $("#note").oninput = e => { clearTimeout(tmr); $("#saved").textContent = "Typing…"; tmr = setTimeout(() => saveTrack(j.id, { note: e.target.value }), 900); };
+  }
+  function closeSheet() { $("#sheet").hidden = $("#scrim").hidden = true; }
+
+  let writing = Promise.resolve();
+  function saveTrack(id, patch) {
+    const next = Object.assign({ status: "none", note: "" }, TRACK[id], patch, { updated: new Date().toISOString() });
+    TRACK[id] = next;
+    document.querySelectorAll("#sts .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === next.status));
+    render();
+    if (!db) {  // e.g. on GitHub Pages: keep the tracker in this browser
+      try { localStorage.setItem("gwb:tracker", JSON.stringify(TRACK)); $("#saved").textContent = "Saved in this browser"; }
+      catch { $("#saved").textContent = "This browser isn't allowing saves, so the change will be lost on reload."; }
+      return;
+    }
+    $("#saved").textContent = "Saving…";
+    writing = writing.then(() => db.collection("tracker").doc(docId(id)).set({ jobId: id, status: next.status, note: next.note, updated: next.updated }))
+      .then(() => { const el = $("#saved"); if (el) el.textContent = "Saved"; })
+      .catch(err => {
+        const el = $("#saved");
+        if (err && err.code === "invalid_argument") { canWrite = false; if (el) el.textContent = "You have view-only access, so changes aren't saved."; }
+        else if (el) el.textContent = "Couldn't save just now. Try again in a moment.";
+      });
+  }
+  const docId = id => id.toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 140);
+
+  /* ---------- companies ---------- */
+  let CF = { q: "", sec: [], hiring: false };
+  function renderCompanies() {
+    const hiring = {}; DATA.jobs.forEach(j => hiring[j.company_id] = (hiring[j.company_id] || 0) + 1);
+    const secs = [...new Set(DATA.companies.flatMap(c => c.sectors || []))];
+    $("#csec").innerHTML = secs.map(s => `<button class="chip" aria-pressed="${CF.sec.includes(s)}" data-k="${esc(s)}">${esc(LABELS.sectors[s] || s)}</button>`).join("");
+    const list = DATA.companies.filter(c => {
+      if (CF.hiring && !hiring[c.id]) return false;
+      if (CF.sec.length && !(c.sectors || []).some(s => CF.sec.includes(s))) return false;
+      if (CF.q && ![c.name, c.mission, c.hq].join(" ").toLowerCase().includes(CF.q.toLowerCase())) return false;
+      return true;
+    }).sort((a, b) => (hiring[b.id] || 0) - (hiring[a.id] || 0) || (b.purpose_score || 0) - (a.purpose_score || 0) || a.name.localeCompare(b.name));
+    $("#cgrid").innerHTML = list.length ? list.map(c => `<article class="co">
+      <h4><span>${esc(c.name)}</span>${hiring[c.id] ? `<button class="hiring" data-co="${esc(c.id)}">${hiring[c.id]} open role${hiring[c.id] > 1 ? "s" : ""} →</button>` : `<span class="muted">no design roles open</span>`}</h4>
+      <div class="meta" style="margin-top:0">${pips(c.purpose_score)}${(c.sectors || []).slice(0, 3).map(s => `<span class="tag">${esc(LABELS.sectors[s] || s)}</span>`).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}</div>
+      <p>${esc(c.mission || "")}</p>
+      <p class="muted">${esc([c.hq, c.uk_presence, c.size && c.size + " people"].filter(Boolean).join(" · "))}</p>
+      ${(c.people || []).length ? `<div class="people">${c.people.slice(0, 4).map(p => `<div class="person"><div style="min-width:0"><span class="role">${esc(ROLE_LABEL[p.role] || p.role || "")}</span><b>${esc(p.name)}</b><small>${esc(p.title || "")}</small></div>${safeUrl(p.linkedin) ? `<a class="btn" href="${esc(p.linkedin)}" target="_blank" rel="noopener">in ↗</a>` : ""}</div>`).join("")}</div>` : ""}
+      <div class="links">${safeUrl(c.careers_url) ? `<a class="btn" href="${esc(c.careers_url)}" target="_blank" rel="noopener">Careers ↗</a>` : ""}${liCompany(c) ? `<a class="btn" href="${esc(liCompany(c))}" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="${liPeople(liCompany(c), "design")}" target="_blank" rel="noopener">Designers there ↗</a>` : ""}</div>
+    </article>`).join("") : `<div class="empty">No companies match.</div>`;
+  }
+
+  /* ---------- sources ---------- */
+  const HOW_ORDER = ["auto", "sweep", "feed", "alert", "join", "retired"];
+  let SF = { q: "", how: [], type: [], hideRetired: true, sort: "roles" };
+  function srcMatch(x, skip) {
+    if (SF.q && ![x.name, x.notes, x.type_label].join(" ").toLowerCase().includes(SF.q.toLowerCase())) return false;
+    if (skip !== "how" && SF.how.length && !SF.how.includes(x.how)) return false;
+    if (skip !== "type" && SF.type.length && !SF.type.includes(x.type_label)) return false;
+    if (skip !== "how" && SF.hideRetired && x.how === "retired" && !SF.how.includes("retired")) return false;
+    return true;
+  }
+  function renderSources() {
+    const H = DATA.source_how || {};
+    const howPool = DATA.sources.filter(x => srcMatch(x, "how"));
+    $("#howgrid").innerHTML = HOW_ORDER.filter(k => H[k]).map(k => {
+      const n = howPool.filter(x => x.how === k).length, roles = howPool.filter(x => x.how === k).reduce((a, x) => a + (x.roles_on_board || 0), 0);
+      return `<button class="howcard" aria-pressed="${SF.how.includes(k)}" data-how="${k}"><div class="hc-top"><span class="howpill how-${k}">${esc(H[k].label)}</span><span class="muted">${n} source${n === 1 ? "" : "s"}${roles ? ` · ${roles} roles` : ""}</span></div><p>${esc(H[k].explain)}</p></button>`;
+    }).join("");
+    const typePool = DATA.sources.filter(x => srcMatch(x, "type"));
+    const types = [...new Set(DATA.sources.map(x => x.type_label))].sort();
+    $("#stype").innerHTML = types.map(t => { const n = typePool.filter(x => x.type_label === t).length; return `<button class="chip ${n ? "" : "zero"}" aria-pressed="${SF.type.includes(t)}" data-k="${esc(t)}">${esc(t)}<span class="n">${n}</span></button>`; }).join("");
+    const sorters = { roles: (a, b) => (b.roles_on_board || 0) - (a.roles_on_board || 0) || (b.relevance || 0) - (a.relevance || 0), fit: (a, b) => (b.relevance || 0) - (a.relevance || 0) || (b.roles_on_board || 0) - (a.roles_on_board || 0), name: (a, b) => a.name.localeCompare(b.name) };
+    const rows = DATA.sources.filter(x => srcMatch(x)).sort(sorters[SF.sort]);
+    $("#stbl").innerHTML = `<thead><tr><th>Source</th><th>Kind</th><th>How roles reach the board</th><th>Fit</th><th style="text-align:right">Roles on board</th><th>Notes</th><th></th></tr></thead><tbody>` +
+      (rows.length ? rows.map(x => `<tr><td><b>${safeUrl(x.url) ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>` : esc(x.name)}</b></td><td>${esc(x.type_label)}</td><td><span class="howpill how-${esc(x.how)}">${esc(x.how_label)}</span></td><td>${pips(x.relevance)}</td><td class="num">${x.roles_on_board || "–"}</td><td class="notes">${esc(x.notes || "")}</td><td>${safeUrl(x.search_url) ? `<a class="btn" href="${esc(x.search_url)}" target="_blank" rel="noopener">Search ↗</a>` : ""}</td></tr>`).join("")
+        : `<tr><td colspan="7" class="muted">No sources match these filters.</td></tr>`) + `</tbody>`;
+  }
+  $("#howgrid").onclick = e => { const b = e.target.closest("[data-how]"); if (!b) return; const k = b.dataset.how; SF.how = SF.how.includes(k) ? SF.how.filter(x => x !== k) : [...SF.how, k]; renderSources(); };
+  $("#stype").onclick = e => { const b = e.target.closest("[data-k]"); if (!b) return; const k = b.dataset.k; SF.type = SF.type.includes(k) ? SF.type.filter(x => x !== k) : [...SF.type, k]; renderSources(); };
+  $("#sq").oninput = e => { SF.q = e.target.value; renderSources(); };
+  $("#shideretired").onchange = e => { SF.hideRetired = e.target.checked; renderSources(); };
+  $("#ssort").onchange = e => { SF.sort = e.target.value; renderSources(); };
+
+  /* ---------- scoring explainer (rendered from the same rules build.py scores with) ---------- */
+  function renderScoring() {
+    const R = DATA.score_rules; if (!R) return;
+    const tierCount = k => DATA.jobs.filter(j => j.tier === k).length;
+    const tiers = R.tiers.map((t, i) => { const hi = i ? R.tiers[i - 1].min - 1 : 100; return `<div class="tierbox"><span class="pill tier-${t.key}" style="justify-self:start">${esc(t.label)}</span><b style="font:700 20px var(--f-display)">${t.min}–${hi}</b><span class="muted">${tierCount(t.key)} roles right now</span></div>`; }).join("");
+    const workLabel = Object.fromEntries(R.work.map(w => [w.key, w.label]));
+    const pick = [DATA.jobs.find(j => j.tier === "strong"), DATA.jobs.find(j => j.tier === "good" && j.score_parts.purpose >= 32), DATA.jobs.find(j => j.tier === "stretch" && j.score_parts.purpose >= 32)].filter(Boolean);
+    const regions = Object.entries(R.regions).filter(([k]) => R.in_area.includes(k)).map(([k, v]) => `<tr><td><b>${esc(k)}</b></td><td class="muted">${esc(v.slice(0, 14).join(", "))}${v.length > 14 ? "…" : ""}</td></tr>`).join("");
+    $("#scorepage").innerHTML = `
+      <div><h2>How a role gets its match score</h2>
+        <p>Every role gets a score out of 100, made of three parts. The weights reflect Robyn's brief: the mission matters most, then a work pattern she can live with, then a level she'll be hired at.</p></div>
+      <div class="formula"><div class="f-purpose"><b>40</b><span>Purpose: is the organisation making positive change?</span></div><div class="f-work"><b>30</b><span>Work pattern: remote, or 2 or fewer office days within ~2h of London</span></div><div class="f-level"><b>30</b><span>Level: does it fit up to ~3 years' experience?</span></div></div>
+      <div><h3>Match tiers</h3><div class="tierrow">${tiers}</div>
+        <p style="margin-top:10px">Nothing is hidden because of its score. Stretch roles stay on the board so you can decide for yourself; use the Match filter to focus.</p></div>
+      <div class="rules">
+        <div class="rulecard"><h3>Purpose · up to 40</h3>
+          <table><tbody>${R.purpose.map(r => `<tr><td>${pips(r.score)}</td><td>${esc(r.meaning)}</td><td class="pts">${r.points}</td></tr>`).join("")}</tbody></table>
+          <p class="muted">Where the score comes from: if the company is in our register, its researched score is used. Otherwise it's estimated from the source, such as Hard Problems' sector tag or a climate investor's portfolio.</p></div>
+        <div class="rulecard"><h3>Work pattern · up to 30</h3>
+          <table><tbody>${R.work.map(r => `<tr><td>${esc(r.label)}</td><td class="pts">${r.points}</td></tr>`).join("")}</tbody></table>
+          <p class="muted">Office days come from the posting text (“2 days a week in the office”). If a posting only says “hybrid”, it gets the middle score until someone checks.</p></div>
+        <div class="rulecard"><h3>Level · up to 30</h3>
+          <table><tbody>${R.level.map(r => `<tr><td>${esc(r.meaning)}</td><td class="pts">${r.points}</td></tr>`).join("")}</tbody></table>
+          <p class="muted"><b>Years asked for</b> can lower this:</p>
+          <table><tbody>${R.years_cap.map(r => `<tr><td>${esc(r.label)}</td></tr>`).join("")}</tbody></table></div>
+      </div>
+      <div><h3>Worked examples from today's board</h3><p>Click one to open the role.</p>
+        <div class="examples">${pick.map(j => `<button class="example" data-id="${esc(j.id)}"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap"><span><b>${esc(j.title)}</b> · ${esc(j.company_name)}</span><span class="pill tier-${j.tier}">${j.match} · ${esc(LABELS.tier[j.tier])}</span></div>
+          <div class="ex-parts"><span>Purpose <b>${j.score_parts.purpose}</b>/40 (purpose ${j.purpose_score}/5)</span><span>Work pattern <b>${j.score_parts.location}</b>/30 (${esc(workLabel[j.work_rule] || "")})</span><span>Level <b>${j.score_parts.seniority}</b>/30 (${esc(LABELS.seniority[j.seniority])}${j.years_experience ? `, asks ${esc(j.years_experience)} yrs` : ""})</span></div></button>`).join("")}</div></div>
+      <div class="rulecard"><h3>What counts as “within ~2h of London”</h3><div class="tbl-wrap" style="padding:0"><table style="min-width:0"><tbody>${regions}</tbody></table></div>
+        <p class="muted">Roles further away (the North, Scotland, Wales) score low unless they're fully remote. On-site roles abroad are left off the board.</p></div>
+      <div><h3>Not in the score (yet)</h3><p>Salary, company size, closing date and which kind of mission (climate, charity, health and so on) don't change the score. Use the filters for those. If any of them should count, the weights can be changed.</p></div>`;
+  }
+  $("#scorepage").onclick = e => { const b = e.target.closest("[data-id]"); if (b) openJob(b.dataset.id); };
+
+  /* ---------- wiring ---------- */
+  function setTab(t) {
+    ["roles", "companies", "sources", "scoring"].forEach(k => { $("#v-" + k).hidden = k !== t; $(`[data-tab="${k}"]`).setAttribute("aria-selected", k === t); });
+    store.set("tab", t);
+  }
+  $("#tabs").onclick = e => { const b = e.target.closest("[data-tab]"); if (b) setTab(b.dataset.tab); };
+  document.querySelectorAll("[data-facet]").forEach(box => box.onclick = e => {
+    const b = e.target.closest("[data-k]"); if (!b) return;
+    const f = box.dataset.facet, k = b.dataset.k;
+    F[f] = F[f].includes(k) ? F[f].filter(x => x !== k) : [...F[f], k]; render();
+  });
+  $("#q").oninput = e => { F.q = e.target.value; render(); };
+  $("#days").oninput = e => { F.days = +e.target.value; render(); };
+  $("#purpose").oninput = e => { F.purpose = +e.target.value; render(); };
+  $("#unkdays").onchange = e => { F.unkdays = e.target.checked; render(); };
+  $("#hidepass").onchange = e => { F.hidepass = e.target.checked; render(); };
+  $("#unconf").onchange = e => { F.unconf = e.target.checked; render(); };
+  $("#sort").onchange = e => { F.sort = e.target.value; render(); };
+  $("#reset").onclick = () => { F = defaults(); syncInputs(); render(); };
+  $("#list").onclick = e => { if (e.target.closest("a")) return; const b = e.target.closest("[data-id]"); if (b) openJob(b.dataset.id); };
+  $("#list").onkeydown = e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches(".job")) { e.preventDefault(); openJob(e.target.dataset.id); } };
+  $("#scrim").onclick = closeSheet;
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#sheet").hidden) closeSheet(); });
+  $("#cq").oninput = e => { CF.q = e.target.value; renderCompanies(); };
+  $("#chiring").onchange = e => { CF.hiring = e.target.checked; renderCompanies(); };
+  $("#csec").onclick = e => { const b = e.target.closest("[data-k]"); if (!b) return; const k = b.dataset.k; CF.sec = CF.sec.includes(k) ? CF.sec.filter(x => x !== k) : [...CF.sec, k]; renderCompanies(); };
+  $("#cgrid").onclick = e => { const b = e.target.closest("[data-co]"); if (!b) return; const c = COS[b.dataset.co]; F = defaults(); F.q = c ? c.name : ""; F.hidepass = false; syncInputs(); render(); setTab("roles"); window.scrollTo(0, 0); };
+  function syncInputs() { $("#q").value = F.q; $("#days").value = F.days; $("#purpose").value = F.purpose; $("#unkdays").checked = F.unkdays; $("#hidepass").checked = F.hidepass; $("#unconf").checked = F.unconf !== false; $("#sort").value = F.sort; }
+  const narrow = window.matchMedia("(max-width: 900px)");
+  const syncFilters = () => { $("#fwrap").open = !narrow.matches; };  // collapsed on phones, always open on desktop
+  syncFilters();
+  narrow.addEventListener?.("change", syncFilters);
+
+  fetch("data.json").then(r => r.json()).then(d => {
+    DATA = d; COS = Object.fromEntries((d.companies || []).map(c => [c.id, c]));
+    BASELINE = d.baseline || "";
+    const s = d.stats || {};
+    $("#stats").innerHTML = [["Roles", s.jobs], ["Strong matches", s.strong, "hl"], ["Companies tracked", s.companies], ["Hiring designers", s.companies_hiring]]
+      .map(([l, v, c]) => `<div class="stat ${c || ""}"><b>${v ?? 0}</b><span>${l}</span></div>`).join("");
+    $("#c-roles").textContent = d.jobs.length; $("#c-cos").textContent = d.companies.length; $("#c-src").textContent = d.sources.filter(x => x.how !== "retired").length;
+    $("#foot").textContent = `Data refreshed ${d.generated}. See “How scoring works” for the match score. People marked unverified were found by web search; check before reaching out.`;
+    syncInputs(); render(); renderCompanies(); renderSources(); renderScoring();
+    const tab = (location.hash || "").slice(1) || store.get("tab", "roles");
+    if (["roles", "companies", "sources", "scoring"].includes(tab)) setTab(tab);
+  }).catch(() => { $("#list").innerHTML = `<div class="empty">Couldn't load the role data. Reload the page to try again.</div>`; });
+
+  /* shared tracker (Robyn + family) */
+  if (!window.claude) {  // not inside Claude (e.g. GitHub Pages): load this browser's saved tracker
+    try { TRACK = JSON.parse(localStorage.getItem("gwb:tracker") || "{}"); } catch { TRACK = {}; }
+  }
+  (async () => {
+    try {
+      db = await window.claude?.use?.("db");
+      const user = await window.claude?.use?.("user");
+      if (user && user.can && (await user.can("data.write")) === false) canWrite = false;
+      if (!db) return;
+      db.collection("tracker").onSnapshot(snap => {
+        const next = {};
+        snap.docs.forEach(d => { const v = d.data(); if (v && v.jobId) next[v.jobId] = v; });
+        TRACK = next;
+        if (DATA.jobs.length) render();
+      }, () => {});
+    } catch { db = null; }
+  })();
+})();
+</script>
+
+</body></html>

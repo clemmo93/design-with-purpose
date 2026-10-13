@@ -1,0 +1,435 @@
+{
+ "Abtrace": {
+  "linkedin": "https://www.linkedin.com/company/abtrace/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Capgemini Invent": {
+  "linkedin": "https://www.linkedin.com/company/capgemini-invent/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Capgemini site footer links the group page (company id 157240); dedicated Capgemini Invent page lists capgemini.com/invent as its website"
+ },
+ "Consultant Connect": {
+  "linkedin": "https://www.linkedin.com/company/consultant-connect-uk/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Create/Change": {
+  "linkedin": "https://www.linkedin.com/company/createchangelondon/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Department for Science, Innovation & Technology": {
+  "linkedin": "https://www.linkedin.com/company/scitechgovuk/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Official DSIT page, but LinkedIn shows it closed as of 20 July 2026 (machinery-of-government change; responsibilities moved to other departments)"
+ },
+ "Dept for Environment Food & Rural Affairs (Defra)": {
+  "linkedin": "https://www.linkedin.com/company/defra/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Drive": {
+  "linkedin": "https://www.linkedin.com/company/drivecouk/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Drive = drive.co.uk, Volkswagen Financial Services UK's vehicle marketplace (Greenhouse board 'drive' job text says backed by VWFS); not the Welsh charity Drive (drivewalesuk)"
+ },
+ "Ecosurety": {
+  "linkedin": "https://www.linkedin.com/company/ecosurety/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Entrust": {
+  "linkedin": "https://www.linkedin.com/company/entrust/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Entrust (identity/digital security; LinkedIn page website entrust.com; /entrustdatacard redirects here). Not 'entrust-corporation' (unrelated 51-follower firm)"
+ },
+ "Eucalyptus": {
+  "linkedin": "https://www.linkedin.com/company/eucalyptusvc/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Fuse Energy": {
+  "linkedin": "https://www.linkedin.com/company/fuseenergyhq/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Goodstack": {
+  "linkedin": "https://www.linkedin.com/company/goodstackglobal/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "HMRC": {
+  "linkedin": "https://www.linkedin.com/company/hmrc/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Haiper AI": {
+  "linkedin": "https://www.linkedin.com/company/haiperai/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "LinkedIn page lists haiper.ai as website; haiper.ai is a JS app with no crawlable footer link"
+ },
+ "Healf": {
+  "linkedin": "https://www.linkedin.com/company/healf/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Healthtech-1": {
+  "linkedin": "https://www.linkedin.com/company/healthtech-1/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Home Office": {
+  "linkedin": "https://www.linkedin.com/company/uk-home-office/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "gov.uk links /the-home-office, which redirects to canonical /uk-home-office"
+ },
+ "Incubator for AI (i.AI)": {
+  "linkedin": "https://www.linkedin.com/company/i-dot-ai/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "L&Q": {
+  "linkedin": "https://www.linkedin.com/company/london-%26-quadrant/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Slug is 'london-&-quadrant' (URL-encoded here); page website lqgroup.org.uk. Avoid 'l&q-group' (dormant page that says it is not used)"
+ },
+ "Leeds Teaching Hospitals": {
+  "linkedin": "https://www.linkedin.com/company/leeds-teaching-hospitals-nhs-trust/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Lendable": {
+  "linkedin": "https://www.linkedin.com/company/zable/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "lendable.co.uk footer links /company/lendable, which now redirects to canonical slug /zable (page still titled Lendable, website lendable.co.uk)"
+ },
+ "Manchester University NHS Foundation Trust": {
+  "linkedin": "https://www.linkedin.com/company/nhs-mft-trust/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "mft.nhs.uk footer has no LinkedIn link; page lists careers.mft.nhs.uk as website, 61k followers. Separate 'mft-research-and-innovation' page exists for R&I"
+ },
+ "Ministry of Housing, Communities and Local Government": {
+  "linkedin": "https://www.linkedin.com/company/mhclgukgov/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Monq": {
+  "linkedin": "https://www.linkedin.com/company/monqai/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "From monq.io / careers.monq.io footer; procurement-negotiation AI startup"
+ },
+ "Motability Operations": {
+  "linkedin": "https://www.linkedin.com/company/motabilityoperations/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Site links /motability-operations, which redirects to canonical /motabilityoperations"
+ },
+ "National Grid": {
+  "linkedin": "https://www.linkedin.com/company/national-grid/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "nationalgrid.com blocks scripted fetch (403); page website nationalgrid.com. Group page covering UK and US"
+ },
+ "Netcompany": {
+  "linkedin": "https://www.linkedin.com/company/netcompany-a-s/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Group page (234k followers, website netcompany.com). No official UK-specific page; 'netcompany-uk' is a 50-follower page, not used"
+ },
+ "Neutreeno": {
+  "linkedin": "https://www.linkedin.com/company/neutreeno/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "North Northamptonshire Council": {
+  "linkedin": "https://www.linkedin.com/company/north-northamptonshire-council/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Nourish": {
+  "linkedin": "https://www.linkedin.com/company/nourish-care-systems/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Nourish Care (care-management software)"
+ },
+ "Ofsted": {
+  "linkedin": "https://www.linkedin.com/company/ofsted/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Paddle": {
+  "linkedin": "https://www.linkedin.com/company/paddle/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Paignton Zoo": {
+  "linkedin": "https://www.linkedin.com/company/paignton-zoo/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "From paigntonzoo.org.uk footer; operated by Wild Planet Trust"
+ },
+ "Partly": {
+  "linkedin": "https://www.linkedin.com/company/partly/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Page website partly.com; posts about auto-parts/collision repair confirm it's the right Partly"
+ },
+ "Peak": {
+  "linkedin": "https://www.linkedin.com/company/peak-ai/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Peak AI (Manchester), now part of UiPath; this role is advertised on uipath.com careers, so UiPath's page may also be relevant"
+ },
+ "Prolific": {
+  "linkedin": "https://www.linkedin.com/company/prolific-com/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Redgate Software": {
+  "linkedin": "https://www.linkedin.com/company/red-gate-software/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Runna (Strava)": {
+  "linkedin": "https://www.linkedin.com/company/runna/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Scarlet": {
+  "linkedin": "https://www.linkedin.com/company/scarlet-comply/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Scarlet = AI/software medical-device notified body (scarlet.cc, listed as page website). Not /company/scarlet (Belgian telecom)"
+ },
+ "Secfix": {
+  "linkedin": "https://www.linkedin.com/company/secfix/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Skin + Me": {
+  "linkedin": "https://www.linkedin.com/company/skinandmehq/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Page website skinandme.com"
+ },
+ "Solirius Reply": {
+  "linkedin": "https://www.linkedin.com/company/solirius/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Spotted Zebra": {
+  "linkedin": "https://www.linkedin.com/company/spottedzebraco/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Stride": {
+  "linkedin": "https://www.linkedin.com/company/stridebiolabs/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Stride (getstride.com, StrideOne preventative-health membership). Hard Problems and Foundation Partners listings are the same job (teamtailor 8507469); not US Stride Health/benefits (stride-benefits)"
+ },
+ "Stride (Foundation Partners)": {
+  "linkedin": "https://www.linkedin.com/company/stridebiolabs/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Same employer and same job as 'Stride'; Foundation Partners (linkedin.com/company/foundation-partners-london/) is the recruiter/venture studio"
+ },
+ "Stripe": {
+  "linkedin": "https://www.linkedin.com/company/stripe/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Teton.ai": {
+  "linkedin": "https://www.linkedin.com/company/teton-ai/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "teton.ai footer links numeric id 37549752, which is the /teton-ai page"
+ },
+ "The Salvation Army UK and Ireland": {
+  "linkedin": "https://www.linkedin.com/company/salvation-army-uk-ie/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "TryHackMe": {
+  "linkedin": "https://www.linkedin.com/company/tryhackme/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "University of Exeter": {
+  "linkedin": "https://www.linkedin.com/school/university-of-exeter/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "LinkedIn lists universities as /school/ pages (exeter.ac.uk footer links this); unverified-http (LinkedIn returned 999)"
+ },
+ "Vitala": {
+  "linkedin": "https://www.linkedin.com/company/vitala/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "vitala.health footer (apply email is @vitala.health); exercise-as-medicine digital platform"
+ },
+ "Whitbread (Premier Inn)": {
+  "linkedin": "https://www.linkedin.com/company/whitbread/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Wokingham Borough Council": {
+  "linkedin": "https://www.linkedin.com/company/wokingham-borough-council/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Page website wokingham.gov.uk"
+ },
+ "Zaizi": {
+  "linkedin": "https://www.linkedin.com/company/zaizi/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "annwn": {
+  "linkedin": "https://www.linkedin.com/company/annwn-ai/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "dmg media": {
+  "linkedin": "https://www.linkedin.com/company/dmgmedia/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Page website dmgmedia.co.uk (19k followers); not 'dmg-media' (135-follower duplicate)"
+ },
+ "UK digital product design agency (via Robert Walters)": {
+  "linkedin": null,
+  "method": "none",
+  "confidence": "high",
+  "note": "client not named"
+ },
+ "Unnamed climate-tech startup (via ADLIB Recruitment)": {
+  "linkedin": null,
+  "method": "none",
+  "confidence": "high",
+  "note": "client not named"
+ },
+ "Unnamed tech-for-good software company (via SR2)": {
+  "linkedin": null,
+  "method": "none",
+  "confidence": "high",
+  "note": "client not named"
+ },
+ "Entermotion Design Studio": {
+  "linkedin": "https://www.linkedin.com/company/entermotion-design-studio/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "entermotion.com has no LinkedIn link; this page lists entermotion.com as its website (318 followers). Not /entermotion (8-follower page)"
+ },
+ "Geordie AI": {
+  "linkedin": "https://www.linkedin.com/company/geordie-ai/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Immersive": {
+  "linkedin": "https://www.linkedin.com/company/immersive-labs-limited/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Immersive = Immersive Labs (Bristol cyber-resilience training; Built In job links careers.immersivelabs.com). Site footer also links /immersive-labs, which returns 404"
+ },
+ "Minerva Project": {
+  "linkedin": "https://www.linkedin.com/company/minerva-project/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Minerva Project company page (minervaproject.com); Minerva University has a separate /school/minerva-university page"
+ },
+ "Oliver's Travels": {
+  "linkedin": "https://www.linkedin.com/company/olivers-travels/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "oliverstravels.com has no crawlable LinkedIn link; this page lists oliverstravels.com as its website"
+ },
+ "PetLabCo.": {
+  "linkedin": "https://www.linkedin.com/company/petlabco/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Page lists thepetlabco.com as its website; /thepetlabco redirects here"
+ },
+ "Quantum (quantum.media)": {
+  "linkedin": "https://www.linkedin.com/company/quantumltd/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "From the quantum.media footer; affiliate/comparison marketing company"
+ },
+ "Workbrew": {
+  "linkedin": "https://www.linkedin.com/company/workbrew/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Anglian Water Group (TIDE Services)": {
+  "linkedin": "https://www.linkedin.com/company/tide-services/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "TIDE Services (tideservices.co.uk footer) is the hiring unit, part of Anglian Water Group. The group site links https://www.linkedin.com/company/anglianwater/ (Anglian Water Services, 67k followers)"
+ },
+ "Mercator Digital": {
+  "linkedin": "https://www.linkedin.com/company/mercator-digital-ltd/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "mercatordigital.com footer (Mercator IT Solutions Ltd, public-sector digital consultancy). Not /mercatordigital (unrelated 5-follower email-marketing page)"
+ },
+ "Department for Transport": {
+  "linkedin": "https://www.linkedin.com/company/department-for-transport/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Unnamed public-services software company (via Morson Edge)": {
+  "linkedin": null,
+  "method": "none",
+  "confidence": "high",
+  "note": "client not named"
+ },
+ "Revolut": {
+  "linkedin": "https://www.linkedin.com/company/revolut/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "revolut.com blocks scripted fetch (403); official page, 2.3M followers"
+ },
+ "The White Company": {
+  "linkedin": "https://www.linkedin.com/company/the-white-company/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Official page (119k followers); not /thewhitecompany (56-follower duplicate)"
+ },
+ "Social care & early-years workforce body in Wales (via Yolk Recruitment)": {
+  "linkedin": null,
+  "method": "none",
+  "confidence": "high",
+  "note": "client not named by recruiter; description fits Social Care Wales (https://www.linkedin.com/company/socialcarewales/, from socialcare.wales footer) but unconfirmed"
+ },
+ "C the Signs": {
+  "linkedin": "https://www.linkedin.com/company/c-the-signs/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Kainos": {
+  "linkedin": "https://www.linkedin.com/company/kainos/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Sage": {
+  "linkedin": "https://www.linkedin.com/company/sage-software/",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Official Sage Group page titled 'Sage'; /company/sage is an unrelated 'SAGE'."
+ },
+ "Communify": {
+  "linkedin": "https://www.linkedin.com/company/communifyglobal/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "communify.com (financial AI) footer; not the brand agency or housing clinic namesakes."
+ }
+}
