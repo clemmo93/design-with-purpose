@@ -1,3 +1,5 @@
+> File format the research agents write today. The target data model for the app and database is [`DATA_MODEL.md`](../DATA_MODEL.md).
+
 # Data schema (v1)
 
 ## data/companies.json  — the Company Register

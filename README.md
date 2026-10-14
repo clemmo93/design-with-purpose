@@ -26,6 +26,8 @@ Strong is 80 or more, Good is 62–79, and anything lower is Stretch. Nothing is
 
 ## How it's built
 
+The full data model (entities, fields, who writes what, access for the two members) is in [`DATA_MODEL.md`](DATA_MODEL.md).
+
 ```
 data/companies.json        Company register (130 orgs, each with its careers system and LinkedIn page)
 scripts/fetch_ats.py   ─►  data/jobs_ats.json        roles from each company's own careers feed
