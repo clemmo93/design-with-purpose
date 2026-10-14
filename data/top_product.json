@@ -1,0 +1,33 @@
+{
+  "_about": "Companies with a strong product and design reputation. Their roles always go on the Roles tab (never skipped), get a 'Top product co' badge, and score purpose points as if purpose 3 (20/40). Edit freely: add or remove names.",
+  "companies": [
+    {"name": "Monzo", "why": "Design-led consumer bank; widely cited UK product and design culture"},
+    {"name": "Wise", "why": "Product-led global money transfer; strong design team"},
+    {"name": "Starling", "why": "Digital bank with a well-regarded app and design team"},
+    {"name": "Revolut", "why": "Fast-moving product organisation, large design team"},
+    {"name": "Spotify", "why": "Consumer product and design leader"},
+    {"name": "Figma", "why": "The design tool company"},
+    {"name": "Google", "why": "Big-tech product and UX practice"},
+    {"name": "Deliveroo", "why": "London consumer marketplace with a strong design org"},
+    {"name": "Synthesia", "why": "London AI video product, design-led"},
+    {"name": "Granola", "why": "Highly regarded AI notes product, small design-led team"},
+    {"name": "Lovable", "why": "AI product builder known for product craft"},
+    {"name": "Productboard", "why": "Product-management tool built by product people"},
+    {"name": "Checkout.com", "why": "Payments platform with a mature design system team"},
+    {"name": "Deel", "why": "Global HR/payroll product, remote-first design team"},
+    {"name": "Personio", "why": "HR software scale-up with a strong design function"},
+    {"name": "Motorway", "why": "UK car-selling product, design-led consumer journeys"},
+    {"name": "Fresha", "why": "Beauty and wellness booking platform, product-led"},
+    {"name": "Taktile", "why": "Decision-platform startup, small senior design team"},
+    {"name": "Legora", "why": "Legal AI product known for craft"},
+    {"name": "LEGO", "why": "LEGO Group and LEGO Digital Play: design-centred brand"},
+    {"name": "Moss", "why": "Spend-management product, strong design"},
+    {"name": "Carwow", "why": "UK consumer marketplace, product-led"},
+    {"name": "Bumble", "why": "Consumer apps (Bumble, Badoo) with a big design team"},
+    {"name": "Stripe", "why": "Payments infrastructure renowned for product and design"},
+    {"name": "Depop", "why": "Consumer resale marketplace, design-led"},
+    {"name": "Runna", "why": "Running app (Strava), consumer product craft"},
+    {"name": "Preply", "why": "Language-learning marketplace, product-led"},
+    {"name": "Proton", "why": "Privacy products (Mail, Drive), strong design"}
+  ]
+}

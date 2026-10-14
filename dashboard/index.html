@@ -132,6 +132,7 @@ details.more > summary { cursor: pointer; padding-block: 12px; font-weight: 700;
 .jc strong { color: var(--ink); font-weight: 600; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 13px; color: var(--ink-2); align-items: center; }
 .tag { font: 400 12px/1 var(--f-body); padding: 4px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); }
+.tag.top { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
 .tag.unconf { background: var(--good-bg); color: var(--good); text-transform: none; }
 .tag.new { background: var(--sun); color: var(--sun-ink); font-weight: 700; }
 .side { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
@@ -277,6 +278,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         <summary>Filters <span id="factive" class="muted"></span></summary>
         <div class="fgroup"><input type="search" id="q" placeholder="Search title, company, keyword…" aria-label="Search roles"></div>
         <div class="fgroup"><div class="flabel">Match</div><div class="chips" data-facet="tier"></div></div>
+        <div class="fgroup"><div class="flabel">Company type</div><div class="chips" data-facet="company_kind"></div></div>
         <div class="fgroup"><div class="flabel">Work model</div><div class="chips" data-facet="work_model"></div></div>
         <div class="fgroup">
           <div class="flabel">Office days a week, at most <span id="dval"></span></div>
@@ -364,6 +366,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
 
   const LABELS = {
     tier: { strong: "Strong", good: "Good", stretch: "Stretch" },
+    company_kind: { purpose: "Purpose-led", top: "Top product company", other: "Other" },
     work_model: { remote: "Remote", hybrid: "Hybrid", office: "Office", unknown: "Not stated" },
     seniority: { junior: "Junior", mid: "Mid", senior: "Senior", lead: "Lead / Head", unknown: "Unclear" },
     source_kind: { api: "Company careers site", aggregator: "Job boards", linkedin: "LinkedIn" },
@@ -375,7 +378,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
     },
   };
   const ORDER = {
-    tier: ["strong", "good", "stretch"], work_model: ["remote", "hybrid", "office", "unknown"],
+    tier: ["strong", "good", "stretch"], company_kind: ["purpose", "top", "other"], work_model: ["remote", "hybrid", "office", "unknown"],
     seniority: ["junior", "mid", "senior", "lead", "unknown"], source_kind: ["api", "aggregator", "linkedin"],
     status: ["none", "shortlist", "applied", "interview", "offer", "closed", "pass"],
     region: ["Remote UK", "London", "South East", "South West", "East / ≤2h", "Midlands / ≤2h", "UK (unspecified)", "North / Far", "Non-UK", "Unknown"],
@@ -388,7 +391,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
   let TRACK = {};               // jobId -> {status, note, updated}
   let db = null, canWrite = true;
 
-  const defaults = () => ({ q: "", tier: [], work_model: [], sectors: [], seniority: [], region: [], source_kind: [], status: [], days: 5, unkdays: true, purpose: 1, hidepass: true, sort: "match", unconf: true });
+  const defaults = () => ({ q: "", tier: [], company_kind: [], work_model: [], sectors: [], seniority: [], region: [], source_kind: [], status: [], days: 5, unkdays: true, purpose: 1, hidepass: true, sort: "match", unconf: true });
   let F = Object.assign(defaults(), store.get("filters", {}));
 
   const statusOf = j => (TRACK[j.id] && TRACK[j.id].status) || "none";
@@ -399,7 +402,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       const hay = [j.title, j.company_name, j.role_summary, j.location, (COS[j.company_id] || {}).mission].join(" ").toLowerCase();
       if (!F.q.toLowerCase().split(/\s+/).every(w => hay.includes(w))) return false;
     }
-    for (const f of ["tier", "work_model", "seniority", "region", "source_kind", "status"]) {
+    for (const f of ["tier", "company_kind", "work_model", "seniority", "region", "source_kind", "status"]) {
       if (f !== skip && F[f].length && !F[f].includes(val(j, f))) return false;
     }
     if (skip !== "sectors" && F.sectors.length && !(j.sectors || []).some(s => F.sectors.includes(s))) return false;
@@ -480,7 +483,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         ${ring(j.match, j.tier)}
         <div style="min-width:0">
           <p class="jt">${esc(j.title)}</p>
-          <div class="jc"><strong>${esc(j.company_name)}</strong>${pips(j.purpose_score)}<span>${esc(j.location || j.region)}</span></div>
+          <div class="jc"><strong>${esc(j.company_name)}</strong>${pips(j.purpose_score)}${j.top_product ? `<span class="tag top">Top product co</span>` : ""}<span>${esc(j.location || j.region)}</span></div>
           <div class="meta">${week(j)}<span>${esc(LABELS.seniority[j.seniority] || j.seniority)}${j.years_experience ? ` · ${esc(j.years_experience)} yrs` : ""}</span>${j.salary ? `<span>${esc(j.salary)}</span>` : ""}
             ${(j.sectors || []).slice(0, 3).map(sec).join("")}
             ${isNew(j) ? `<span class="tag new">New</span>` : ""}
@@ -490,7 +493,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
         <div class="side">${liCompany(COS[j.company_id], j) ? `<a class="li-link" href="${esc(liCompany(COS[j.company_id], j))}" target="_blank" rel="noopener" aria-label="${esc(j.company_name)} on LinkedIn">LinkedIn ↗</a>` : ""}${st !== "none" ? `<span class="status" data-s="${st}">${esc(LABELS.status[st])}</span>` : ""}${j.posted ? `<span class="muted">${fmtDate(j.posted)}</span>` : ""}</div>
       </div>`;
     }).join("") : `<div class="empty">No roles match these filters. Try widening office days or clearing a filter.</div>`;
-    const active = ["tier", "work_model", "sectors", "seniority", "region", "source_kind", "status"].reduce((n, k) => n + F[k].length, 0) + (F.q ? 1 : 0) + (F.days < 5 ? 1 : 0) + (F.purpose > 1 ? 1 : 0);
+    const active = ["tier", "company_kind", "work_model", "sectors", "seniority", "region", "source_kind", "status"].reduce((n, k) => n + F[k].length, 0) + (F.q ? 1 : 0) + (F.days < 5 ? 1 : 0) + (F.purpose > 1 ? 1 : 0);
     $("#factive").textContent = active ? `${active} active` : "";
   }
 
@@ -557,7 +560,7 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
       <h3>The role</h3><p>${esc(j.role_summary || "No summary captured. Open the posting for details.")}</p>
       <h3>The company</h3>
       <p>${esc(c.mission || "")}</p>
-      <div class="meta">${pips(j.purpose_score)}<span>Purpose ${j.purpose_score || "?"}/5</span>${(j.sectors || []).map(sec).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}${c.size ? `<span class="tag">${esc(c.size)} people</span>` : ""}${c.hq ? `<span class="tag">${esc(c.hq)}</span>` : ""}</div>
+      <div class="meta">${pips(j.purpose_score)}<span>Purpose ${j.purpose_score || "?"}/5</span>${j.top_product ? `<span class="tag top">Top product co</span>` : ""}${(j.sectors || []).map(sec).join("")}${c.org_type ? `<span class="tag">${esc(c.org_type)}</span>` : ""}${c.size ? `<span class="tag">${esc(c.size)} people</span>` : ""}${c.hq ? `<span class="tag">${esc(c.hq)}</span>` : ""}</div>
       ${c.purpose_rationale ? `<p class="muted" style="margin-top:8px">${esc(c.purpose_rationale)}</p>` : ""}
       ${c.design_team_notes ? `<p class="muted">${esc(c.design_team_notes)}</p>` : ""}
       <h3>Why this score</h3>
@@ -731,6 +734,8 @@ td.num { font: 500 13px var(--f-mono); font-variant-numeric: tabular-nums; text-
           <p class="muted"><b>Years asked for</b> can lower this:</p>
           <table><tbody>${R.years_cap.map(r => `<tr><td>${esc(r.label)}</td></tr>`).join("")}</tbody></table></div>
       </div>
+      ${R.top_product ? `<div class="rulecard"><h3>Top product companies</h3><p>Some companies are worth Robyn's time for the quality of their product and design practice, even when positive change isn't their mission. Their roles always go on the board with a <span class="tag top">Top product co</span> badge. Their purpose leaves stay honest, but they earn <b>${R.top_product.points} of 40</b> purpose points, the same as a purpose-adjacent company.</p>
+        <p class="muted">${R.top_product.companies.map(c => esc(c.name)).join(" · ")}</p></div>` : ""}
       <div><h3>Worked examples from today's board</h3><p>Click one to open the role.</p>
         <div class="examples">${pick.map(j => `<button class="example" data-id="${esc(j.id)}"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap"><span><b>${esc(j.title)}</b> · ${esc(j.company_name)}</span><span class="pill tier-${j.tier}">${j.match} · ${esc(LABELS.tier[j.tier])}</span></div>
           <div class="ex-parts"><span>Purpose <b>${j.score_parts.purpose}</b>/40 (purpose ${j.purpose_score}/5)</span><span>Work pattern <b>${j.score_parts.location}</b>/30 (${esc(workLabel[j.work_rule] || "")})</span><span>Level <b>${j.score_parts.seniority}</b>/30 (${esc(LABELS.seniority[j.seniority])}${j.years_experience ? `, asks ${esc(j.years_experience)} yrs` : ""})</span></div></button>`).join("")}</div></div>

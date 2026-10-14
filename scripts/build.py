@@ -15,7 +15,7 @@ from fetch_ats import EXCLUDE_RE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-JOB_FILES = ["jobs_ats.json", "jobs_boards.json", "jobs_aggregators.json", "jobs_linkedin.json", "jobs_junior.json", "jobs_linkedin_auth.json", "jobs_manual.json"]
+JOB_FILES = ["jobs_top_product.json", "jobs_ats.json", "jobs_boards.json", "jobs_aggregators.json", "jobs_linkedin.json", "jobs_junior.json", "jobs_linkedin_auth.json", "jobs_manual.json"]
 SOURCE_PRIORITY = {"api": 0, "aggregator": 1, "linkedin": 2}  # lower wins on dedupe
 
 # Rough region map: towns within ~2h of London grouped by region.
@@ -158,6 +158,8 @@ def work_key(wm, days, reg):
 def score(job, company):
     purpose = job.get("purpose_score") or (company or {}).get("purpose_score") or 2
     p = PURPOSE_PTS.get(int(purpose), 10)
+    if job.get("top_product"):
+        p = max(p, PURPOSE_PTS[3])  # a top product company earns purpose-3 points without inflating its leaves
     loc = WORK_PTS[work_key(job["work_model"], job["office_days"], job["region"])]
     sen = LEVEL_PTS[job["seniority"]]
     my = min_years(job.get("years_experience"))
@@ -173,9 +175,24 @@ def score_rules():
         "level": [{"key": k, "points": v, "meaning": LEVEL_MEANING[k]} for k, v in LEVEL_PTS.items()],
         "years_cap": [{"up_to": u, "cap": c, "label": l} for u, c, l in YEARS_CAP],
         "tiers": [{"key": k, "min": m, "label": l} for k, m, l in TIERS],
+        "top_product": {"points": PURPOSE_PTS[3], "companies": json.loads((DATA / "top_product.json").read_text())["companies"] if (DATA / "top_product.json").exists() else []},
         "regions": {k: v for k, v in REGIONS.items()},
         "in_area": IN_AREA,
     }
+
+
+def load_top_product():
+    p = DATA / "top_product.json"
+    names = [c["name"] for c in json.loads(p.read_text())["companies"]] if p.exists() else []
+    return [norm_company(n) for n in names]
+
+
+TOP_PRODUCT = []  # filled in main()
+
+
+def is_top_product(name):
+    k = norm_company(name)
+    return any(k == t or k.startswith(t + " ") for t in TOP_PRODUCT)
 
 
 def norm_title(t):
@@ -395,6 +412,8 @@ def passed_on(jobs):
             if str(x.get("id")) in on_board_ids or (norm_company(co), norm_title(x.get("title", ""))) in on_board_keys:
                 continue  # it made it onto the board after all
             g = pass_group(x.get("reason"), co)
+            if is_top_product(co) and g in ("commercial", "consultancy"):
+                continue  # top product companies go on the Roles tab, not here
             e = by_co.setdefault(norm_company(co) or co.lower(), {"company": co, "group": g, "roles": [], "reasons": set()})
             if PASS_GROUPS[g][2] < PASS_GROUPS[e["group"]][2]:
                 e["group"] = g
@@ -411,6 +430,7 @@ def passed_on(jobs):
 
 
 def main():
+    TOP_PRODUCT.extend(load_top_product())
     companies = json.loads((DATA / "companies.json").read_text()) if (DATA / "companies.json").exists() else []
     cmap = {c["id"]: c for c in companies}
     name_map = {c["name"].lower(): c for c in companies}
@@ -448,6 +468,8 @@ def main():
         if c:  # the curated register is the authority on purpose + sector
             j["sectors"] = sorted(set(c.get("sectors", [])) | set(j.get("sectors") or []))
             j["purpose_score"] = c.get("purpose_score") or j.get("purpose_score")
+        j["top_product"] = is_top_product(j.get("company_name"))
+        j["company_kind"] = "top" if j["top_product"] else "purpose" if (j.get("purpose_score") or (c or {}).get("purpose_score") or 0) >= 3 else "other"
         j["match"], j["score_parts"] = score(j, c)
         j["tier"] = next(k for k, m, _ in TIERS if j["match"] >= m)
         j["work_rule"] = work_key(j["work_model"], j["office_days"], j["region"])

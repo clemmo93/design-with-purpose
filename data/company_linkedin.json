@@ -556,5 +556,122 @@
   "method": "n/a",
   "confidence": "high",
   "note": "client not named (recruiter post)"
+ },
+ "Bumble Inc.": {
+  "linkedin": "https://www.linkedin.com/company/bumbleinc/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Carwow": {
+  "linkedin": "https://www.linkedin.com/company/carwow/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Checkout.com": {
+  "linkedin": "https://www.linkedin.com/company/checkout/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Deel": {
+  "linkedin": "https://www.linkedin.com/company/deel/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Figma": {
+  "linkedin": "https://www.linkedin.com/company/figma/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Granola": {
+  "linkedin": "https://www.linkedin.com/company/meetgranola/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Legora": {
+  "linkedin": "https://www.linkedin.com/company/wearelegora/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Monzo": {
+  "linkedin": "https://www.linkedin.com/company/monzo-bank/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Moss": {
+  "linkedin": "https://www.linkedin.com/company/moss-finance/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Productboard": {
+  "linkedin": "https://www.linkedin.com/company/productboard/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Synthesia": {
+  "linkedin": "https://www.linkedin.com/company/synthesia-technologies/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Taktile": {
+  "linkedin": "https://www.linkedin.com/company/taktile1/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Wise": {
+  "linkedin": "https://www.linkedin.com/company/wiseaccount/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Starling": {
+  "linkedin": "https://www.linkedin.com/company/starlingbank/",
+  "method": "website-footer",
+  "confidence": "high"
+ },
+ "Fresha": {
+  "linkedin": "https://www.linkedin.com/company/heyfresha/",
+  "method": "website-footer",
+  "confidence": "high",
+  "note": "Footer links /shedul (old name) which redirects to /heyfresha; /fresha is an unrelated catering firm."
+ },
+ "Deliveroo": {
+  "linkedin": "https://www.linkedin.com/company/deliveroo/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "Google": {
+  "linkedin": "https://www.linkedin.com/company/google/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "LEGO Digital Play": {
+  "linkedin": "https://www.linkedin.com/company/lego-digital-play/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "the LEGO Group": {
+  "linkedin": "https://www.linkedin.com/company/lego-group/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "Lovable": {
+  "linkedin": "https://www.linkedin.com/company/lovable-dev/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "Personio": {
+  "linkedin": "https://www.linkedin.com/company/personio/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "Spotify": {
+  "linkedin": "https://www.linkedin.com/company/spotify/",
+  "method": "search+http200",
+  "confidence": "high"
+ },
+ "Motorway": {
+  "linkedin": "https://www.linkedin.com/company/motorway-online-ltd./",
+  "method": "search+http200",
+  "confidence": "high",
+  "note": "Slug genuinely ends with a full stop."
  }
 }
